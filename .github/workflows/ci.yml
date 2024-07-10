@@ -1,9 +1,9 @@
 name: Tarea Automatizada de ejecución de pruebas
 
 env:
-  SONAR_ORG: 'sosa proyecto'                # Nombre de la organización de SonarCloud
-  SONAR_PROJECT: 'sosa-proyecto_sosau3'     # Key ID del proyecto en SonarCloud
-  COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}   # Autenticación para Composer
+  SONAR_ORG: 'sosa proyecto'
+  SONAR_PROJECT: 'sosa-proyecto_sosau3'
+  COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
 
 on:
   push:
@@ -24,8 +24,11 @@ jobs:
           php-version: '8.0'
           tools: composer:v2
 
-      - name: Instalar dependencias
-        run: composer install --no-progress --no-suggest --prefer-dist
+      - name: Instalar dependencias y actualizar Composer
+        run: |
+          composer self-update --2
+          composer install --no-progress --no-suggest --prefer-dist
+          composer update
 
       - name: Ejecutar pruebas con Behat
         run: vendor/bin/behat --format=junit --out=behat-reports/
