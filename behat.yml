@@ -2,13 +2,13 @@ default:
   suites:
     default:
       paths:
-        - '%paths.base%/features'
+        - '%paths.base%/features/bootstrap'
       contexts:
-        - App\Behat\Context\ClienteContext
-        - App\Behat\Context\CotizacionContext
-        - App\Behat\Context\LugarContext
-        - App\Behat\Context\MantenimientoContext
-        - App\Behat\Context\MaquinariaContext
+        - ClienteContext
+        - CotizacionContext
+        - LugarContext
+        - MantenimientoContext
+        - MaquinariaContext
   extensions:
     emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
       name: html
