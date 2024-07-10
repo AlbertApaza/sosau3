@@ -33,17 +33,11 @@ jobs:
       - name: Ejecutar pruebas con Behat
         run: vendor/bin/behat --format=junit --out=behat-reports/
 
-      - name: Crear directorio conf.d si no existe
-        run: mkdir -p $GITHUB_WORKSPACE/conf.d/
-
-      - name: Configurar Xdebug para cobertura
-        run: echo "xdebug.mode=coverage" >> $GITHUB_WORKSPACE/conf.d/xdebug.ini
+      - name: Instalar y configurar Xdebug
+        run: echo "xdebug.mode=coverage" >> $PHP_INI_DIR/conf.d/xdebug.ini
 
       - name: Ejecutar pruebas con cobertura
         run: vendor/bin/behat --format=clover --out=behat-reports/clover.xml
-
-      - name: Verificar generación de clover.xml
-        run: ls -lah behat-reports/
 
       - name: Configurar SonarCloud
         run: |
