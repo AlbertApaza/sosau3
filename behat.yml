@@ -1,0 +1,19 @@
+default:
+  suites:
+    default:
+      paths:
+        - '%paths.base%/features'
+      contexts:
+        - ClienteContext
+        - CotizacionContext
+        - LugarContext
+        - MantenimientoContext
+        - MaquinariaContext
+  extensions:
+    emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
+      name: html
+      renderer: Twig,Behat2
+      file_name: index
+      print_args: true
+      print_outp: true
+      loop_break: true
