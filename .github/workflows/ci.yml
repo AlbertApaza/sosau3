@@ -33,7 +33,10 @@ jobs:
       - name: Ejecutar pruebas con Behat
         run: vendor/bin/behat --format=junit --out=behat-reports/
 
-      - name: Instalar y configurar Xdebug
+      - name: Crear directorio conf.d si no existe
+        run: mkdir -p $PHP_INI_DIR/conf.d/
+
+      - name: Configurar Xdebug para cobertura
         run: echo "xdebug.mode=coverage" >> $PHP_INI_DIR/conf.d/xdebug.ini
 
       - name: Ejecutar pruebas con cobertura
