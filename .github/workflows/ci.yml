@@ -39,6 +39,9 @@ jobs:
       - name: Ejecutar pruebas con cobertura
         run: vendor/bin/behat --format=clover --out=behat-reports/clover.xml
 
+      - name: Verificar generación de clover.xml
+        run: ls -lah behat-reports/
+
       - name: Configurar SonarCloud
         run: |
           wget https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip
