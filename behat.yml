@@ -4,11 +4,11 @@ default:
       paths:
         - '%paths.base%/features'
       contexts:
-        - ClienteContext
-        - CotizacionContext
-        - LugarContext
-        - MantenimientoContext
-        - MaquinariaContext
+        - features\bootstrap\ClienteContext
+        - features\bootstrap\CotizacionContext
+        - features\bootstrap\LugarContext
+        - features\bootstrap\MantenimientoContext
+        - features\bootstrap\MaquinariaContext
   extensions:
     emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
       name: html
