@@ -17,5 +17,3 @@ default:
       print_args: true
       print_outp: true
       loop_break: true
-    Behat\CloverExtension\Behat\CloverExtension:
-      target: behat-reports/clover.xml
