@@ -1,0 +1,42 @@
+name: Despliegue a GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v2
+
+      - name: Instalar dependencias y ejecutar pruebas
+        run: |
+          composer install --no-progress --no-interaction
+          vendor/bin/behat --format=junit --out=behat-reports/
+
+      - name: Subir informe de cobertura
+        uses: actions/upload-artifact@v2
+        with:
+          name: cobertura
+          path: behat-reports/clover.xml
+
+      - name: Construir y desplegar en GitHub Pages
+        run: |
+          # Clonar la rama gh-pages
+          git clone --branch=gh-pages --depth=1 https://github.com/tu-usuario/tu-repositorio.git gh-pages
+
+          # Copiar los reportes generados a la carpeta deseada en la rama gh-pages
+          cp -r behat-reports/* gh-pages/
+
+          # Añadir y hacer commit de los cambios
+          cd gh-pages
+          git add .
+          git commit -m "Actualizar reportes de cobertura"
+          
+          # Empujar los cambios a la rama gh-pages
+          git push origin gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
