@@ -1,7 +1,6 @@
 <?php
 
 use Behat\Behat\Context\Context;
-use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
 use Phake;
 use Exception;
@@ -170,5 +169,33 @@ class ClienteContext implements Context
             }
         }
         Phake::when($this->clienteService)->editarCliente($idcliente, $clienteData)->thenThrow(new Exception('Los campos del formulario no pueden estar vacíos'));
+    }
+
+    /**
+     * @When intento eliminar el cliente con idcliente :idcliente
+     */
+    public function intentoEliminarElClienteConIdcliente($idcliente)
+    {
+        // Simular comportamiento con Phake
+        foreach ($this->clientes as $key => $cliente) {
+            if ($cliente['idcliente'] == $idcliente) {
+                unset($this->clientes[$key]);
+                break;
+            }
+        }
+        Phake::when($this->clienteService)->eliminarCliente($idcliente)->thenReturn(true);
+    }
+
+    /**
+     * @Then el cliente con idcliente :idcliente ya no debe estar en la lista de clientes
+     */
+    public function elClienteConIdclienteYaNoDebeEstarEnLaListaDeClientes($idcliente)
+    {
+        // Verificar que el cliente con el id dado ya no esté en la lista
+        foreach ($this->clientes as $cliente) {
+            if ($cliente['idcliente'] == $idcliente) {
+                throw new Exception("El cliente con idcliente $idcliente aún está en la lista.");
+            }
+        }
     }
 }
