@@ -2,21 +2,23 @@
 
 use App\Model\Cliente;
 use PHPUnit\Framework\Assert;
-
-use Behat\Behat\Hook\Scope\BeforeScenarioScope;
+use Phake;
 use Behat\Behat\Context\Context;
-use Behat\Gherkin\Node\PyStringNode;
-use Behat\Gherkin\Node\TableNode;
+use Behat\Behat\Tester\Exception\PendingException;
 
 /**
  * Defines application features from the specific context.
  */
-class ClienteContext implements \Behat\Behat\Context\Context
+class ClienteContext implements Context
 {
     private $cliente;
     private $clientsList;
 
-
+    public function __construct()
+    {
+        // Crea una instancia simulada de Cliente
+        $this->cliente = Phake::mock(Cliente::class);
+    }
 
     /**
      * @Given I have a Cliente instance
@@ -42,26 +44,22 @@ class ClienteContext implements \Behat\Behat\Context\Context
         Assert::assertNotEmpty($this->clientsList, 'The client list is empty.');
     }
 
-		/**
- * @When I add a new client with nombre :nombre, apellido :apellido, correo :correo, iddocumento :iddocumento, documento :documento, telefono :telefono
- */
-public function iAddANewClientWith($nombre, $apellido, $correo, $iddocumento, $documento, $telefono)
-{
-    try {
-        $this->cliente->agregarCliente($nombre, $apellido, $correo, $iddocumento, $documento, $telefono);
-        echo "Cliente '$nombre $apellido' agregado correctamente." . PHP_EOL;
+    /**
+     * @When I add a new client with nombre :nombre, apellido :apellido, correo :correo, iddocumento :iddocumento, documento :documento, telefono :telefono
+     */
+    public function iAddANewClientWith($nombre, $apellido, $correo, $iddocumento, $documento, $telefono)
+    {
+        try {
+            $this->cliente->agregarCliente($nombre, $apellido, $correo, $iddocumento, $documento, $telefono);
+            echo "Cliente '$nombre $apellido' agregado correctamente." . PHP_EOL;
 
-        // Actualizar la lista de clientes después de agregar uno nuevo
-        $this->iRequestTheListOfClients();
-    } catch (\Exception $e) {
-        echo "Error al agregar el cliente: " . $e->getMessage() . PHP_EOL;
+            // Actualizar la lista de clientes después de agregar uno nuevo
+            $this->iRequestTheListOfClients();
+        } catch (\Exception $e) {
+            echo "Error al agregar el cliente: " . $e->getMessage() . PHP_EOL;
+        }
     }
-}
 
-
-
-
-		
     /**
      * @Then the client list should include :expectedClient
      */
@@ -82,27 +80,26 @@ public function iAddANewClientWith($nombre, $apellido, $correo, $iddocumento, $d
      */
     public function thereIsAClientWithIdcliente($idcliente)
     {
-        // Assuming a method that adds a client with specific details for testing purposes
+        // Agrega un cliente con detalles específicos para propósitos de prueba
         $this->cliente->agregarCliente('John', 'Doe', 'john.doe@example.com', 'DNI', '12345678', '987654321');
     }
 
-	/**
-	 * @When I edit the client with idcliente :idcliente, setting nombre to :nombre, apellido to :apellido, correo to :correo, iddocumento to :iddocumento, documento to :documento, telefono to :telefono
-	 */
-	public function iEditTheClientWithIdcliente($idcliente, $nombre, $apellido, $correo, $iddocumento, $documento, $telefono)
-	{
-		try {
-			// Realizar la edición del cliente
-			$this->cliente->editarCliente($idcliente, $nombre, $apellido, $correo, $iddocumento, $documento, $telefono);
-			echo "Cliente con id $idcliente editado correctamente." . PHP_EOL;
+    /**
+     * @When I edit the client with idcliente :idcliente, setting nombre to :nombre, apellido to :apellido, correo to :correo, iddocumento to :iddocumento, documento to :documento, telefono to :telefono
+     */
+    public function iEditTheClientWithIdcliente($idcliente, $nombre, $apellido, $correo, $iddocumento, $documento, $telefono)
+    {
+        try {
+            // Realizar la edición del cliente
+            $this->cliente->editarCliente($idcliente, $nombre, $apellido, $correo, $iddocumento, $documento, $telefono);
+            echo "Cliente con id $idcliente editado correctamente." . PHP_EOL;
 
-			// Actualizar la lista de clientes después de la edición
-			$this->iRequestTheListOfClients();
-		} catch (\Exception $e) {
-			echo "Error al editar el cliente: " . $e->getMessage() . PHP_EOL;
-		}
-	}
-
+            // Actualizar la lista de clientes después de la edición
+            $this->iRequestTheListOfClients();
+        } catch (\Exception $e) {
+            echo "Error al editar el cliente: " . $e->getMessage() . PHP_EOL;
+        }
+    }
 
     /**
      * @When I delete the client with idcliente :idcliente
@@ -135,23 +132,23 @@ public function iAddANewClientWith($nombre, $apellido, $correo, $iddocumento, $d
         $this->clientsList = $this->cliente->buscarCliente($term);
     }
 
-	/**
-	 * @Then the search results should include :expectedClient
-	 */
-	public function theSearchResultsShouldInclude($expectedClient)
-	{
-		if ($this->clientsList === null) {
-			throw new \Exception("Client list is null. Ensure it is initialized properly.");
-		}
+    /**
+     * @Then the search results should include :expectedClient
+     */
+    public function theSearchResultsShouldInclude($expectedClient)
+    {
+        if ($this->clientsList === null) {
+            throw new \Exception("Client list is null. Ensure it is initialized properly.");
+        }
 
-		$found = false;
-		foreach ($this->clientsList as $client) {
-			if ($client['nombre'] . ' ' . $client['apellido'] === $expectedClient) {
-				$found = true;
-				break;
-			}
-		}
-		Assert::assertTrue($found, "Expected client '$expectedClient' not found in the search results.");
-	}
+        $found = false;
+        foreach ($this->clientsList as $client) {
+            if ($client['nombre'] . ' ' . $client['apellido'] === $expectedClient) {
+                $found = true;
+                break;
+            }
+        }
+        Assert::assertTrue($found, "Expected client '$expectedClient' not found in the search results.");
+    }
 }
 ?>
