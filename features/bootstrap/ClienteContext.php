@@ -1,7 +1,6 @@
 <?php
 
 use Behat\Behat\Context\Context;
-use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
 use Phake;
 use Exception;
@@ -44,6 +43,7 @@ class ClienteContext implements Context
     {
         foreach ($clientesTable as $clienteData) {
             $this->clientes[] = [
+                'idcliente' => isset($clienteData['idcliente']) ? $clienteData['idcliente'] : null,
                 'nombre' => $clienteData['nombre'],
                 'apellido' => $clienteData['apellido'],
                 'correo' => $clienteData['correo'],
@@ -230,4 +230,5 @@ class ClienteContext implements Context
         }
     }
 }
+
 ?>
