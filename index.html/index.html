@@ -818,26 +818,27 @@ Para poder visualizar los lugares disponibles</p>
                     <span class="title">Visualizar todos los lugares</span>
                 </h3>
                 <ol>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">Given </span>
                             <span class="text">que el Personal navega a la p&aacute;gina de administraci&oacute;n de lugares </span>
-                            <span class="path"></span>
+                            <span class="path">LugarContext::queElPersonalNavegaALaPaginaDeAdministracionDeLugares()</span>
                         </div>
                     </li>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">When </span>
                             <span class="text">el sistema solicita todos los lugares </span>
-                            <span class="path"></span>
+                            <span class="path">LugarContext::elSistemaSolicitaTodosLosLugares()</span>
                         </div>
                     </li>
-                    <li class="pending">
+                    <li class="failed">
                         <div class="step">
                             <span class="keyword">Then </span>
                             <span class="text">el sistema muestra la lista de lugares disponibles </span>
-                            <span class="path"></span>
+                            <span class="path">LugarContext::elSistemaMuestraLaListaDeLugaresDisponibles()</span>
                         </div>
+                        <pre class="backtrace">La lista de lugares no se mostró correctamente.</pre>
                     </li>
                 </ol>
             </div>
@@ -864,26 +865,27 @@ Para poder gestionar las maquinarias de manera eficiente</p>
                     <span class="title">Listar todos los mantenimientos</span>
                 </h3>
                 <ol>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">Given </span>
                             <span class="text">que el Personal navega a la p&aacute;gina de mantenimientos </span>
-                            <span class="path"></span>
+                            <span class="path">MantenimientoContext::queElPersonalNavegaALaPaginaDeMantenimientos()</span>
                         </div>
                     </li>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">When </span>
                             <span class="text">el sistema solicita todos los registros de mantenimiento </span>
-                            <span class="path"></span>
+                            <span class="path">MantenimientoContext::elSistemaSolicitaTodosLosRegistrosDeMantenimiento()</span>
                         </div>
                     </li>
-                    <li class="pending">
+                    <li class="failed">
                         <div class="step">
                             <span class="keyword">Then </span>
                             <span class="text">el sistema muestra la lista de mantenimientos </span>
-                            <span class="path"></span>
+                            <span class="path">MantenimientoContext::elSistemaMuestraLaListaDeMantenimientos()</span>
                         </div>
+                        <pre class="backtrace">La lista de mantenimientos no se mostró correctamente.</pre>
                     </li>
                 </ol>
             </div>
@@ -895,25 +897,25 @@ Para poder gestionar las maquinarias de manera eficiente</p>
                     <span class="title">Agregar un nuevo mantenimiento</span>
                 </h3>
                 <ol>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">Given </span>
                             <span class="text">que el Personal proporciona los detalles del mantenimiento </span>
-                            <span class="path"></span>
+                            <span class="path">MantenimientoContext::queElPersonalProporcionaLosDetallesDelMantenimiento()</span>
                         </div>
                     </li>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">When </span>
                             <span class="text">el sistema agrega un nuevo registro de mantenimiento </span>
-                            <span class="path"></span>
+                            <span class="path">MantenimientoContext::elSistemaAgregaUnNuevoRegistroDeMantenimiento()</span>
                         </div>
                     </li>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">Then </span>
                             <span class="text">el sistema confirma que el mantenimiento se ha agregado exitosamente </span>
-                            <span class="path"></span>
+                            <span class="path">MantenimientoContext::elSistemaConfirmaQueElMantenimientoSeHaAgregadoExitosamente()</span>
                         </div>
                     </li>
                 </ol>
@@ -926,25 +928,25 @@ Para poder gestionar las maquinarias de manera eficiente</p>
                     <span class="title">Eliminar un mantenimiento</span>
                 </h3>
                 <ol>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">Given </span>
                             <span class="text">que el Personal selecciona un mantenimiento para eliminar </span>
-                            <span class="path"></span>
+                            <span class="path">MantenimientoContext::queElPersonalSeleccionaUnMantenimientoParaEliminar()</span>
                         </div>
                     </li>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">When </span>
                             <span class="text">el sistema elimina el mantenimiento seleccionado </span>
-                            <span class="path"></span>
+                            <span class="path">MantenimientoContext::elSistemaEliminaElMantenimientoSeleccionado()</span>
                         </div>
                     </li>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">Then </span>
                             <span class="text">el sistema confirma que el mantenimiento se ha eliminado exitosamente </span>
-                            <span class="path"></span>
+                            <span class="path">MantenimientoContext::elSistemaConfirmaQueElMantenimientoSeHaEliminadoExitosamente()</span>
                         </div>
                     </li>
                 </ol>
@@ -957,25 +959,25 @@ Para poder gestionar las maquinarias de manera eficiente</p>
                     <span class="title">Editar un mantenimiento existente</span>
                 </h3>
                 <ol>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">Given </span>
                             <span class="text">que el Personal proporciona los detalles actualizados del mantenimiento </span>
-                            <span class="path"></span>
+                            <span class="path">MantenimientoContext::queElPersonalProporcionaLosDetallesActualizadosDelMantenimiento()</span>
                         </div>
                     </li>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">When </span>
                             <span class="text">el sistema actualiza el registro de mantenimiento </span>
-                            <span class="path"></span>
+                            <span class="path">MantenimientoContext::elSistemaActualizaElRegistroDeMantenimiento()</span>
                         </div>
                     </li>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">Then </span>
                             <span class="text">el sistema confirma que el mantenimiento se ha actualizado exitosamente </span>
-                            <span class="path"></span>
+                            <span class="path">MantenimientoContext::elSistemaConfirmaQueElMantenimientoSeHaActualizadoExitosamente()</span>
                         </div>
                     </li>
                 </ol>
@@ -988,32 +990,32 @@ Para poder gestionar las maquinarias de manera eficiente</p>
                     <span class="title">Buscar mantenimientos</span>
                 </h3>
                 <ol>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">Given </span>
                             <span class="text">que el Personal proporciona un t&eacute;rmino de b&uacute;squeda </span>
-                            <span class="path"></span>
+                            <span class="path">MantenimientoContext::queElPersonalProporcionaUnTerminoDeBusqueda()</span>
                         </div>
                     </li>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">When </span>
                             <span class="text">el sistema busca registros de mantenimiento que coincidan con el t&eacute;rmino </span>
-                            <span class="path"></span>
+                            <span class="path">MantenimientoContext::elSistemaBuscaRegistrosDeMantenimientoQueCoincidanConElTermino()</span>
                         </div>
                     </li>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">Then </span>
                             <span class="text">el sistema muestra los registros de mantenimiento que coinciden con el t&eacute;rmino de b&uacute;squeda </span>
-                            <span class="path"></span>
+                            <span class="path">MantenimientoContext::elSistemaMuestraLosRegistrosDeMantenimientoQueCoincidenConElTerminoDeBusqueda()</span>
                         </div>
                     </li>
                 </ol>
             </div>
             <div class="featureResult failed">Feature has failed
-                <span>Scenarios passed : 0%,
-                Scenarios failed : 100%</span>
+                <span>Scenarios passed : 80%,
+                Scenarios failed : 20%</span>
             </div>
         </div><!DOCTYPE html>
 <html lang="en">
@@ -1055,7 +1057,7 @@ Para poder gestionar las maquinarias de manera eficiente</p>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Automated test report - 11/07/2024 21:46:06</a>
+            <a class="navbar-brand" href="#">Automated test report - 11/07/2024 21:47:14</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -1084,7 +1086,7 @@ Para poder gestionar las maquinarias de manera eficiente</p>
                 17
                 Scenarios:
             </div>
-            <div class="chart-summary failed">8 failed</div>
+            <div class="chart-summary failed">4 failed</div>
             <div class="chart-summary undefined">0 undefined</div>
             <div class="chart-summary skipped">0 skipped</div>
         </div>
@@ -1093,10 +1095,10 @@ Para poder gestionar las maquinarias de manera eficiente</p>
                 <canvas id="chart-steps" width="300" height="300"/>
             </div>
             <div class="chart-summary title">
-                46
+                64
                 Steps:
             </div>
-            <div class="chart-summary failed">0 failed</div>
+            <div class="chart-summary failed">2 failed</div>
             <div class="chart-summary undefined">0 undefined</div>
             <div class="chart-summary skipped">0 skipped</div>
         </div>
@@ -1217,7 +1219,7 @@ Para poder gestionar las maquinarias de manera eficiente</p>
                                                                                     </div>
                                                                                     <div class="progress">
                                                 <div class="progress-bar progress-bar-green" role="progressbar"
-                                                     style="width: 0%">
+                                                     style="width: 80%">
                                                     <span class="sr-only">40% Complete (success)</span>
                                                 </div>
                                                 <div class="progress-bar progress-bar-warning" role="progressbar"
@@ -1225,7 +1227,7 @@ Para poder gestionar las maquinarias de manera eficiente</p>
                                                     <span class="sr-only">40% Complete (success)</span>
                                                 </div>
                                                 <div class="progress-bar progress-bar-red" role="progressbar"
-                                                     style="width: 100%">
+                                                     style="width: 20%">
                                                     <span class="sr-only">40% Complete (success)</span>
                                                 </div>
                                             </div>
@@ -1751,15 +1753,17 @@ Para poder visualizar los lugares disponibles</p>
                                      role="tabpanel"
                                      aria-labelledby="headingOne">
                                     <ul class="list-group">
-                                                                                    <li class="list-group-item alert alert-warning">
+                                                                                    <li class="list-group-item alert alert-success">
                                                 <b>Given</b> que el Personal navega a la página de administración de lugares
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
                                                 <b>When</b> el sistema solicita todos los lugares
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-danger">
                                                 <b>Then</b> el sistema muestra la lista de lugares disponibles
-                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(La lista de lugares no se mostró correctamente.)</p>
+                                                                                                                                                                                            </li>
                                                                                                                                                                                                                 </ul>
                                 </div>
                             </div>
@@ -1781,7 +1785,7 @@ Para poder gestionar las maquinarias de manera eficiente</p>
                                                                     </div>
                                                                     <div class="progress">
                                         <div class="progress-bar progress-bar-green" role="progressbar"
-                                             style="width: 0%">
+                                             style="width: 80%">
                                             <span class="sr-only">40% Complete (success)</span>
                                         </div>
                                         <div class="progress-bar progress-bar-warning" role="progressbar"
@@ -1789,7 +1793,7 @@ Para poder gestionar las maquinarias de manera eficiente</p>
                                             <span class="sr-only">40% Complete (success)</span>
                                         </div>
                                         <div class="progress-bar progress-bar-red" role="progressbar"
-                                             style="width: 100%">
+                                             style="width: 20%">
                                             <span class="sr-only">40% Complete (success)</span>
                                         </div>
                                     </div>
@@ -1815,19 +1819,21 @@ Para poder gestionar las maquinarias de manera eficiente</p>
                                      role="tabpanel"
                                      aria-labelledby="headingOne">
                                     <ul class="list-group">
-                                                                                    <li class="list-group-item alert alert-warning">
+                                                                                    <li class="list-group-item alert alert-success">
                                                 <b>Given</b> que el Personal navega a la página de mantenimientos
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
                                                 <b>When</b> el sistema solicita todos los registros de mantenimiento
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-danger">
                                                 <b>Then</b> el sistema muestra la lista de mantenimientos
-                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(La lista de mantenimientos no se mostró correctamente.)</p>
+                                                                                                                                                                                            </li>
                                                                                                                                                                                                                 </ul>
                                 </div>
                             </div>
-                                                    <div class="panel panel-default failed">
+                                                    <div class="panel panel-default passed">
                                 <div class="panel-heading" role="tab">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordion"
@@ -1845,19 +1851,19 @@ Para poder gestionar las maquinarias de manera eficiente</p>
                                      role="tabpanel"
                                      aria-labelledby="headingOne">
                                     <ul class="list-group">
-                                                                                    <li class="list-group-item alert alert-warning">
+                                                                                    <li class="list-group-item alert alert-success">
                                                 <b>Given</b> que el Personal proporciona los detalles del mantenimiento
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
                                                 <b>When</b> el sistema agrega un nuevo registro de mantenimiento
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
                                                 <b>Then</b> el sistema confirma que el mantenimiento se ha agregado exitosamente
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                 </ul>
                                 </div>
                             </div>
-                                                    <div class="panel panel-default failed">
+                                                    <div class="panel panel-default passed">
                                 <div class="panel-heading" role="tab">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordion"
@@ -1875,19 +1881,19 @@ Para poder gestionar las maquinarias de manera eficiente</p>
                                      role="tabpanel"
                                      aria-labelledby="headingOne">
                                     <ul class="list-group">
-                                                                                    <li class="list-group-item alert alert-warning">
+                                                                                    <li class="list-group-item alert alert-success">
                                                 <b>Given</b> que el Personal selecciona un mantenimiento para eliminar
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
                                                 <b>When</b> el sistema elimina el mantenimiento seleccionado
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
                                                 <b>Then</b> el sistema confirma que el mantenimiento se ha eliminado exitosamente
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                 </ul>
                                 </div>
                             </div>
-                                                    <div class="panel panel-default failed">
+                                                    <div class="panel panel-default passed">
                                 <div class="panel-heading" role="tab">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordion"
@@ -1905,19 +1911,19 @@ Para poder gestionar las maquinarias de manera eficiente</p>
                                      role="tabpanel"
                                      aria-labelledby="headingOne">
                                     <ul class="list-group">
-                                                                                    <li class="list-group-item alert alert-warning">
+                                                                                    <li class="list-group-item alert alert-success">
                                                 <b>Given</b> que el Personal proporciona los detalles actualizados del mantenimiento
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
                                                 <b>When</b> el sistema actualiza el registro de mantenimiento
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
                                                 <b>Then</b> el sistema confirma que el mantenimiento se ha actualizado exitosamente
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                 </ul>
                                 </div>
                             </div>
-                                                    <div class="panel panel-default failed">
+                                                    <div class="panel panel-default passed">
                                 <div class="panel-heading" role="tab">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordion"
@@ -1935,13 +1941,13 @@ Para poder gestionar las maquinarias de manera eficiente</p>
                                      role="tabpanel"
                                      aria-labelledby="headingOne">
                                     <ul class="list-group">
-                                                                                    <li class="list-group-item alert alert-warning">
+                                                                                    <li class="list-group-item alert alert-success">
                                                 <b>Given</b> que el Personal proporciona un término de búsqueda
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
                                                 <b>When</b> el sistema busca registros de mantenimiento que coincidan con el término
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
                                                 <b>Then</b> el sistema muestra los registros de mantenimiento que coinciden con el término de búsqueda
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                 </ul>
@@ -1965,7 +1971,7 @@ Para poder gestionar las maquinarias de manera eficiente</p>
         new Chart(featureChart, {type: 'doughnut', options: {legend: {display: false}}, data: {
                 labels: ['Failed', 'Pending', 'Passed'],
                 datasets: [{
-                    data: [8, 0, 9],
+                    data: [4, 0, 13],
                     backgroundColor: ['#F7464A', 'e38d13', '#00a65a'],
                 }],
             }});
@@ -1979,7 +1985,7 @@ Para poder gestionar las maquinarias de manera eficiente</p>
         new Chart(stepChart, {type: 'doughnut', options: {legend: {display: false}}, data: {
                 labels: ['Failed','Passed'],
                 datasets: [{
-                    data: [0, 46],
+                    data: [2, 62],
                     backgroundColor: ["#F7464A", "#00a65a"],
                 }],
             }});
@@ -2044,13 +2050,13 @@ Para poder gestionar las maquinarias de manera eficiente</p>
                     4 features ( <strong class="passed">1 success</strong> <strong class="failed">3 fail</strong> )
                 </p>
                 <p class="scenarios">
-                    17 scenarios ( <strong class="passed">9 success</strong> <strong class="failed">8 fail</strong> )
+                    17 scenarios ( <strong class="passed">13 success</strong> <strong class="failed">4 fail</strong> )
                 </p>
                 <p class="steps">
-                    66 steps ( <strong class="passed">46 success</strong> <strong class="pending">20 pending</strong> )
+                    66 steps ( <strong class="passed">62 success</strong> <strong class="pending">2 pending</strong> <strong class="failed">2 fail</strong> )
                 </p>
                 <p class="time">
-                0m0.06s - 13.16Mb
+                0m0.09s - 13.39Mb
                 </p>
             </div>
             <div class="switchers">
@@ -2062,24 +2068,6 @@ Para poder gestionar las maquinarias de manera eficiente</p>
                 <ul>
                     <li>Then el sistema muestra un mensaje de error indicando que los campos del formulario no pueden estar vacíos</li>
                     <li>Then el sistema muestra un mensaje de error indicando que los campos del formulario no pueden estar vacíos</li>
-                    <li>Given que el Personal navega a la página de administración de lugares</li>
-                    <li>When el sistema solicita todos los lugares</li>
-                    <li>Then el sistema muestra la lista de lugares disponibles</li>
-                    <li>Given que el Personal navega a la página de mantenimientos</li>
-                    <li>When el sistema solicita todos los registros de mantenimiento</li>
-                    <li>Then el sistema muestra la lista de mantenimientos</li>
-                    <li>Given que el Personal proporciona los detalles del mantenimiento</li>
-                    <li>When el sistema agrega un nuevo registro de mantenimiento</li>
-                    <li>Then el sistema confirma que el mantenimiento se ha agregado exitosamente</li>
-                    <li>Given que el Personal selecciona un mantenimiento para eliminar</li>
-                    <li>When el sistema elimina el mantenimiento seleccionado</li>
-                    <li>Then el sistema confirma que el mantenimiento se ha eliminado exitosamente</li>
-                    <li>Given que el Personal proporciona los detalles actualizados del mantenimiento</li>
-                    <li>When el sistema actualiza el registro de mantenimiento</li>
-                    <li>Then el sistema confirma que el mantenimiento se ha actualizado exitosamente</li>
-                    <li>Given que el Personal proporciona un término de búsqueda</li>
-                    <li>When el sistema busca registros de mantenimiento que coincidan con el término</li>
-                    <li>Then el sistema muestra los registros de mantenimiento que coinciden con el término de búsqueda</li>
                 </ul>
             </div>
     </div><script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js'></script>
