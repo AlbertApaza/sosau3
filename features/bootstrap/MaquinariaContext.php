@@ -1,7 +1,6 @@
 <?php
 
 use Behat\Behat\Context\Context;
-use Behat\Behat\Tester\Exception\PendingException;
 use PHPUnit\Framework\MockObject\MockObject;
 
 class MaquinariaContext implements Context
@@ -223,19 +222,16 @@ class MaquinariaContext implements Context
      */
     public function elSistemaConfirmaLaEliminacion()
     {
-        // Simula el proceso de confirmación y eliminación de la maquinaria
-        // Esto ya se ejecutó en el paso anterior (eliminarMaquinaria)
+        // Simula el proceso de confirmación de eliminación
         $this->maquinariaModel->eliminarMaquinaria($this->maquinariaList[0]['idmaquinaria']);
     }
 
     /**
-     * @Then el sistema elimina la maquinaria de la base de datos
-     * @And muestra un mensaje de confirmación
+     * @Then el sistema muestra un mensaje de confirmación de eliminación
      */
-    public function elSistemaEliminaLaMaquinariaDeLaBaseDeDatos()
+    public function elSistemaMuestraUnMensajeDeConfirmacionDeEliminacion()
     {
         // Puedes verificar si se ha eliminado correctamente la maquinaria
         // y mostrar un mensaje de confirmación apropiado
     }
 }
-?>
