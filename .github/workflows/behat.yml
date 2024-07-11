@@ -32,6 +32,9 @@ jobs:
       - name: Install Composer dependencies
         run: composer install --no-progress --prefer-dist
 
+      - name: Create report directory
+        run: mkdir -p report
+
       - name: Run Behat and generate report
         run: vendor/bin/behat --format=progress --out=report/behat.html
 
