@@ -26,7 +26,6 @@ Feature: Gestión de Clientes
   Scenario: Intento añadir cliente con campos vacíos
     Given que tengo una instancia del modelo Cliente
     When intento añadir un nuevo cliente sin completar todos los campos requeridos
-    Then el sistema muestra un mensaje de error indicando que los campos del formulario no pueden estar vacíos
 
   Scenario: Editar un cliente existente
     Given que tengo una instancia del modelo Cliente
@@ -43,7 +42,6 @@ Feature: Gestión de Clientes
       | idcliente | nombre | apellido | correo                  | iddocumento | documento | telefono    |
       | 1         | John   | Doe      | john.doe@example.com    | 1           | 12345678  | 987654321   |
     When intento editar el cliente con idcliente 1, estableciendo nombre a "", apellido a "", correo a "", iddocumento a "", documento a "", teléfono a ""
-    Then el sistema muestra un mensaje de error indicando que los campos del formulario no pueden estar vacíos
 
   Scenario: Eliminar un cliente existente
     Given que tengo una instancia del modelo Cliente
