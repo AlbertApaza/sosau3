@@ -34,7 +34,7 @@ jobs:
 
     - name: Run Behat tests
       run: vendor/bin/behat --format=html --out=features/bootstrap/reports/index.html
-          - name: Upload Behat HTML report
+    - name: Upload Behat HTML report
       if: always()
       uses: actions/upload-artifact@v2
       with:
