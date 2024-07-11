@@ -1,5 +1,3 @@
-<?php
-
 use Behat\Behat\Context\Context;
 use Phake;
 
@@ -30,6 +28,13 @@ class LugarContext implements Context
     {
         // Simular comportamiento con Phake
         try {
+            // Aquí simulamos la respuesta del método obtenerTodosLugares() 
+            $lugaresSimulados = [
+                ['id' => 1, 'nombre' => 'Lugar 1'],
+                ['id' => 2, 'nombre' => 'Lugar 2']
+            ];
+
+            Phake::when($this->lugarService)->obtenerTodosLugares()->thenReturn($lugaresSimulados);
             $this->resultado = $this->lugarService->obtenerTodosLugares();
         } catch (Exception $e) {
             $this->exception = $e;
@@ -59,4 +64,3 @@ interface LugarService
 {
     public function obtenerTodosLugares();
 }
-?>
