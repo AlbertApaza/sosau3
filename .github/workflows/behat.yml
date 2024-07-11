@@ -1,45 +1,11 @@
-name: Run Behat Tests
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
-jobs:
-  behat-tests:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Setup PHP Action
-        uses: shivammathur/setup-php@2.31.1
-        with:
-          php-version: '7.4' # Puedes cambiar la versión de PHP según sea necesario
-
-      - name: Cache Composer dependencies
-        uses: actions/cache@v2
-        with:
-          path: vendor
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-composer-
-
-      - name: Install Composer dependencies
-        run: composer install --no-progress --prefer-dist
-
-      - name: Create report directory
-        run: mkdir -p report
-
-      - name: Run Behat and generate report
-        run: vendor/bin/behat --format=progress --out=report/behat.html
-
-      - name: Upload Behat report
-        uses: actions/upload-artifact@v2
-        with:
-          name: behat-report
-          path: report/behat.html
+default:
+  paths:
+    features: features
+  suites:
+    default:
+      paths: [ "%paths.base%/features" ]
+      contexts:
+        - FeatureContext
+  formatters:
+    html:
+      output_path: report/behat.html
