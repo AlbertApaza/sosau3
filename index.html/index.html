@@ -502,7 +502,7 @@
                             <span class="text">intento editar el cliente con idcliente 1, estableciendo nombre a &quot;Johnny&quot;, apellido a &quot;Doe&quot;, correo a &quot;johnny.doe@example.com&quot;, iddocumento a &quot;1&quot;, documento a &quot;99999999&quot;, tel&eacute;fono a &quot;111222333&quot; </span>
                             <span class="path">ClienteContext::intentoEditarElClienteConIdclienteEstableciendoDatos()</span>
                         </div>
-                        <pre class="backtrace">Warning: Undefined array key "idcliente" in /home/runner/work/sosau3/sosau3/features/bootstrap/ClienteContext.php line 144</pre>
+                        <pre class="backtrace">Warning: Undefined array key "idcliente" in /home/runner/work/sosau3/sosau3/features/bootstrap/ClienteContext.php line 143</pre>
                     </li>
                     <li class="skipped">
                         <div class="step">
@@ -541,7 +541,7 @@
                             <span class="text">intento editar el cliente con idcliente 1, estableciendo nombre a &quot;&quot;, apellido a &quot;&quot;, correo a &quot;&quot;, iddocumento a &quot;&quot;, documento a &quot;&quot;, tel&eacute;fono a &quot;&quot; </span>
                             <span class="path">ClienteContext::intentoEditarElClienteConIdclienteEstableciendoDatos()</span>
                         </div>
-                        <pre class="backtrace">Warning: Undefined array key "idcliente" in /home/runner/work/sosau3/sosau3/features/bootstrap/ClienteContext.php line 144</pre>
+                        <pre class="backtrace">Warning: Undefined array key "idcliente" in /home/runner/work/sosau3/sosau3/features/bootstrap/ClienteContext.php line 143</pre>
                     </li>
                     <li class="pending">
                         <div class="step">
@@ -574,18 +574,19 @@
                             <span class="path">ClienteContext::queExistenLosSiguientesClientesEnLaBaseDeDatos()</span><br><pre class="argument"><table class="argument"> <thead><tr class="row"><td>idcliente</td><td>nombre</td><td>apellido</td><td>correo</td><td>iddocumento</td><td>documento</td><td>telefono</td></tr></thead><tbody><tr class="row"><td>1</td><td>John</td><td>Doe</td><td>john.doe@example.com</td><td>1</td><td>12345678</td><td>987654321</td></tr></tbody></table></pre>
                         </div>
                     </li>
-                    <li class="pending">
+                    <li class="failed">
                         <div class="step">
                             <span class="keyword">When </span>
                             <span class="text">intento eliminar el cliente con idcliente 1 </span>
-                            <span class="path"></span>
+                            <span class="path">ClienteContext::intentoEliminarElClienteConIdcliente()</span>
                         </div>
+                        <pre class="backtrace">Warning: Undefined array key "idcliente" in /home/runner/work/sosau3/sosau3/features/bootstrap/ClienteContext.php line 181</pre>
                     </li>
-                    <li class="pending">
+                    <li class="skipped">
                         <div class="step">
                             <span class="keyword">Then </span>
                             <span class="text">el cliente con idcliente 1 ya no debe estar en la lista de clientes </span>
-                            <span class="path"></span>
+                            <span class="path">ClienteContext::elClienteConIdclienteYaNoDebeEstarEnLaListaDeClientes()</span>
                         </div>
                     </li>
                 </ol>
@@ -634,7 +635,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Automated test report - 11/07/2024 19:48:18</a>
+            <a class="navbar-brand" href="#">Automated test report - 11/07/2024 19:50:18</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -672,10 +673,10 @@
                 <canvas id="chart-steps" width="300" height="300"/>
             </div>
             <div class="chart-summary title">
-                21
+                22
                 Steps:
             </div>
-            <div class="chart-summary failed">2 failed</div>
+            <div class="chart-summary failed">3 failed</div>
             <div class="chart-summary undefined">0 undefined</div>
             <div class="chart-summary skipped">0 skipped</div>
         </div>
@@ -922,7 +923,7 @@
                                                                                                                                                                                                                         <li class="list-group-item alert alert-danger">
                                                 <b>When</b> intento editar el cliente con idcliente 1, estableciendo nombre a &quot;Johnny&quot;, apellido a &quot;Doe&quot;, correo a &quot;johnny.doe@example.com&quot;, iddocumento a &quot;1&quot;, documento a &quot;99999999&quot;, teléfono a &quot;111222333&quot;
                                                                                                                                                                                                                                                         <br>
-                                                    <p style="padding-left:2em ; color:gray">(Warning: Undefined array key &quot;idcliente&quot; in /home/runner/work/sosau3/sosau3/features/bootstrap/ClienteContext.php line 144)</p>
+                                                    <p style="padding-left:2em ; color:gray">(Warning: Undefined array key &quot;idcliente&quot; in /home/runner/work/sosau3/sosau3/features/bootstrap/ClienteContext.php line 143)</p>
                                                                                                                                                                                             </li>
                                                                                                                                                                                                                         <li class="list-group-item alert alert-info">
                                                 <b>Then</b> la lista de clientes debe incluir &quot;Johnny Doe&quot;
@@ -959,7 +960,7 @@
                                                                                                                                                                                                                         <li class="list-group-item alert alert-danger">
                                                 <b>When</b> intento editar el cliente con idcliente 1, estableciendo nombre a &quot;&quot;, apellido a &quot;&quot;, correo a &quot;&quot;, iddocumento a &quot;&quot;, documento a &quot;&quot;, teléfono a &quot;&quot;
                                                                                                                                                                                                                                                         <br>
-                                                    <p style="padding-left:2em ; color:gray">(Warning: Undefined array key &quot;idcliente&quot; in /home/runner/work/sosau3/sosau3/features/bootstrap/ClienteContext.php line 144)</p>
+                                                    <p style="padding-left:2em ; color:gray">(Warning: Undefined array key &quot;idcliente&quot; in /home/runner/work/sosau3/sosau3/features/bootstrap/ClienteContext.php line 143)</p>
                                                                                                                                                                                             </li>
                                                                                                                                                                                                                         <li class="list-group-item alert alert-warning">
                                                 <b>Then</b> el sistema muestra un mensaje de error indicando que los campos del formulario no pueden estar vacíos
@@ -993,10 +994,12 @@
                                                                                                                                                             <p style="padding-left:0.5em; overflow-x:scroll; white-space:nowrap; font-family:monospace">
                                                             | 1 |  John |  Doe |  john.doe@example.com |  1 |  12345678 |  987654321 |                                                         </p>
                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-danger">
                                                 <b>When</b> intento eliminar el cliente con idcliente 1
-                                                                                                                                                                                                                                                                                                                                                </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(Warning: Undefined array key &quot;idcliente&quot; in /home/runner/work/sosau3/sosau3/features/bootstrap/ClienteContext.php line 181)</p>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
                                                 <b>Then</b> el cliente con idcliente 1 ya no debe estar en la lista de clientes
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                 </ul>
@@ -1034,7 +1037,7 @@
         new Chart(stepChart, {type: 'doughnut', options: {legend: {display: false}}, data: {
                 labels: ['Failed','Passed'],
                 datasets: [{
-                    data: [2, 19],
+                    data: [3, 19],
                     backgroundColor: ["#F7464A", "#00a65a"],
                 }],
             }});
@@ -1102,10 +1105,10 @@
                     7 scenarios ( <strong class="passed">3 success</strong> <strong class="failed">4 fail</strong> )
                 </p>
                 <p class="steps">
-                    26 steps ( <strong class="passed">19 success</strong> <strong class="pending">4 pending</strong> <strong class="skipped">1 skipped</strong> <strong class="failed">2 fail</strong> )
+                    26 steps ( <strong class="passed">19 success</strong> <strong class="pending">2 pending</strong> <strong class="skipped">2 skipped</strong> <strong class="failed">3 fail</strong> )
                 </p>
                 <p class="time">
-                0m0.03s - 12.97Mb
+                0m0.03s - 12.99Mb
                 </p>
             </div>
             <div class="switchers">
@@ -1117,8 +1120,6 @@
                 <ul>
                     <li>Then el sistema muestra un mensaje de error indicando que los campos del formulario no pueden estar vacíos</li>
                     <li>Then el sistema muestra un mensaje de error indicando que los campos del formulario no pueden estar vacíos</li>
-                    <li>When intento eliminar el cliente con idcliente 1</li>
-                    <li>Then el cliente con idcliente 1 ya no debe estar en la lista de clientes</li>
                 </ul>
             </div>
     </div><script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js'></script>
