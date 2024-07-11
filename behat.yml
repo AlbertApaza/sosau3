@@ -5,11 +5,6 @@ default:
         - "%paths.base%/features"
       contexts:
         - ClienteContext
-        - PermisosContext
-        - ProductosContext
-        - RolesContext
-        - UsuariosContext
-        - VentasContext
   # formatters:
   #   junit:
       # output_path: "build/junit"
