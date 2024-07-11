@@ -4,7 +4,6 @@ default:
       paths:
         - "%paths.base%/features"
       contexts:
-        - ClienteContext
   # formatters:
   #   junit:
       # output_path: "build/junit"
