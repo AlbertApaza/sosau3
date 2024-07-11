@@ -1,8 +1,8 @@
 name: Tarea Automatizada de ejecución de pruebas
 
 env:
-  SONAR_ORG: 'edwardapaza'                  # Nombre de la organización en SonarCloud
-  SONAR_PROJECT: 'edwardapaza_bddreporte'   # Key ID del proyecto en SonarCloud
+  SONAR_ORG: 'albert1'                  # Nombre de la organización en SonarCloud
+  SONAR_PROJECT: 'albert1_sosa'   # Key ID del proyecto en SonarCloud
 
 on:
   push:
