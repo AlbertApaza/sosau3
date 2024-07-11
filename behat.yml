@@ -6,6 +6,8 @@ default:
       contexts:
         - ClienteContext
         - CotizacionContext
+        - LugarContext
+        - MantenimientoContext
   # formatters:
   #   junit:
       # output_path: "build/junit"
