@@ -1,6 +1,7 @@
 <?php
 
 use Behat\Behat\Context\Context;
+use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
 use Phake;
 use Exception;
@@ -67,7 +68,10 @@ class ClienteContext implements Context
      */
     public function laListaDebeContenerAlMenosUnCliente()
     {
-        // No se requiere implementación para este método utilizando Phake
+        // Verificar que la lista de clientes no esté vacía
+        if (empty($this->clientes)) {
+            throw new Exception('La lista de clientes está vacía');
+        }
     }
 
     /**
@@ -93,7 +97,18 @@ class ClienteContext implements Context
      */
     public function laListaDeClientesDebeIncluir($nombreCompleto)
     {
-        // No se requiere implementación para este método utilizando Phake
+        // Verificar que el nombre completo esté en la lista de clientes
+        $nombreEncontrado = false;
+        foreach ($this->clientes as $cliente) {
+            $nombreCompletoEsperado = $cliente['nombre'] . ' ' . $cliente['apellido'];
+            if ($nombreCompletoEsperado === $nombreCompleto) {
+                $nombreEncontrado = true;
+                break;
+            }
+        }
+        if (!$nombreEncontrado) {
+            throw new Exception("El cliente con nombre completo '$nombreCompleto' no está en la lista de clientes");
+        }
     }
 
     /**
@@ -113,7 +128,18 @@ class ClienteContext implements Context
      */
     public function losResultadosDeLaBusquedaDebenIncluir($nombreCompleto)
     {
-        // No se requiere implementación para este método utilizando Phake
+        // Verificar que el nombre completo esté en los resultados de búsqueda
+        $nombreEncontrado = false;
+        foreach ($this->clientes as $cliente) {
+            $nombreCompletoEsperado = $cliente['nombre'] . ' ' . $cliente['apellido'];
+            if ($nombreCompletoEsperado === $nombreCompleto) {
+                $nombreEncontrado = true;
+                break;
+            }
+        }
+        if (!$nombreEncontrado) {
+            throw new Exception("Los resultados de la búsqueda no incluyen a '$nombreCompleto'");
+        }
     }
 
     /**
@@ -149,6 +175,25 @@ class ClienteContext implements Context
     }
 
     /**
+     * @Then la lista de clientes debe incluir :nombreCompleto
+     */
+    public function laListaDeClientesDebeIncluir($nombreCompleto)
+    {
+        // Verificar que el nombre completo esté en la lista de clientes
+        $nombreEncontrado = false;
+        foreach ($this->clientes as $cliente) {
+            $nombreCompletoEsperado = $cliente['nombre'] . ' ' . $cliente['apellido'];
+            if ($nombreCompletoEsperado === $nombreCompleto) {
+                $nombreEncontrado = true;
+                break;
+            }
+        }
+        if (!$nombreEncontrado) {
+            throw new Exception("El cliente con nombre completo '$nombreCompleto' no está en la lista de clientes");
+        }
+    }
+
+    /**
      * @When intento editar el cliente con idcliente :idcliente, estableciendo nombre a :nombre, apellido a :apellido, correo a :correo, iddocumento a :iddocumento, documento a :documento, teléfono a :telefono con datos inválidos
      */
     public function intentoEditarElClienteConIdclienteEstableciendoDatosInvalidos($idcliente, $nombre, $apellido, $correo, $iddocumento, $documento, $telefono)
@@ -177,11 +222,16 @@ class ClienteContext implements Context
     public function intentoEliminarElClienteConIdcliente($idcliente)
     {
         // Simular comportamiento con Phake
+        $clienteEncontrado = false;
         foreach ($this->clientes as $key => $cliente) {
             if ($cliente['idcliente'] == $idcliente) {
                 unset($this->clientes[$key]);
+                $clienteEncontrado = true;
                 break;
             }
+        }
+        if (!$clienteEncontrado) {
+            throw new Exception("No se encontró ningún cliente con idcliente '$idcliente'");
         }
         Phake::when($this->clienteService)->eliminarCliente($idcliente)->thenReturn(true);
     }
@@ -191,11 +241,12 @@ class ClienteContext implements Context
      */
     public function elClienteConIdclienteYaNoDebeEstarEnLaListaDeClientes($idcliente)
     {
-        // Verificar que el cliente con el id dado ya no esté en la lista
+        // Verificar que el cliente con el id indicado no esté en la lista de clientes
         foreach ($this->clientes as $cliente) {
             if ($cliente['idcliente'] == $idcliente) {
-                throw new Exception("El cliente con idcliente $idcliente aún está en la lista.");
+                throw new Exception("El cliente con idcliente '$idcliente' todavía está en la lista de clientes");
             }
         }
     }
 }
+?>
