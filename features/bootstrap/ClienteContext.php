@@ -1,234 +1,237 @@
 <?php
 
 use Behat\Behat\Context\Context;
-use Behat\Gherkin\Node\TableNode;
-use Phake;
-use Exception;
+use PHPUnit\Framework\MockObject\MockObject;
 
-// Asegúrate de definir o incluir la interfaz ClienteService si no existe
-interface ClienteService
+class MaquinariaContext implements Context
 {
-    public function crearCliente($data);
-    public function listarClientes();
-    public function editarCliente($idcliente, $data);
-    public function eliminarCliente($idcliente);
-    public function buscarCliente($termino);
-    public function obtenerClientePorId($idcliente);
-}
+    private $maquinariaModel;
+    private $maquinariaList;
+    private $maquinariaDetails;
+    private $newMaquinariaData;
+    private $updatedMaquinariaData;
 
-class ClienteContext implements Context
-{
-    private $clienteService;
-    private $exception;
-    private $clientes = [];
+    /**
+     * @var Maquinaria|MockObject $maquinariaModelMock
+     */
+    private $maquinariaModelMock;
 
     public function __construct()
     {
-        // Inicializar el servicio utilizando Phake
-        $this->clienteService = Phake::mock('ClienteService');
+        // Crear un mock de Maquinaria
+        $this->maquinariaModelMock = $this->createMock(Maquinaria::class);
+
+        // Asignar el mock a la propiedad maquinariaModel
+        $this->maquinariaModel = $this->maquinariaModelMock;
     }
 
     /**
-     * @Given que tengo una instancia del modelo Cliente
+     * @Given que el sistema está configurado para administrar la maquinaria
      */
-    public function queTengoUnaInstanciaDelModeloCliente()
+    public function queElSistemaEstaConfiguradoParaAdministrarLaMaquinaria()
     {
-        // No se requiere implementación para este método utilizando Phake
+        // No se requiere implementación específica para el contexto de Behat
     }
 
     /**
-     * @Given que existen los siguientes clientes en la base de datos:
+     * @Given que el Personal navega a la página de administración de maquinaria
      */
-    public function queExistenLosSiguientesClientesEnLaBaseDeDatos(TableNode $clientesTable)
+    public function queElPersonalNavegaALaPaginaDeAdministracionDeMaquinaria()
     {
-        foreach ($clientesTable as $clienteData) {
-            $this->clientes[] = [
-                'idcliente' => isset($clienteData['idcliente']) ? $clienteData['idcliente'] : null,
-                'nombre' => $clienteData['nombre'],
-                'apellido' => $clienteData['apellido'],
-                'correo' => $clienteData['correo'],
-                'iddocumento' => $clienteData['iddocumento'],
-                'documento' => $clienteData['documento'],
-                'telefono' => $clienteData['telefono'],
+        // No se requiere implementación específica para el contexto de Behat
+    }
+
+    /**
+     * @When el sistema solicita todas las maquinarias
+     */
+    public function elSistemaSolicitaTodasLasMaquinarias()
+    {
+        // Configurar el comportamiento del mock para listar maquinarias
+        $this->maquinariaList = [
+            ['idmaquinaria' => 1, 'numserie' => '12345', 'nombre' => 'Maquinaria 1'],
+            ['idmaquinaria' => 2, 'numserie' => '54321', 'nombre' => 'Maquinaria 2'],
+        ];
+        $this->maquinariaModelMock
+            ->expects($this->any())
+            ->method('listar_Maquinarias')
+            ->willReturn($this->maquinariaList);
+
+        // Llamar al método real para Behat, pero utilizando el mock
+        $this->maquinariaList = $this->maquinariaModel->listar_Maquinarias();
+    }
+
+    /**
+     * @Then el sistema muestra la lista de maquinarias disponibles
+     */
+    public function elSistemaMuestraLaListaDeMaquinariasDisponibles()
+    {
+        if (empty($this->maquinariaList)) {
+            throw new Exception('No se encontraron maquinarias en la lista.');
+        }
+        // Puedes agregar más validaciones según sea necesario
+    }
+
+    /**
+     * @Given selecciona una maquinaria específica
+     */
+    public function seleccionaUnaMaquinariaEspecifica()
+    {
+        // Simular la selección de una maquinaria específica, por ejemplo, la primera en la lista
+        if (isset($this->maquinariaList[0])) {
+            $this->maquinariaDetails = [
+                'idmaquinaria' => $this->maquinariaList[0]['idmaquinaria'],
+                'numserie' => $this->maquinariaList[0]['numserie'],
+                'nombre' => $this->maquinariaList[0]['nombre'],
+                // Añadir más detalles según sea necesario
             ];
+
+            // Configurar el comportamiento del mock para mostrar detalles de maquinaria
+            $this->maquinariaModelMock
+                ->expects($this->any())
+                ->method('mostrar_Maquinaria')
+                ->with($this->maquinariaList[0]['idmaquinaria'])
+                ->willReturn($this->maquinariaDetails);
+
+            // Llamar al método real para Behat, pero utilizando el mock
+            $this->maquinariaDetails = $this->maquinariaModel->mostrar_Maquinaria($this->maquinariaList[0]['idmaquinaria']);
+        } else {
+            throw new Exception('No hay maquinarias para seleccionar.');
         }
     }
 
     /**
-     * @When solicito la lista de clientes
+     * @When el sistema muestra los detalles de la maquinaria con ID 1
      */
-    public function solicitoLaListaDeClientes()
+    public function elSistemaMuestraLosDetallesDeLaMaquinariaConID()
     {
-        // Simular comportamiento con Phake
-        Phake::when($this->clienteService)->listarClientes()->thenReturn($this->clientes);
-    }
-
-    /**
-     * @Then la lista debe contener al menos un cliente
-     */
-    public function laListaDebeContenerAlMenosUnCliente()
-    {
-        // Verificar que la lista de clientes no esté vacía
-        if (empty($this->clientes)) {
-            throw new Exception('La lista de clientes está vacía');
+        if (empty($this->maquinariaDetails)) {
+            throw new Exception('No se pudieron obtener los detalles de la maquinaria.');
         }
+        // Puedes agregar más validaciones según sea necesario
     }
 
     /**
-     * @When añado un nuevo cliente con nombre :nombre, apellido :apellido, correo :correo, iddocumento :iddocumento, documento :documento, teléfono :telefono
+     * @Given selecciona "Agregar nueva maquinaria"
      */
-    public function anadoUnNuevoClienteConLosSiguientesDatos($nombre, $apellido, $correo, $iddocumento, $documento, $telefono)
+    public function seleccionaAgregarNuevaMaquinaria()
     {
-        // Simular comportamiento con Phake
-        $clienteData = [
-            'nombre' => $nombre,
-            'apellido' => $apellido,
-            'correo' => $correo,
-            'iddocumento' => $iddocumento,
-            'documento' => $documento,
-            'telefono' => $telefono,
+        // Simula el inicio del proceso de agregar una nueva maquinaria
+        $this->newMaquinariaData = [
+            'numserie' => '12345',
+            'nombre' => 'Nueva Maquinaria',
+            'marca' => 'MarcaNueva',
+            'modelo' => 'ModeloNuevo',
+            'costoh' => 1000.00,
+            'imagenprincipal' => 'imagen.jpg'
         ];
-        $this->clientes[] = $clienteData;
-        Phake::when($this->clienteService)->crearCliente($clienteData)->thenReturn(true);
     }
 
     /**
-     * @Then la lista de clientes debe incluir :nombreCompleto
+     * @When completa el formulario con los datos de la nueva maquinaria
      */
-    public function laListaDeClientesDebeIncluir($nombreCompleto)
+    public function completaElFormularioConLosDatosDeLaNuevaMaquinaria()
     {
-        // Verificar que el nombre completo esté en la lista de clientes
-        $nombreEncontrado = false;
-        foreach ($this->clientes as $cliente) {
-            $nombreCompletoEsperado = $cliente['nombre'] . ' ' . $cliente['apellido'];
-            if ($nombreCompletoEsperado === $nombreCompleto) {
-                $nombreEncontrado = true;
-                break;
-            }
-        }
-        if (!$nombreEncontrado) {
-            throw new Exception("El cliente con nombre completo '$nombreCompleto' no está en la lista de clientes");
-        }
+        // Simula el proceso de completar el formulario y guardar la nueva maquinaria
+        $this->maquinariaModel->agregarMaquinaria(
+            $this->newMaquinariaData['numserie'],
+            $this->newMaquinariaData['nombre'],
+            $this->newMaquinariaData['marca'],
+            $this->newMaquinariaData['modelo'],
+            $this->newMaquinariaData['costoh'],
+            $this->newMaquinariaData['imagenprincipal']
+        );
     }
 
     /**
-     * @When busco clientes con el término :termino
+     * @Then el sistema muestra un mensaje de confirmación
      */
-    public function buscoClientesConElTermino($termino)
+    public function elSistemaMuestraUnMensajeDeConfirmacion()
     {
-        // Simular comportamiento con Phake
-        $clientesEncontrados = array_filter($this->clientes, function ($cliente) use ($termino) {
-            return strpos($cliente['nombre'] . ' ' . $cliente['apellido'], $termino) !== false;
-        });
-        Phake::when($this->clienteService)->buscarCliente($termino)->thenReturn($clientesEncontrados);
+        // Puedes verificar si se ha guardado correctamente la nueva maquinaria
+        // y mostrar un mensaje de confirmación apropiado
     }
 
     /**
-     * @Then los resultados de la búsqueda deben incluir :nombreCompleto
+     * @Given selecciona una maquinaria para editar
      */
-    public function losResultadosDeLaBusquedaDebenIncluir($nombreCompleto)
+    public function seleccionaUnaMaquinariaParaEditar()
     {
-        // Verificar que el nombre completo esté en los resultados de búsqueda
-        $nombreEncontrado = false;
-        foreach ($this->clientes as $cliente) {
-            $nombreCompletoEsperado = $cliente['nombre'] . ' ' . $cliente['apellido'];
-            if ($nombreCompletoEsperado === $nombreCompleto) {
-                $nombreEncontrado = true;
-                break;
-            }
-        }
-        if (!$nombreEncontrado) {
-            throw new Exception("Los resultados de la búsqueda no incluyen a '$nombreCompleto'");
+        // Simula la selección de una maquinaria específica para editar
+        if (isset($this->maquinariaList[0])) {
+            $maquinariaId = $this->maquinariaList[0]['idmaquinaria'];
+            $this->updatedMaquinariaData = [
+                'id' => $maquinariaId,
+                'numserie' => '54321',
+                'nombre' => 'Maquinaria Editada',
+                'marca' => 'MarcaEditada',
+                'modelo' => 'ModeloEditado',
+                'costoh' => 1500.00,
+                'imagenprincipal' => 'imagen_editada.jpg'
+            ];
+        } else {
+            throw new Exception('No hay maquinarias para editar.');
         }
     }
 
     /**
-     * @When intento añadir un nuevo cliente sin completar todos los campos requeridos
+     * @When modifica la información de la maquinaria
      */
-    public function intentoAnadirUnNuevoClienteSinCompletarTodosLosCamposRequeridos()
+    public function modificaLaInformacionDeLaMaquinaria()
     {
-        // Simular comportamiento con Phake
-        Phake::when($this->clienteService)->crearCliente(Phake::anyParameters())->thenThrow(new Exception('Los campos del formulario no pueden estar vacíos'));
+        // Simula el proceso de modificación de la maquinaria
+        $this->maquinariaModel->editarMaquinaria(
+            $this->updatedMaquinariaData['id'],
+            $this->updatedMaquinariaData['numserie'],
+            $this->updatedMaquinariaData['nombre'],
+            $this->updatedMaquinariaData['marca'],
+            $this->updatedMaquinariaData['modelo'],
+            $this->updatedMaquinariaData['costoh'],
+            $this->updatedMaquinariaData['imagenprincipal']
+        );
     }
 
     /**
-     * @When intento editar el cliente con idcliente :idcliente, estableciendo nombre a :nombre, apellido a :apellido, correo a :correo, iddocumento a :iddocumento, documento a :documento, teléfono a :telefono
+     * @Then el sistema muestra un mensaje de confirmación
      */
-    public function intentoEditarElClienteConIdclienteEstableciendoDatos($idcliente, $nombre, $apellido, $correo, $iddocumento, $documento, $telefono)
+    public function elSistemaMuestraUnMensajeDeConfirmacionParaEdicion()
     {
-        // Simular comportamiento con Phake
-        $clienteData = [
-            'nombre' => $nombre,
-            'apellido' => $apellido,
-            'correo' => $correo,
-            'iddocumento' => $iddocumento,
-            'documento' => $documento,
-            'telefono' => $telefono,
-        ];
-        foreach ($this->clientes as &$cliente) {
-            if ($cliente['idcliente'] == $idcliente) {
-                $cliente = array_merge($cliente, $clienteData);
-                break;
-            }
-        }
-        Phake::when($this->clienteService)->editarCliente($idcliente, $clienteData)->thenReturn(true);
+        // Puedes verificar si se ha editado correctamente la maquinaria
+        // y mostrar un mensaje de confirmación apropiado
     }
 
     /**
-     * @When intento editar el cliente con idcliente :idcliente, estableciendo nombre a :nombre, apellido a :apellido, correo a :correo, iddocumento a :iddocumento, documento a :documento, teléfono a :telefono con datos inválidos
+     * @Given selecciona una maquinaria para eliminar
      */
-    public function intentoEditarElClienteConIdclienteEstableciendoDatosInvalidos($idcliente, $nombre, $apellido, $correo, $iddocumento, $documento, $telefono)
+    public function seleccionaUnaMaquinariaParaEliminar()
     {
-        // Simular comportamiento con Phake
-        $clienteData = [
-            'nombre' => $nombre,
-            'apellido' => $apellido,
-            'correo' => $correo,
-            'iddocumento' => $iddocumento,
-            'documento' => $documento,
-            'telefono' => $telefono,
-        ];
-        foreach ($this->clientes as &$cliente) {
-            if ($cliente['idcliente'] == $idcliente) {
-                $cliente = array_merge($cliente, $clienteData);
-                break;
-            }
+        // Simula la selección de una maquinaria específica para eliminar
+        if (isset($this->maquinariaList[0])) {
+            $maquinariaId = $this->maquinariaList[0]['idmaquinaria'];
+            // Configurar el comportamiento del mock para eliminar maquinaria
+            $this->maquinariaModelMock
+                ->expects($this->any())
+                ->method('eliminarMaquinaria')
+                ->with($maquinariaId);
+        } else {
+            throw new Exception('No hay maquinarias para eliminar.');
         }
-        Phake::when($this->clienteService)->editarCliente($idcliente, $clienteData)->thenThrow(new Exception('Los campos del formulario no pueden estar vacíos'));
     }
 
     /**
-     * @When intento eliminar el cliente con idcliente :idcliente
+     * @When el sistema confirma la eliminación
      */
-    public function intentoEliminarElClienteConIdcliente($idcliente)
+    public function elSistemaConfirmaLaEliminacion()
     {
-        // Simular comportamiento con Phake
-        $clienteEncontrado = false;
-        foreach ($this->clientes as $key => $cliente) {
-            if ($cliente['idcliente'] == $idcliente) {
-                unset($this->clientes[$key]);
-                $clienteEncontrado = true;
-                break;
-            }
-        }
-        if (!$clienteEncontrado) {
-            throw new Exception("No se encontró ningún cliente con idcliente '$idcliente'");
-        }
-        Phake::when($this->clienteService)->eliminarCliente($idcliente)->thenReturn(true);
+        // Simula el proceso de confirmación de eliminación
+        $this->maquinariaModel->eliminarMaquinaria($this->maquinariaList[0]['idmaquinaria']);
     }
 
     /**
-     * @Then el cliente con idcliente :idcliente ya no debe estar en la lista de clientes
+     * @Then el sistema muestra un mensaje de confirmación de eliminación
      */
-    public function elClienteConIdclienteYaNoDebeEstarEnLaListaDeClientes($idcliente)
+    public function elSistemaMuestraUnMensajeDeConfirmacionDeEliminacion()
     {
-        // Verificar que el cliente con el id indicado no esté en la lista de clientes
-        foreach ($this->clientes as $cliente) {
-            if ($cliente['idcliente'] == $idcliente) {
-                throw new Exception("El cliente con idcliente '$idcliente' todavía está en la lista de clientes");
-            }
-        }
+        // Puedes verificar si se ha eliminado correctamente la maquinaria
+        // y mostrar un mensaje de confirmación apropiado
     }
 }
-
-?>
