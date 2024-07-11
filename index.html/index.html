@@ -592,6 +592,266 @@
                 <span>Scenarios passed : 71.43%,
                 Scenarios failed : 28.57%</span>
             </div>
+        </div>
+        <div class="feature">
+            <h2>
+                <span id="feat2" class="keyword"> Feature: </span>
+                <span class="title">Gestión de Cotizaciones</span>
+            </h2>
+            <p>Como usuario,
+Quiero gestionar cotizaciones en el sistema
+Para poder ver, añadir, editar y eliminar cotizaciones, así como recuperar detalles de clientes, maquinaria y ubicaciones.</p>
+            <ul class="tags">
+            </ul>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Crear una nueva cotización</span>
+                </h3>
+                <ol>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">tengo una instancia de Cotizacion </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">a&ntilde;ado una nueva cotizaci&oacute;n para el cliente con idcliente 1 </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">la cotizaci&oacute;n deber&iacute;a a&ntilde;adirse exitosamente </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Actualizar una cotización existente</span>
+                </h3>
+                <ol>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">tengo una instancia de Cotizacion </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">existe una cotizaci&oacute;n con idcotizacion 431 </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">actualizo la cotizaci&oacute;n con idcotizacion 431, estableciendo idcliente a 2, idmaquinaria a 567, idlugar a 4, total a 1500.50 y tiempo a 5 </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">la cotizaci&oacute;n con idcotizacion 431 deber&iacute;a actualizarse exitosamente </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Obtener detalles del cliente para la cotización</span>
+                </h3>
+                <ol>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">tengo una instancia de Cotizacion </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">existe un cliente con idcliente 2 </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">obtengo los detalles del cliente con idcliente 2 </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">deber&iacute;a recibir los detalles del cliente </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Obtener detalles de la maquinaria para la cotización</span>
+                </h3>
+                <ol>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">tengo una instancia de Cotizacion </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">existe una maquinaria con idmaquinaria 567 </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">obtengo los detalles de la maquinaria con idmaquinaria 567 </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">deber&iacute;a recibir los detalles de la maquinaria </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Obtener detalles de la ubicación para la cotización</span>
+                </h3>
+                <ol>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">tengo una instancia de Cotizacion </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">existe una ubicaci&oacute;n con idlugar 4 </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">obtengo los detalles de la ubicaci&oacute;n con idlugar 4 </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">deber&iacute;a recibir los detalles de la ubicaci&oacute;n </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Obtener toda la maquinaria disponible para la cotización</span>
+                </h3>
+                <ol>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">tengo una instancia de Cotizacion </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">obtengo toda la maquinaria disponible </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">deber&iacute;a recibir una lista de toda la maquinaria </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Obtener todas las ubicaciones disponibles para la cotización</span>
+                </h3>
+                <ol>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">tengo una instancia de Cotizacion </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">obtengo todas las ubicaciones disponibles </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">deber&iacute;a recibir una lista de todas las ubicaciones </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="featureResult failed">Feature has failed
+                <span>Scenarios passed : 0%,
+                Scenarios failed : 100%</span>
+            </div>
         </div><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -632,7 +892,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Automated test report - 11/07/2024 20:06:25</a>
+            <a class="navbar-brand" href="#">Automated test report - 11/07/2024 21:24:21</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -649,19 +909,19 @@
                 <canvas id="chart-features" width="300" height="300"/>
             </div>
             <div class="chart-summary title">
-                1 Features:
+                2 Features:
             </div>
-            <div class="chart-summary failed">1 failed</div>
+            <div class="chart-summary failed">2 failed</div>
         </div>
         <div class="col-sm-4">
             <div class="canvas-holder">
                 <canvas id="chart-scenarios" width="300" height="300"/>
             </div>
             <div class="chart-summary title">
-                7
+                14
                 Scenarios:
             </div>
-            <div class="chart-summary failed">2 failed</div>
+            <div class="chart-summary failed">9 failed</div>
             <div class="chart-summary undefined">0 undefined</div>
             <div class="chart-summary skipped">0 skipped</div>
         </div>
@@ -713,6 +973,36 @@
                                                 </div>
                                                 <div class="progress-bar progress-bar-red" role="progressbar"
                                                      style="width: 28.571428571429%">
+                                                    <span class="sr-only">40% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <div class="col-sm-4 feature" data-id="feature-2">
+                                <div class="card failed">
+                                    <div class="header">
+                                        <h2>Feature: Gestión de Cotizaciones</h2>
+                                    </div>
+                                    <div class="info">
+                                        <p>Como usuario,<br />
+Quiero gestionar cotizaciones en el sistema<br />
+Para poder ver, añadir, editar y eliminar cotizaciones, así como recuperar detalles de clientes, maquinaria y ubicaciones.</p>
+                                    </div>
+                                    <div class="footer">
+                                        <div class="tags">
+                                                                                    </div>
+                                                                                    <div class="progress">
+                                                <div class="progress-bar progress-bar-green" role="progressbar"
+                                                     style="width: 0%">
+                                                    <span class="sr-only">40% Complete (success)</span>
+                                                </div>
+                                                <div class="progress-bar progress-bar-warning" role="progressbar"
+                                                     style="width: 0%">
+                                                    <span class="sr-only">40% Complete (success)</span>
+                                                </div>
+                                                <div class="progress-bar progress-bar-red" role="progressbar"
+                                                     style="width: 100%">
                                                     <span class="sr-only">40% Complete (success)</span>
                                                 </div>
                                             </div>
@@ -998,6 +1288,262 @@
                             </div>
                                             </div>
                 </div>
+                            <div class="feature" data-id="feature-2">
+                    <div class="col-sm-4">
+                        <div class="card failed">
+                            <div class="header">
+                                <h2>Feature: Gestión de Cotizaciones</h2>
+                            </div>
+                            <div class="info">
+                                <p>Como usuario,<br />
+Quiero gestionar cotizaciones en el sistema<br />
+Para poder ver, añadir, editar y eliminar cotizaciones, así como recuperar detalles de clientes, maquinaria y ubicaciones.</p>
+                            </div>
+                            <div class="footer">
+                                <div class="tags">
+                                                                    </div>
+                                                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-green" role="progressbar"
+                                             style="width: 0%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                        <div class="progress-bar progress-bar-warning" role="progressbar"
+                                             style="width: 0%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                        <div class="progress-bar progress-bar-red" role="progressbar"
+                                             style="width: 100%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 details panel-group" role="tablist" aria-multiselectable="true">
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-2-1"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-2-1">
+                                            Scenario: Crear una nueva cotización
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-2-1" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-warning">
+                                                <b>Given</b> tengo una instancia de Cotizacion
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>When</b> añado una nueva cotización para el cliente con idcliente 1
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>Then</b> la cotización debería añadirse exitosamente
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-2-2"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-2-2">
+                                            Scenario: Actualizar una cotización existente
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-2-2" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-warning">
+                                                <b>Given</b> tengo una instancia de Cotizacion
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>And</b> existe una cotización con idcotizacion 431
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>When</b> actualizo la cotización con idcotizacion 431, estableciendo idcliente a 2, idmaquinaria a 567, idlugar a 4, total a 1500.50 y tiempo a 5
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>Then</b> la cotización con idcotizacion 431 debería actualizarse exitosamente
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-2-3"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-2-3">
+                                            Scenario: Obtener detalles del cliente para la cotización
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-2-3" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-warning">
+                                                <b>Given</b> tengo una instancia de Cotizacion
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>And</b> existe un cliente con idcliente 2
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>When</b> obtengo los detalles del cliente con idcliente 2
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>Then</b> debería recibir los detalles del cliente
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-2-4"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-2-4">
+                                            Scenario: Obtener detalles de la maquinaria para la cotización
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-2-4" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-warning">
+                                                <b>Given</b> tengo una instancia de Cotizacion
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>And</b> existe una maquinaria con idmaquinaria 567
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>When</b> obtengo los detalles de la maquinaria con idmaquinaria 567
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>Then</b> debería recibir los detalles de la maquinaria
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-2-5"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-2-5">
+                                            Scenario: Obtener detalles de la ubicación para la cotización
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-2-5" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-warning">
+                                                <b>Given</b> tengo una instancia de Cotizacion
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>And</b> existe una ubicación con idlugar 4
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>When</b> obtengo los detalles de la ubicación con idlugar 4
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>Then</b> debería recibir los detalles de la ubicación
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-2-6"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-2-6">
+                                            Scenario: Obtener toda la maquinaria disponible para la cotización
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-2-6" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-warning">
+                                                <b>Given</b> tengo una instancia de Cotizacion
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>When</b> obtengo toda la maquinaria disponible
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>Then</b> debería recibir una lista de toda la maquinaria
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-2-7"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-2-7">
+                                            Scenario: Obtener todas las ubicaciones disponibles para la cotización
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-2-7" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-warning">
+                                                <b>Given</b> tengo una instancia de Cotizacion
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>When</b> obtengo todas las ubicaciones disponibles
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>Then</b> debería recibir una lista de todas las ubicaciones
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                            </div>
+                </div>
                         </div>
 </div>
 <!-- /container -->
@@ -1014,14 +1560,14 @@
         new Chart(featureChart, {type: 'doughnut', options: {legend: {display: false}}, data: {
                 labels: ['Failed', 'Pending', 'Passed'],
                 datasets: [{
-                    data: [2, 0, 5],
+                    data: [9, 0, 5],
                     backgroundColor: ['#F7464A', 'e38d13', '#00a65a'],
                 }],
             }});
         new Chart(scenarioChart, {type: 'doughnut', options: {legend: {display: false}}, data: {
                 labels: ['Failed', 'Passed'],
                 datasets: [{
-                    data: [1, 0],
+                    data: [2, 0],
                     backgroundColor: ["#F7464A", "#00a65a"],
                 }],
             }});
@@ -1090,16 +1636,16 @@
         <div class="summary failed">
             <div class="counters">
                 <p class="features">
-                    1 features ( <strong class="failed">1 fail</strong> )
+                    2 features ( <strong class="failed">2 fail</strong> )
                 </p>
                 <p class="scenarios">
-                    7 scenarios ( <strong class="passed">5 success</strong> <strong class="failed">2 fail</strong> )
+                    14 scenarios ( <strong class="passed">5 success</strong> <strong class="failed">9 fail</strong> )
                 </p>
                 <p class="steps">
-                    26 steps ( <strong class="passed">24 success</strong> <strong class="pending">2 pending</strong> )
+                    51 steps ( <strong class="passed">24 success</strong> <strong class="pending">27 pending</strong> )
                 </p>
                 <p class="time">
-                0m0.03s - 12.95Mb
+                0m0.04s - 13.02Mb
                 </p>
             </div>
             <div class="switchers">
@@ -1111,6 +1657,31 @@
                 <ul>
                     <li>Then el sistema muestra un mensaje de error indicando que los campos del formulario no pueden estar vacíos</li>
                     <li>Then el sistema muestra un mensaje de error indicando que los campos del formulario no pueden estar vacíos</li>
+                    <li>Given tengo una instancia de Cotizacion</li>
+                    <li>When añado una nueva cotización para el cliente con idcliente 1</li>
+                    <li>Then la cotización debería añadirse exitosamente</li>
+                    <li>Given tengo una instancia de Cotizacion</li>
+                    <li>And existe una cotización con idcotizacion 431</li>
+                    <li>When actualizo la cotización con idcotizacion 431, estableciendo idcliente a 2, idmaquinaria a 567, idlugar a 4, total a 1500.50 y tiempo a 5</li>
+                    <li>Then la cotización con idcotizacion 431 debería actualizarse exitosamente</li>
+                    <li>Given tengo una instancia de Cotizacion</li>
+                    <li>And existe un cliente con idcliente 2</li>
+                    <li>When obtengo los detalles del cliente con idcliente 2</li>
+                    <li>Then debería recibir los detalles del cliente</li>
+                    <li>Given tengo una instancia de Cotizacion</li>
+                    <li>And existe una maquinaria con idmaquinaria 567</li>
+                    <li>When obtengo los detalles de la maquinaria con idmaquinaria 567</li>
+                    <li>Then debería recibir los detalles de la maquinaria</li>
+                    <li>Given tengo una instancia de Cotizacion</li>
+                    <li>And existe una ubicación con idlugar 4</li>
+                    <li>When obtengo los detalles de la ubicación con idlugar 4</li>
+                    <li>Then debería recibir los detalles de la ubicación</li>
+                    <li>Given tengo una instancia de Cotizacion</li>
+                    <li>When obtengo toda la maquinaria disponible</li>
+                    <li>Then debería recibir una lista de toda la maquinaria</li>
+                    <li>Given tengo una instancia de Cotizacion</li>
+                    <li>When obtengo todas las ubicaciones disponibles</li>
+                    <li>Then debería recibir una lista de todas las ubicaciones</li>
                 </ul>
             </div>
     </div><script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js'></script>
