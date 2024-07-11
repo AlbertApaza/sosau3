@@ -327,3 +327,2303 @@
         </head>
         <body>
         <div id='behat'>
+        <div class="suite">Suite : default</div>
+        <div class="feature">
+            <h2>
+                <span id="feat1" class="keyword"> Feature: </span>
+                <span class="title">Client Management</span>
+            </h2>
+            <p>As a user,
+I want to manage clients in the system
+So that I can view, add, edit, delete, and search clients.</p>
+            <ul class="tags">
+            </ul>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">List clients</span>
+                </h3>
+                <ol>
+                    <li class="failed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">I have a Cliente instance </span>
+                            <span class="path">ClienteContext::iHaveAClienteInstance()</span>
+                        </div>
+                        <pre class="backtrace">Fatal error: Class "PHPUnit\Framework\Assert" not found</pre>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I request the list of clients </span>
+                            <span class="path">ClienteContext::iRequestTheListOfClients()</span>
+                        </div>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">the list should contain at least one client </span>
+                            <span class="path">ClienteContext::theListShouldContainAtLeastOneClient()</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Add a new client</span>
+                </h3>
+                <ol>
+                    <li class="failed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">I have a Cliente instance </span>
+                            <span class="path">ClienteContext::iHaveAClienteInstance()</span>
+                        </div>
+                        <pre class="backtrace">Fatal error: Class "PHPUnit\Framework\Assert" not found</pre>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I add a new client with nombre &quot;John&quot;, apellido &quot;Doe&quot;, correo &quot;john.doe@example.com&quot;, iddocumento &quot;1&quot;, documento &quot;12345678&quot;, telefono &quot;987654321&quot; </span>
+                            <span class="path">ClienteContext::iAddANewClientWith()</span>
+                        </div>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">the client list should include &quot;John Doe&quot; </span>
+                            <span class="path">ClienteContext::theClientListShouldInclude()</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Edit an existing client</span>
+                </h3>
+                <ol>
+                    <li class="failed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">I have a Cliente instance </span>
+                            <span class="path">ClienteContext::iHaveAClienteInstance()</span>
+                        </div>
+                        <pre class="backtrace">Fatal error: Class "PHPUnit\Framework\Assert" not found</pre>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">there is a client with idcliente 240 </span>
+                            <span class="path">ClienteContext::thereIsAClientWithIdcliente()</span>
+                        </div>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I edit the client with idcliente 240, setting nombre to &quot;Jane&quot;, apellido to &quot;Smith&quot;, correo to &quot;jane.smith@example.com&quot;, iddocumento to &quot;1&quot;, documento to &quot;87654321&quot;, telefono to &quot;654321987&quot; </span>
+                            <span class="path">ClienteContext::iEditTheClientWithIdcliente()</span>
+                        </div>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">the client list should include &quot;Jane Smith&quot; </span>
+                            <span class="path">ClienteContext::theClientListShouldInclude()</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Delete an existing client</span>
+                </h3>
+                <ol>
+                    <li class="failed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">I have a Cliente instance </span>
+                            <span class="path">ClienteContext::iHaveAClienteInstance()</span>
+                        </div>
+                        <pre class="backtrace">Fatal error: Class "PHPUnit\Framework\Assert" not found</pre>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I delete the client with idcliente 239 </span>
+                            <span class="path">ClienteContext::iDeleteTheClientWithIdcliente()</span>
+                        </div>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">the client list should not include &quot;Jane Smith&quot; </span>
+                            <span class="path">ClienteContext::theClientListShouldNotInclude()</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Search clients by term</span>
+                </h3>
+                <ol>
+                    <li class="failed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">I have a Cliente instance </span>
+                            <span class="path">ClienteContext::iHaveAClienteInstance()</span>
+                        </div>
+                        <pre class="backtrace">Fatal error: Class "PHPUnit\Framework\Assert" not found</pre>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I search for clients with term &quot;John&quot; </span>
+                            <span class="path">ClienteContext::iSearchForClientsWithTerm()</span>
+                        </div>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">the search results should include &quot;John Doe&quot; </span>
+                            <span class="path">ClienteContext::theSearchResultsShouldInclude()</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="featureResult failed">Feature has failed
+                <span>Scenarios passed : 0%,
+                Scenarios failed : 100%</span>
+            </div>
+        </div>
+        <div class="feature">
+            <h2>
+                <span id="feat2" class="keyword"> Feature: </span>
+                <span class="title">Quotation Management</span>
+            </h2>
+            <p>As a user,
+I want to manage quotations in the system
+So that I can view, add, edit, and delete quotations, as well as retrieve client, machinery, and location details.</p>
+            <ul class="tags">
+            </ul>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Create a new quotation</span>
+                </h3>
+                <ol>
+                    <li class="failed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">I have a Cotizacion instance </span>
+                            <span class="path">CotizacionContext::iHaveACotizacionInstance()</span>
+                        </div>
+                        <pre class="backtrace">Fatal error: Class "PHPUnit\Framework\Assert" not found</pre>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I add a new quotation for client with idcliente 1 </span>
+                            <span class="path">CotizacionContext::iAddANewQuotationForClientWithIdcliente()</span>
+                        </div>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">the quotation should be successfully added </span>
+                            <span class="path">CotizacionContext::theQuotationShouldBeSuccessfullyAdded()</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Update an existing quotation</span>
+                </h3>
+                <ol>
+                    <li class="failed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">I have a Cotizacion instance </span>
+                            <span class="path">CotizacionContext::iHaveACotizacionInstance()</span>
+                        </div>
+                        <pre class="backtrace">Fatal error: Class "PHPUnit\Framework\Assert" not found</pre>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">there is a quotation with idcotizacion 431 </span>
+                            <span class="path">CotizacionContext::thereIsAQuotationWithIdcotizacion()</span>
+                        </div>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I update the quotation with idcotizacion 431, setting idcliente to 2, idmaquinaria to 567, idlugar to 4, total to 1500.50, and tiempo to 5 </span>
+                            <span class="path">CotizacionContext::iUpdateTheQuotationWithIdcotizacionSetting()</span>
+                        </div>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">the quotation with idcotizacion 431 should be successfully updated </span>
+                            <span class="path">CotizacionContext::theQuotationWithIdcotizacionShouldBeSuccessfullyUpdated()</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Get client details for quotation</span>
+                </h3>
+                <ol>
+                    <li class="failed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">I have a Cotizacion instance </span>
+                            <span class="path">CotizacionContext::iHaveACotizacionInstance()</span>
+                        </div>
+                        <pre class="backtrace">Fatal error: Class "PHPUnit\Framework\Assert" not found</pre>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">there is a client with idcliente 2 </span>
+                            <span class="path">ClienteContext::thereIsAClientWithIdcliente()</span>
+                        </div>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I fetch the details of the client with idcliente 2 </span>
+                            <span class="path">CotizacionContext::iFetchTheDetailsOfTheClientWithIdcliente()</span>
+                        </div>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">I should receive the details of the client </span>
+                            <span class="path">CotizacionContext::iShouldReceiveTheDetailsOfTheClient()</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Get machinery details for quotation</span>
+                </h3>
+                <ol>
+                    <li class="failed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">I have a Cotizacion instance </span>
+                            <span class="path">CotizacionContext::iHaveACotizacionInstance()</span>
+                        </div>
+                        <pre class="backtrace">Fatal error: Class "PHPUnit\Framework\Assert" not found</pre>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">there is a machinery with idmaquinaria 567 </span>
+                            <span class="path">CotizacionContext::thereIsAMachineryWithIdmaquinaria()</span>
+                        </div>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I fetch the details of the machinery with idmaquinaria 567 </span>
+                            <span class="path">CotizacionContext::iFetchTheDetailsOfTheMachineryWithIdmaquinaria()</span>
+                        </div>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">I should receive the details of the machinery </span>
+                            <span class="path">CotizacionContext::iShouldReceiveTheDetailsOfTheMachinery()</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Get location details for quotation</span>
+                </h3>
+                <ol>
+                    <li class="failed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">I have a Cotizacion instance </span>
+                            <span class="path">CotizacionContext::iHaveACotizacionInstance()</span>
+                        </div>
+                        <pre class="backtrace">Fatal error: Class "PHPUnit\Framework\Assert" not found</pre>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">there is a location with idlugar 4 </span>
+                            <span class="path">CotizacionContext::thereIsALocationWithIdlugar()</span>
+                        </div>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I fetch the details of the location with idlugar 4 </span>
+                            <span class="path">CotizacionContext::iFetchTheDetailsOfTheLocationWithIdlugar()</span>
+                        </div>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">I should receive the details of the location </span>
+                            <span class="path">CotizacionContext::iShouldReceiveTheDetailsOfTheLocation()</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Get all available machinery for quotation</span>
+                </h3>
+                <ol>
+                    <li class="failed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">I have a Cotizacion instance </span>
+                            <span class="path">CotizacionContext::iHaveACotizacionInstance()</span>
+                        </div>
+                        <pre class="backtrace">Fatal error: Class "PHPUnit\Framework\Assert" not found</pre>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I fetch all available machinery </span>
+                            <span class="path">CotizacionContext::iFetchAllAvailableMachinery()</span>
+                        </div>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">I should receive a list of all machinery </span>
+                            <span class="path">CotizacionContext::iShouldReceiveAListOfAllMachinery()</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Get all available locations for quotation</span>
+                </h3>
+                <ol>
+                    <li class="failed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">I have a Cotizacion instance </span>
+                            <span class="path">CotizacionContext::iHaveACotizacionInstance()</span>
+                        </div>
+                        <pre class="backtrace">Fatal error: Class "PHPUnit\Framework\Assert" not found</pre>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I fetch all available locations </span>
+                            <span class="path">CotizacionContext::iFetchAllAvailableLocations()</span>
+                        </div>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">I should receive a list of all locations </span>
+                            <span class="path">CotizacionContext::iShouldReceiveAListOfAllLocations()</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="featureResult failed">Feature has failed
+                <span>Scenarios passed : 0%,
+                Scenarios failed : 100%</span>
+            </div>
+        </div>
+        <div class="feature">
+            <h2>
+                <span id="feat3" class="keyword"> Feature: </span>
+                <span class="title">Retrieve all places</span>
+            </h2>
+            <p>As a user
+I want to retrieve all places from the database
+So that I can see a list of available places</p>
+            <ul class="tags">
+            </ul>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">User requests all places</span>
+                </h3>
+                <ol>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">there are places in the database </span>
+                            <span class="path">LugarContext::thereArePlacesInTheDatabase()</span>
+                        </div>
+                    </li>
+                    <li class="failed">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I request all places </span>
+                            <span class="path">LugarContext::iRequestAllPlaces()</span>
+                        </div>
+                        <pre class="backtrace">Fatal error: Class "App\Model\Lugar" not found</pre>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">I should get a list of places </span>
+                            <span class="path">LugarContext::iShouldGetAListOfPlaces()</span>
+                        </div>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">each place should have an &quot;idlugar&quot; </span>
+                            <span class="path">LugarContext::eachPlaceShouldHaveAn()</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="featureResult failed">Feature has failed
+                <span>Scenarios passed : 0%,
+                Scenarios failed : 100%</span>
+            </div>
+        </div>
+        <div class="feature">
+            <h2>
+                <span id="feat4" class="keyword"> Feature: </span>
+                <span class="title">Maintenance Management</span>
+            </h2>
+            <p></p>
+            <ul class="tags">
+            </ul>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Add a new maintenance record</span>
+                </h3>
+                <ol>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">I have a Mantenimiento instance </span>
+                            <span class="path">MantenimientoContext::iHaveAMantenimientoInstance()</span>
+                        </div>
+                    </li>
+                    <li class="failed">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I add a new maintenance record with idmaquinaria 1, fecha &quot;2024-06-30&quot;, descripcion &quot;Limpieza y revisi&oacute;n&quot;, costopro 200.50, idempleado 1, estado &quot;Pendiente&quot;, tipo 1 </span>
+                            <span class="path">MantenimientoContext::iAddANewMaintenanceRecord()</span>
+                        </div>
+                        <pre class="backtrace">Fatal error: Call to a member function agregarMantenimiento() on null</pre>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">the maintenance list should include &quot;Limpieza y revisi&oacute;n&quot; </span>
+                            <span class="path">MantenimientoContext::theMaintenanceListShouldInclude()</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Edit an existing maintenance record</span>
+                </h3>
+                <ol>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">I have a Mantenimiento instance </span>
+                            <span class="path">MantenimientoContext::iHaveAMantenimientoInstance()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">there is a maintenance record with idmantenimiento 1 </span>
+                            <span class="path">MantenimientoContext::thereIsAMaintenanceRecordWithIdmantenimiento()</span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I edit the maintenance record with idmantenimiento 1, setting idmaquinaria to 2, fecha to &quot;2024-07-01&quot;, descripcion to &quot;Reparaci&oacute;n de motor&quot;, costopro to 500.75, idempleado to 2, estado to &quot;Completado&quot;, tipo 2 </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">the maintenance list should include &quot;Reparaci&oacute;n de motor&quot; </span>
+                            <span class="path">MantenimientoContext::theMaintenanceListShouldInclude()</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Delete an existing maintenance record</span>
+                </h3>
+                <ol>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">I have a Mantenimiento instance </span>
+                            <span class="path">MantenimientoContext::iHaveAMantenimientoInstance()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">there is a maintenance record with idmantenimiento 3 </span>
+                            <span class="path">MantenimientoContext::thereIsAMaintenanceRecordWithIdmantenimiento()</span>
+                        </div>
+                    </li>
+                    <li class="failed">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I delete the maintenance record with idmantenimiento 3 </span>
+                            <span class="path">MantenimientoContext::iDeleteTheMaintenanceRecord()</span>
+                        </div>
+                        <pre class="backtrace">Fatal error: Call to a member function eliminarMantenimiento() on null</pre>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">the maintenance list should not include &quot;Reparaci&oacute;n de motor&quot; </span>
+                            <span class="path">MantenimientoContext::theMaintenanceListShouldNotInclude()</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Search maintenance records by term</span>
+                </h3>
+                <ol>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">I have a Mantenimiento instance </span>
+                            <span class="path">MantenimientoContext::iHaveAMantenimientoInstance()</span>
+                        </div>
+                    </li>
+                    <li class="failed">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I search for maintenance records with term &quot;Limpieza y revisi&oacute;n&quot; </span>
+                            <span class="path">MantenimientoContext::iSearchForMaintenanceRecordsWithTerm()</span>
+                        </div>
+                        <pre class="backtrace">Fatal error: Call to a member function buscarMantenimiento() on null</pre>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">the search results should include &quot;Limpieza y revisi&oacute;n&quot; </span>
+                            <span class="path">ClienteContext::theSearchResultsShouldInclude()</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Get maintenance details by ID</span>
+                </h3>
+                <ol>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">I have a Mantenimiento instance </span>
+                            <span class="path">MantenimientoContext::iHaveAMantenimientoInstance()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">there is a maintenance record with idmantenimiento 2 </span>
+                            <span class="path">MantenimientoContext::thereIsAMaintenanceRecordWithIdmantenimiento()</span>
+                        </div>
+                    </li>
+                    <li class="failed">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I fetch the details of the maintenance record with idmantenimiento 2 </span>
+                            <span class="path">MantenimientoContext::iFetchTheDetailsOfTheMaintenanceRecord()</span>
+                        </div>
+                        <pre class="backtrace">Fatal error: Call to a member function obtenerMantenimientoPorId() on null</pre>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">I should receive the details of the maintenance record </span>
+                            <span class="path">MantenimientoContext::iShouldReceiveTheDetailsOfTheMaintenanceRecord()</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="featureResult failed">Feature has failed
+                <span>Scenarios passed : 0%,
+                Scenarios failed : 100%</span>
+            </div>
+        </div>
+        <div class="feature">
+            <h2>
+                <span id="feat5" class="keyword"> Feature: </span>
+                <span class="title">Manage machinery</span>
+            </h2>
+            <p>As a user
+I want to manage machinery in the database
+So that I can see, add, edit, delete, and search machinery</p>
+            <ul class="tags">
+            </ul>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">List all machinery</span>
+                </h3>
+                <ol>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">there is machinery in the database </span>
+                            <span class="path">MaquinariaContext::thereIsMachineryInTheDatabase()</span>
+                        </div>
+                    </li>
+                    <li class="failed">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I request all machinery </span>
+                            <span class="path">MaquinariaContext::iRequestAllMachinery()</span>
+                        </div>
+                        <pre class="backtrace">Fatal error: Class "App\Model\Maquinaria" not found</pre>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">I should get a list of machinery </span>
+                            <span class="path">MaquinariaContext::iShouldGetAListOfMachinery()</span>
+                        </div>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">each machinery should have an &quot;idmaquinaria&quot; </span>
+                            <span class="path">MaquinariaContext::eachMachineryShouldHaveAn()</span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">each machinery should have a &quot;nombre&quot; </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Add a new machinery</span>
+                </h3>
+                <ol>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">I have a Maquinaria instance </span>
+                            <span class="path">MaquinariaContext::iHaveAMaquinariaInstance()</span>
+                        </div>
+                    </li>
+                    <li class="failed">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I add a new machinery with numserie &quot;ABC123&quot;, nombre &quot;Excavator&quot;, marca &quot;CAT&quot;, modelo &quot;X1&quot;, costoh 100.50, imagenprincipal &quot;excavator.jpg&quot; </span>
+                            <span class="path">MaquinariaContext::iAddANewMachinery()</span>
+                        </div>
+                        <pre class="backtrace">Fatal error: Class "App\Model\Maquinaria" not found</pre>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">the machinery list should include &quot;Excavator&quot; </span>
+                            <span class="path">MaquinariaContext::theMachineryListShouldInclude()</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Edit an existing machinery</span>
+                </h3>
+                <ol>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">I have a Maquinaria instance </span>
+                            <span class="path">MaquinariaContext::iHaveAMaquinariaInstance()</span>
+                        </div>
+                    </li>
+                    <li class="failed">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">there is a machinery with idmaquinaria 1 </span>
+                            <span class="path">CotizacionContext::thereIsAMachineryWithIdmaquinaria()</span>
+                        </div>
+                        <pre class="backtrace">Fatal error: Call to a member function obtenerMaquinariaPorId() on null</pre>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I edit the machinery with idmaquinaria 1, setting numserie to &quot;XYZ789&quot;, nombre to &quot;Bulldozer&quot;, marca to &quot;CAT&quot;, modelo to &quot;B2&quot;, costoh to 150.75, imagenprincipal to &quot;bulldozer.jpg&quot; </span>
+                            <span class="path">MaquinariaContext::iEditTheMachinery()</span>
+                        </div>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">the machinery list should include &quot;Bulldozer&quot; </span>
+                            <span class="path">MaquinariaContext::theMachineryListShouldInclude()</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Delete an existing machinery</span>
+                </h3>
+                <ol>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">I have a Maquinaria instance </span>
+                            <span class="path">MaquinariaContext::iHaveAMaquinariaInstance()</span>
+                        </div>
+                    </li>
+                    <li class="failed">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I delete the machinery with idmaquinaria 834 </span>
+                            <span class="path">MaquinariaContext::iDeleteTheMachinery()</span>
+                        </div>
+                        <pre class="backtrace">Fatal error: Class "App\Model\Maquinaria" not found</pre>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">the machinery list should not include &quot;Excavator&quot; </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Search machinery by term</span>
+                </h3>
+                <ol>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">I have a Maquinaria instance </span>
+                            <span class="path">MaquinariaContext::iHaveAMaquinariaInstance()</span>
+                        </div>
+                    </li>
+                    <li class="failed">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I search for machinery with term &quot;Excavator&quot; </span>
+                            <span class="path">MaquinariaContext::iSearchForMachineryWithTerm()</span>
+                        </div>
+                        <pre class="backtrace">Fatal error: Class "App\Model\Maquinaria" not found</pre>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">the search results should include &quot;Excavator&quot; </span>
+                            <span class="path">ClienteContext::theSearchResultsShouldInclude()</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="featureResult failed">Feature has failed
+                <span>Scenarios passed : 0%,
+                Scenarios failed : 100%</span>
+            </div>
+        </div><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Behat Tests</title>
+
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="assets/Twig/css/style.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+</head>
+<body role="document" style="margin-top: 70px;">
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Automated test report - 11/07/2024 17:21:51</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="container theme-showcase" role="main">
+    <div class="row charts">
+        <div class="col-sm-4">
+            <div class="canvas-holder">
+                <canvas id="chart-features" width="300" height="300"/>
+            </div>
+            <div class="chart-summary title">
+                5 Features:
+            </div>
+            <div class="chart-summary failed">5 failed</div>
+        </div>
+        <div class="col-sm-4">
+            <div class="canvas-holder">
+                <canvas id="chart-scenarios" width="300" height="300"/>
+            </div>
+            <div class="chart-summary title">
+                23
+                Scenarios:
+            </div>
+            <div class="chart-summary failed">23 failed</div>
+            <div class="chart-summary undefined">0 undefined</div>
+            <div class="chart-summary skipped">0 skipped</div>
+        </div>
+        <div class="col-sm-4">
+            <div class="canvas-holder">
+                <canvas id="chart-steps" width="300" height="300"/>
+            </div>
+            <div class="chart-summary title">
+                36
+                Steps:
+            </div>
+            <div class="chart-summary failed">22 failed</div>
+            <div class="chart-summary undefined">0 undefined</div>
+            <div class="chart-summary skipped">0 skipped</div>
+        </div>
+    </div>
+    <hr>
+    <div class="filters">
+        <a class="btn btn-default" id="feature-all-filter" role="button">All</a>
+        <a class="btn btn-success" id="feature-passed-filter" role="button">Passed</a>
+        <a class="btn btn-danger" id="feature-failed-filter" role="button">Failed</a>
+    </div>
+    <hr>
+    <div id="feature-overview">
+                    <div class="row">
+                <div class="col-sm-12">
+                    <h2>Suite: default</h2>
+
+                    <div class="row">
+                                                    <div class="col-sm-4 feature" data-id="feature-1">
+                                <div class="card failed">
+                                    <div class="header">
+                                        <h2>Feature: Client Management</h2>
+                                    </div>
+                                    <div class="info">
+                                        <p>As a user,<br />
+I want to manage clients in the system<br />
+So that I can view, add, edit, delete, and search clients.</p>
+                                    </div>
+                                    <div class="footer">
+                                        <div class="tags">
+                                                                                    </div>
+                                                                                    <div class="progress">
+                                                <div class="progress-bar progress-bar-green" role="progressbar"
+                                                     style="width: 0%">
+                                                    <span class="sr-only">40% Complete (success)</span>
+                                                </div>
+                                                <div class="progress-bar progress-bar-warning" role="progressbar"
+                                                     style="width: 0%">
+                                                    <span class="sr-only">40% Complete (success)</span>
+                                                </div>
+                                                <div class="progress-bar progress-bar-red" role="progressbar"
+                                                     style="width: 100%">
+                                                    <span class="sr-only">40% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <div class="col-sm-4 feature" data-id="feature-2">
+                                <div class="card failed">
+                                    <div class="header">
+                                        <h2>Feature: Quotation Management</h2>
+                                    </div>
+                                    <div class="info">
+                                        <p>As a user,<br />
+I want to manage quotations in the system<br />
+So that I can view, add, edit, and delete quotations, as well as retrieve client, machinery, and location details.</p>
+                                    </div>
+                                    <div class="footer">
+                                        <div class="tags">
+                                                                                    </div>
+                                                                                    <div class="progress">
+                                                <div class="progress-bar progress-bar-green" role="progressbar"
+                                                     style="width: 0%">
+                                                    <span class="sr-only">40% Complete (success)</span>
+                                                </div>
+                                                <div class="progress-bar progress-bar-warning" role="progressbar"
+                                                     style="width: 0%">
+                                                    <span class="sr-only">40% Complete (success)</span>
+                                                </div>
+                                                <div class="progress-bar progress-bar-red" role="progressbar"
+                                                     style="width: 100%">
+                                                    <span class="sr-only">40% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <div class="col-sm-4 feature" data-id="feature-3">
+                                <div class="card failed">
+                                    <div class="header">
+                                        <h2>Feature: Retrieve all places</h2>
+                                    </div>
+                                    <div class="info">
+                                        <p>As a user<br />
+I want to retrieve all places from the database<br />
+So that I can see a list of available places</p>
+                                    </div>
+                                    <div class="footer">
+                                        <div class="tags">
+                                                                                    </div>
+                                                                                    <div class="progress">
+                                                <div class="progress-bar progress-bar-green" role="progressbar"
+                                                     style="width: 0%">
+                                                    <span class="sr-only">40% Complete (success)</span>
+                                                </div>
+                                                <div class="progress-bar progress-bar-warning" role="progressbar"
+                                                     style="width: 0%">
+                                                    <span class="sr-only">40% Complete (success)</span>
+                                                </div>
+                                                <div class="progress-bar progress-bar-red" role="progressbar"
+                                                     style="width: 100%">
+                                                    <span class="sr-only">40% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <div class="col-sm-4 feature" data-id="feature-4">
+                                <div class="card failed">
+                                    <div class="header">
+                                        <h2>Feature: Maintenance Management</h2>
+                                    </div>
+                                    <div class="info">
+                                        <p></p>
+                                    </div>
+                                    <div class="footer">
+                                        <div class="tags">
+                                                                                    </div>
+                                                                                    <div class="progress">
+                                                <div class="progress-bar progress-bar-green" role="progressbar"
+                                                     style="width: 0%">
+                                                    <span class="sr-only">40% Complete (success)</span>
+                                                </div>
+                                                <div class="progress-bar progress-bar-warning" role="progressbar"
+                                                     style="width: 0%">
+                                                    <span class="sr-only">40% Complete (success)</span>
+                                                </div>
+                                                <div class="progress-bar progress-bar-red" role="progressbar"
+                                                     style="width: 100%">
+                                                    <span class="sr-only">40% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <div class="col-sm-4 feature" data-id="feature-5">
+                                <div class="card failed">
+                                    <div class="header">
+                                        <h2>Feature: Manage machinery</h2>
+                                    </div>
+                                    <div class="info">
+                                        <p>As a user<br />
+I want to manage machinery in the database<br />
+So that I can see, add, edit, delete, and search machinery</p>
+                                    </div>
+                                    <div class="footer">
+                                        <div class="tags">
+                                                                                    </div>
+                                                                                    <div class="progress">
+                                                <div class="progress-bar progress-bar-green" role="progressbar"
+                                                     style="width: 0%">
+                                                    <span class="sr-only">40% Complete (success)</span>
+                                                </div>
+                                                <div class="progress-bar progress-bar-warning" role="progressbar"
+                                                     style="width: 0%">
+                                                    <span class="sr-only">40% Complete (success)</span>
+                                                </div>
+                                                <div class="progress-bar progress-bar-red" role="progressbar"
+                                                     style="width: 100%">
+                                                    <span class="sr-only">40% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                                                            </div>
+                                </div>
+                            </div>
+                                            </div>
+                </div>
+            </div>
+            <hr>
+            </div>
+    <div id="scenario-overview" class="row">
+                                    <div class="feature" data-id="feature-1">
+                    <div class="col-sm-4">
+                        <div class="card failed">
+                            <div class="header">
+                                <h2>Feature: Client Management</h2>
+                            </div>
+                            <div class="info">
+                                <p>As a user,<br />
+I want to manage clients in the system<br />
+So that I can view, add, edit, delete, and search clients.</p>
+                            </div>
+                            <div class="footer">
+                                <div class="tags">
+                                                                    </div>
+                                                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-green" role="progressbar"
+                                             style="width: 0%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                        <div class="progress-bar progress-bar-warning" role="progressbar"
+                                             style="width: 0%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                        <div class="progress-bar progress-bar-red" role="progressbar"
+                                             style="width: 100%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 details panel-group" role="tablist" aria-multiselectable="true">
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-1-1"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-1-1">
+                                            Scenario: List clients
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-1-1" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-danger">
+                                                <b>Given</b> I have a Cliente instance
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(Fatal error: Class &quot;PHPUnit\Framework\Assert&quot; not found)</p>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>When</b> I request the list of clients
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>Then</b> the list should contain at least one client
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-1-2"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-1-2">
+                                            Scenario: Add a new client
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-1-2" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-danger">
+                                                <b>Given</b> I have a Cliente instance
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(Fatal error: Class &quot;PHPUnit\Framework\Assert&quot; not found)</p>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>When</b> I add a new client with nombre &quot;John&quot;, apellido &quot;Doe&quot;, correo &quot;john.doe@example.com&quot;, iddocumento &quot;1&quot;, documento &quot;12345678&quot;, telefono &quot;987654321&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>Then</b> the client list should include &quot;John Doe&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-1-3"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-1-3">
+                                            Scenario: Edit an existing client
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-1-3" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-danger">
+                                                <b>Given</b> I have a Cliente instance
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(Fatal error: Class &quot;PHPUnit\Framework\Assert&quot; not found)</p>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>And</b> there is a client with idcliente 240
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>When</b> I edit the client with idcliente 240, setting nombre to &quot;Jane&quot;, apellido to &quot;Smith&quot;, correo to &quot;jane.smith@example.com&quot;, iddocumento to &quot;1&quot;, documento to &quot;87654321&quot;, telefono to &quot;654321987&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>Then</b> the client list should include &quot;Jane Smith&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-1-4"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-1-4">
+                                            Scenario: Delete an existing client
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-1-4" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-danger">
+                                                <b>Given</b> I have a Cliente instance
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(Fatal error: Class &quot;PHPUnit\Framework\Assert&quot; not found)</p>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>When</b> I delete the client with idcliente 239
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>Then</b> the client list should not include &quot;Jane Smith&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-1-5"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-1-5">
+                                            Scenario: Search clients by term
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-1-5" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-danger">
+                                                <b>Given</b> I have a Cliente instance
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(Fatal error: Class &quot;PHPUnit\Framework\Assert&quot; not found)</p>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>When</b> I search for clients with term &quot;John&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>Then</b> the search results should include &quot;John Doe&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                            </div>
+                </div>
+                            <div class="feature" data-id="feature-2">
+                    <div class="col-sm-4">
+                        <div class="card failed">
+                            <div class="header">
+                                <h2>Feature: Quotation Management</h2>
+                            </div>
+                            <div class="info">
+                                <p>As a user,<br />
+I want to manage quotations in the system<br />
+So that I can view, add, edit, and delete quotations, as well as retrieve client, machinery, and location details.</p>
+                            </div>
+                            <div class="footer">
+                                <div class="tags">
+                                                                    </div>
+                                                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-green" role="progressbar"
+                                             style="width: 0%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                        <div class="progress-bar progress-bar-warning" role="progressbar"
+                                             style="width: 0%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                        <div class="progress-bar progress-bar-red" role="progressbar"
+                                             style="width: 100%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 details panel-group" role="tablist" aria-multiselectable="true">
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-2-1"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-2-1">
+                                            Scenario: Create a new quotation
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-2-1" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-danger">
+                                                <b>Given</b> I have a Cotizacion instance
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(Fatal error: Class &quot;PHPUnit\Framework\Assert&quot; not found)</p>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>When</b> I add a new quotation for client with idcliente 1
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>Then</b> the quotation should be successfully added
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-2-2"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-2-2">
+                                            Scenario: Update an existing quotation
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-2-2" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-danger">
+                                                <b>Given</b> I have a Cotizacion instance
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(Fatal error: Class &quot;PHPUnit\Framework\Assert&quot; not found)</p>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>And</b> there is a quotation with idcotizacion 431
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>When</b> I update the quotation with idcotizacion 431, setting idcliente to 2, idmaquinaria to 567, idlugar to 4, total to 1500.50, and tiempo to 5
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>Then</b> the quotation with idcotizacion 431 should be successfully updated
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-2-3"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-2-3">
+                                            Scenario: Get client details for quotation
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-2-3" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-danger">
+                                                <b>Given</b> I have a Cotizacion instance
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(Fatal error: Class &quot;PHPUnit\Framework\Assert&quot; not found)</p>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>And</b> there is a client with idcliente 2
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>When</b> I fetch the details of the client with idcliente 2
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>Then</b> I should receive the details of the client
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-2-4"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-2-4">
+                                            Scenario: Get machinery details for quotation
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-2-4" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-danger">
+                                                <b>Given</b> I have a Cotizacion instance
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(Fatal error: Class &quot;PHPUnit\Framework\Assert&quot; not found)</p>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>And</b> there is a machinery with idmaquinaria 567
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>When</b> I fetch the details of the machinery with idmaquinaria 567
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>Then</b> I should receive the details of the machinery
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-2-5"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-2-5">
+                                            Scenario: Get location details for quotation
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-2-5" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-danger">
+                                                <b>Given</b> I have a Cotizacion instance
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(Fatal error: Class &quot;PHPUnit\Framework\Assert&quot; not found)</p>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>And</b> there is a location with idlugar 4
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>When</b> I fetch the details of the location with idlugar 4
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>Then</b> I should receive the details of the location
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-2-6"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-2-6">
+                                            Scenario: Get all available machinery for quotation
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-2-6" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-danger">
+                                                <b>Given</b> I have a Cotizacion instance
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(Fatal error: Class &quot;PHPUnit\Framework\Assert&quot; not found)</p>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>When</b> I fetch all available machinery
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>Then</b> I should receive a list of all machinery
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-2-7"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-2-7">
+                                            Scenario: Get all available locations for quotation
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-2-7" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-danger">
+                                                <b>Given</b> I have a Cotizacion instance
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(Fatal error: Class &quot;PHPUnit\Framework\Assert&quot; not found)</p>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>When</b> I fetch all available locations
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>Then</b> I should receive a list of all locations
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                            </div>
+                </div>
+                            <div class="feature" data-id="feature-3">
+                    <div class="col-sm-4">
+                        <div class="card failed">
+                            <div class="header">
+                                <h2>Feature: Retrieve all places</h2>
+                            </div>
+                            <div class="info">
+                                <p>As a user<br />
+I want to retrieve all places from the database<br />
+So that I can see a list of available places</p>
+                            </div>
+                            <div class="footer">
+                                <div class="tags">
+                                                                    </div>
+                                                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-green" role="progressbar"
+                                             style="width: 0%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                        <div class="progress-bar progress-bar-warning" role="progressbar"
+                                             style="width: 0%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                        <div class="progress-bar progress-bar-red" role="progressbar"
+                                             style="width: 100%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 details panel-group" role="tablist" aria-multiselectable="true">
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-3-1"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-3-1">
+                                            Scenario: User requests all places
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-3-1" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-success">
+                                                <b>Given</b> there are places in the database
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-danger">
+                                                <b>When</b> I request all places
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(Fatal error: Class &quot;App\Model\Lugar&quot; not found)</p>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>Then</b> I should get a list of places
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>And</b> each place should have an &quot;idlugar&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                            </div>
+                </div>
+                            <div class="feature" data-id="feature-4">
+                    <div class="col-sm-4">
+                        <div class="card failed">
+                            <div class="header">
+                                <h2>Feature: Maintenance Management</h2>
+                            </div>
+                            <div class="info">
+                                <p></p>
+                            </div>
+                            <div class="footer">
+                                <div class="tags">
+                                                                    </div>
+                                                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-green" role="progressbar"
+                                             style="width: 0%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                        <div class="progress-bar progress-bar-warning" role="progressbar"
+                                             style="width: 0%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                        <div class="progress-bar progress-bar-red" role="progressbar"
+                                             style="width: 100%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 details panel-group" role="tablist" aria-multiselectable="true">
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-4-1"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-4-1">
+                                            Scenario: Add a new maintenance record
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-4-1" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-success">
+                                                <b>Given</b> I have a Mantenimiento instance
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-danger">
+                                                <b>When</b> I add a new maintenance record with idmaquinaria 1, fecha &quot;2024-06-30&quot;, descripcion &quot;Limpieza y revisión&quot;, costopro 200.50, idempleado 1, estado &quot;Pendiente&quot;, tipo 1
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(Fatal error: Call to a member function agregarMantenimiento() on null)</p>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>Then</b> the maintenance list should include &quot;Limpieza y revisión&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-4-2"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-4-2">
+                                            Scenario: Edit an existing maintenance record
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-4-2" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-success">
+                                                <b>Given</b> I have a Mantenimiento instance
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> there is a maintenance record with idmantenimiento 1
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>When</b> I edit the maintenance record with idmantenimiento 1, setting idmaquinaria to 2, fecha to &quot;2024-07-01&quot;, descripcion to &quot;Reparación de motor&quot;, costopro to 500.75, idempleado to 2, estado to &quot;Completado&quot;, tipo 2
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>Then</b> the maintenance list should include &quot;Reparación de motor&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-4-3"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-4-3">
+                                            Scenario: Delete an existing maintenance record
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-4-3" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-success">
+                                                <b>Given</b> I have a Mantenimiento instance
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> there is a maintenance record with idmantenimiento 3
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-danger">
+                                                <b>When</b> I delete the maintenance record with idmantenimiento 3
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(Fatal error: Call to a member function eliminarMantenimiento() on null)</p>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>Then</b> the maintenance list should not include &quot;Reparación de motor&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-4-4"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-4-4">
+                                            Scenario: Search maintenance records by term
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-4-4" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-success">
+                                                <b>Given</b> I have a Mantenimiento instance
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-danger">
+                                                <b>When</b> I search for maintenance records with term &quot;Limpieza y revisión&quot;
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(Fatal error: Call to a member function buscarMantenimiento() on null)</p>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>Then</b> the search results should include &quot;Limpieza y revisión&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-4-5"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-4-5">
+                                            Scenario: Get maintenance details by ID
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-4-5" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-success">
+                                                <b>Given</b> I have a Mantenimiento instance
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> there is a maintenance record with idmantenimiento 2
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-danger">
+                                                <b>When</b> I fetch the details of the maintenance record with idmantenimiento 2
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(Fatal error: Call to a member function obtenerMantenimientoPorId() on null)</p>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>Then</b> I should receive the details of the maintenance record
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                            </div>
+                </div>
+                            <div class="feature" data-id="feature-5">
+                    <div class="col-sm-4">
+                        <div class="card failed">
+                            <div class="header">
+                                <h2>Feature: Manage machinery</h2>
+                            </div>
+                            <div class="info">
+                                <p>As a user<br />
+I want to manage machinery in the database<br />
+So that I can see, add, edit, delete, and search machinery</p>
+                            </div>
+                            <div class="footer">
+                                <div class="tags">
+                                                                    </div>
+                                                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-green" role="progressbar"
+                                             style="width: 0%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                        <div class="progress-bar progress-bar-warning" role="progressbar"
+                                             style="width: 0%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                        <div class="progress-bar progress-bar-red" role="progressbar"
+                                             style="width: 100%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 details panel-group" role="tablist" aria-multiselectable="true">
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-5-1"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-5-1">
+                                            Scenario: List all machinery
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-5-1" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-success">
+                                                <b>Given</b> there is machinery in the database
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-danger">
+                                                <b>When</b> I request all machinery
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(Fatal error: Class &quot;App\Model\Maquinaria&quot; not found)</p>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>Then</b> I should get a list of machinery
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>And</b> each machinery should have an &quot;idmaquinaria&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>And</b> each machinery should have a &quot;nombre&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-5-2"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-5-2">
+                                            Scenario: Add a new machinery
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-5-2" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-success">
+                                                <b>Given</b> I have a Maquinaria instance
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-danger">
+                                                <b>When</b> I add a new machinery with numserie &quot;ABC123&quot;, nombre &quot;Excavator&quot;, marca &quot;CAT&quot;, modelo &quot;X1&quot;, costoh 100.50, imagenprincipal &quot;excavator.jpg&quot;
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(Fatal error: Class &quot;App\Model\Maquinaria&quot; not found)</p>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>Then</b> the machinery list should include &quot;Excavator&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-5-3"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-5-3">
+                                            Scenario: Edit an existing machinery
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-5-3" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-success">
+                                                <b>Given</b> I have a Maquinaria instance
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-danger">
+                                                <b>And</b> there is a machinery with idmaquinaria 1
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(Fatal error: Call to a member function obtenerMaquinariaPorId() on null)</p>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>When</b> I edit the machinery with idmaquinaria 1, setting numserie to &quot;XYZ789&quot;, nombre to &quot;Bulldozer&quot;, marca to &quot;CAT&quot;, modelo to &quot;B2&quot;, costoh to 150.75, imagenprincipal to &quot;bulldozer.jpg&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>Then</b> the machinery list should include &quot;Bulldozer&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-5-4"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-5-4">
+                                            Scenario: Delete an existing machinery
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-5-4" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-success">
+                                                <b>Given</b> I have a Maquinaria instance
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-danger">
+                                                <b>When</b> I delete the machinery with idmaquinaria 834
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(Fatal error: Class &quot;App\Model\Maquinaria&quot; not found)</p>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>Then</b> the machinery list should not include &quot;Excavator&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-5-5"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-5-5">
+                                            Scenario: Search machinery by term
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-5-5" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-success">
+                                                <b>Given</b> I have a Maquinaria instance
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-danger">
+                                                <b>When</b> I search for machinery with term &quot;Excavator&quot;
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(Fatal error: Class &quot;App\Model\Maquinaria&quot; not found)</p>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>Then</b> the search results should include &quot;Excavator&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                            </div>
+                </div>
+                        </div>
+</div>
+<!-- /container -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    window.onload = function () {
+        var featureChart = document.getElementById("chart-features").getContext("2d");
+        var scenarioChart = document.getElementById("chart-scenarios").getContext("2d");
+        var stepChart = document.getElementById("chart-steps").getContext("2d");
+        new Chart(featureChart, {type: 'doughnut', options: {legend: {display: false}}, data: {
+                labels: ['Failed', 'Pending', 'Passed'],
+                datasets: [{
+                    data: [23, 0, 0],
+                    backgroundColor: ['#F7464A', 'e38d13', '#00a65a'],
+                }],
+            }});
+        new Chart(scenarioChart, {type: 'doughnut', options: {legend: {display: false}}, data: {
+                labels: ['Failed', 'Passed'],
+                datasets: [{
+                    data: [5, 0],
+                    backgroundColor: ["#F7464A", "#00a65a"],
+                }],
+            }});
+        new Chart(stepChart, {type: 'doughnut', options: {legend: {display: false}}, data: {
+                labels: ['Failed','Passed'],
+                datasets: [{
+                    data: [22, 14],
+                    backgroundColor: ["#F7464A", "#00a65a"],
+                }],
+            }});
+    };
+</script>
+<script type="text/javascript">
+    function showOverview() {
+        $("#feature-overview").show();
+        $("#scenario-overview").hide();
+    }
+    function showDetails() {
+        $("#feature-overview").hide();
+        $("#scenario-overview").show();
+    }
+    function showFeatureDetail(featureId) {
+        $("#scenario-overview .feature").hide();
+        $("#scenario-overview .feature[data-id='" + featureId + "']").show();
+    }
+    $(function () {
+        $('.collapse').collapse();
+
+        $('.filters').click()
+        {
+            showOverview();
+        }
+
+        $('.filters #feature-failed-filter').click(function () {
+            showOverview();
+            $('.feature').hide();
+            $('.card.failed').parent().show();
+        });
+        $('.filters #feature-pending-filter').click(function () {
+            showOverview();
+            $('.feature').hide();
+            $('.card.pending').parent().show();
+        });
+        $('.filters #feature-passed-filter').click(function () {
+            showOverview();
+            $('.feature').hide();
+            $('.card.passed').parent().show();
+        });
+        $('.filters #feature-all-filter').click(function () {
+            showOverview();
+            $('.feature').show();
+        });
+    });
+
+    $(function () {
+        $(".feature").click(function () {
+            var featureId = $(this).data("id");
+            showDetails();
+            showFeatureDetail(featureId);
+        });
+    });
+</script>
+</body>
+</html>
+
+        <div class="summary failed">
+            <div class="counters">
+                <p class="features">
+                    5 features ( <strong class="failed">5 fail</strong> )
+                </p>
+                <p class="scenarios">
+                    23 scenarios ( <strong class="failed">23 fail</strong> )
+                </p>
+                <p class="steps">
+                    81 steps ( <strong class="passed">14 success</strong> <strong class="pending">3 pending</strong> <strong class="skipped">42 skipped</strong> <strong class="failed">22 fail</strong> )
+                </p>
+                <p class="time">
+                0m0.09s - 13.20Mb
+                </p>
+            </div>
+            <div class="switchers">
+                <a href="javascript:void(0)" id="behat_show_all">[+] all</a>
+                <a href="javascript:void(0)" id="behat_hide_all">[-] all</a>
+            </div>
+        </div> 
+            <div class="pending">Pending steps :
+                <ul>
+                    <li>When I edit the maintenance record with idmantenimiento 1, setting idmaquinaria to 2, fecha to "2024-07-01", descripcion to "Reparación de motor", costopro to 500.75, idempleado to 2, estado to "Completado", tipo 2</li>
+                    <li>And each machinery should have a "nombre"</li>
+                    <li>Then the machinery list should not include "Excavator"</li>
+                </ul>
+            </div>
+    </div><script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js'></script>
+        <script type='text/javascript'>
+            $(document).ready(function(){
+                Array.prototype.diff = function(a) {
+                    return this.filter(function(i) {return a.indexOf(i) < 0;});
+                };
+
+                $('#behat .feature h2').click(function(){
+                    $(this).parent().toggleClass('jq-toggle-opened');
+                }).parent().addClass('jq-toggle');
+
+                $('#behat .scenario h3').click(function(){
+                    $(this).parent().toggleClass('jq-toggle-opened');
+                }).parent().addClass('jq-toggle');
+
+                $('#behat_show_all').click(function(){
+                    $('#behat .feature').addClass('jq-toggle-opened');
+                    $('#behat .scenario').addClass('jq-toggle-opened');
+                });
+
+                $('#behat_hide_all').click(function(){
+                    $('#behat .feature').removeClass('jq-toggle-opened');
+                    $('#behat .scenario').removeClass('jq-toggle-opened');
+                });
+
+                $('#behat .summary .counters .scenarios .passed')
+                    .addClass('switcher')
+                    .click(function(){
+                        var scenario = $('.feature .scenario:not(:has(.failed, .pending))');
+                        var feature  = scenario.parent();
+
+                        $('#behat_hide_all').click();
+
+                        scenario.addClass('jq-toggle-opened');
+                        feature.addClass('jq-toggle-opened');
+                    });
+
+
+                $('#behat .summary .counters .scenarios .failed')
+                    .addClass('switcher')
+                    .click(function(){
+                        var scenario = $('.feature .scenario:has(.failed, .pending)');
+                        var feature = scenario.parent();
+
+                        $('#behat_hide_all').click();
+
+                        scenario.addClass('jq-toggle-opened');
+                        feature.addClass('jq-toggle-opened');
+                    });
+
+                $('#behat .summary .counters .steps .passed')
+                    .addClass('switcher')
+                    .click(function(){
+                        var scenario = $('.feature .scenario:has(.passed)');
+                        var feature  = scenario.parent();
+
+                        $('#behat_hide_all').click();
+
+                        scenario.addClass('jq-toggle-opened');
+                        feature.addClass('jq-toggle-opened');
+                    });
+
+                $('#behat .summary .counters .steps .failed')
+                    .addClass('switcher')
+                    .click(function(){
+                        var scenario = $('.feature .scenario:has(.failed)');
+                        var feature = scenario.parent();
+
+                        $('#behat_hide_all').click();
+
+                        scenario.addClass('jq-toggle-opened');
+                        feature.addClass('jq-toggle-opened');
+                    });
+
+                $('#behat .summary .counters .steps .skipped')
+                    .addClass('switcher')
+                    .click(function(){
+                        var scenario = $('.feature .scenario:has(.skipped)');
+                        var feature = scenario.parent();
+
+                        $('#behat_hide_all').click();
+
+                        scenario.addClass('jq-toggle-opened');
+                        feature.addClass('jq-toggle-opened');
+                    });
+
+                $('#behat .summary .counters .steps .pending')
+                    .addClass('switcher')
+                    .click(function(){
+                        var scenario = $('.feature .scenario:has(.pending)');
+                        var feature = scenario.parent();
+
+                        $('#behat_hide_all').click();
+
+                        scenario.addClass('jq-toggle-opened');
+                        feature.addClass('jq-toggle-opened');
+                    });
+            });
+        </script>
+</body>
+</html>
