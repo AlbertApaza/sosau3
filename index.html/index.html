@@ -596,11 +596,11 @@
         <div class="feature">
             <h2>
                 <span id="feat2" class="keyword"> Feature: </span>
-                <span class="title">Gestión de Cotizaciones</span>
+                <span class="title">Administrar Cotizaciones</span>
             </h2>
-            <p>Como usuario,
-Quiero gestionar cotizaciones en el sistema
-Para poder ver, añadir, editar y eliminar cotizaciones, así como recuperar detalles de clientes, maquinaria y ubicaciones.</p>
+            <p>Como Personal administrativo
+Quiero administrar cotizaciones en el sistema
+Para poder crear, visualizar, actualizar y eliminar cotizaciones</p>
             <ul class="tags">
             </ul>
             <div class="scenario">
@@ -608,180 +608,70 @@ Para poder ver, añadir, editar y eliminar cotizaciones, así como recuperar det
                 </ul>
                 <h3>
                     <span class="keyword"> Scenario: </span>
-                    <span class="title">Crear una nueva cotización</span>
+                    <span class="title">Crear Cotización</span>
                 </h3>
                 <ol>
                     <li class="pending">
                         <div class="step">
                             <span class="keyword">Given </span>
-                            <span class="text">tengo una instancia del modelo Cotizacion </span>
-                            <span class="path"></span>
-                        </div>
-                    </li>
-                    <li class="skipped">
-                        <div class="step">
-                            <span class="keyword">When </span>
-                            <span class="text">a&ntilde;ado una nueva cotizaci&oacute;n para el cliente con idcliente 1 </span>
-                            <span class="path">CotizacionContext::anadoUnaNuevaCotizacionParaElCliente()</span>
-                        </div>
-                    </li>
-                    <li class="skipped">
-                        <div class="step">
-                            <span class="keyword">Then </span>
-                            <span class="text">la cotizaci&oacute;n deber&iacute;a a&ntilde;adirse exitosamente </span>
-                            <span class="path">CotizacionContext::laCotizacionDeberiaAnadirseExitosamente()</span>
-                        </div>
-                    </li>
-                </ol>
-            </div>
-            <div class="scenario">
-                <ul class="tags">
-                </ul>
-                <h3>
-                    <span class="keyword"> Scenario: </span>
-                    <span class="title">Actualizar una cotización existente</span>
-                </h3>
-                <ol>
-                    <li class="pending">
-                        <div class="step">
-                            <span class="keyword">Given </span>
-                            <span class="text">tengo una instancia del modelo Cotizacion </span>
+                            <span class="text">que el Personal navega a la p&aacute;gina de administraci&oacute;n de cotizaciones </span>
                             <span class="path"></span>
                         </div>
                     </li>
                     <li class="pending">
                         <div class="step">
                             <span class="keyword">And </span>
-                            <span class="text">existe una cotizaci&oacute;n con idcotizacion 431 </span>
-                            <span class="path"></span>
-                        </div>
-                    </li>
-                    <li class="pending">
-                        <div class="step">
-                            <span class="keyword">When </span>
-                            <span class="text">actualizo la cotizaci&oacute;n con idcotizacion 431, estableciendo idcliente a 2, idmaquinaria a 567, idlugar a 4, total a 1500.50 y tiempo a 5 </span>
-                            <span class="path"></span>
-                        </div>
-                    </li>
-                    <li class="skipped">
-                        <div class="step">
-                            <span class="keyword">Then </span>
-                            <span class="text">la cotizaci&oacute;n con idcotizacion 431 deber&iacute;a actualizarse exitosamente </span>
-                            <span class="path">CotizacionContext::laCotizacionConIdcotizacionDeberiaActualizarseExitosamente()</span>
-                        </div>
-                    </li>
-                </ol>
-            </div>
-            <div class="scenario">
-                <ul class="tags">
-                </ul>
-                <h3>
-                    <span class="keyword"> Scenario: </span>
-                    <span class="title">Obtener detalles del cliente para la cotización</span>
-                </h3>
-                <ol>
-                    <li class="pending">
-                        <div class="step">
-                            <span class="keyword">Given </span>
-                            <span class="text">tengo una instancia del modelo Cotizacion </span>
+                            <span class="text">selecciona &quot;Crear nueva cotizaci&oacute;n&quot; </span>
                             <span class="path"></span>
                         </div>
                     </li>
                     <li class="pending">
                         <div class="step">
                             <span class="keyword">And </span>
-                            <span class="text">existe un cliente con idcliente 2 </span>
-                            <span class="path"></span>
-                        </div>
-                    </li>
-                    <li class="skipped">
-                        <div class="step">
-                            <span class="keyword">When </span>
-                            <span class="text">obtengo los detalles del cliente con idcliente 2 </span>
-                            <span class="path">CotizacionContext::obtengoLosDetallesDelClienteConIdcliente()</span>
-                        </div>
-                    </li>
-                    <li class="skipped">
-                        <div class="step">
-                            <span class="keyword">Then </span>
-                            <span class="text">deber&iacute;a recibir los detalles del cliente </span>
-                            <span class="path">CotizacionContext::deberiaRecibirLosDetallesDelCliente()</span>
-                        </div>
-                    </li>
-                </ol>
-            </div>
-            <div class="scenario">
-                <ul class="tags">
-                </ul>
-                <h3>
-                    <span class="keyword"> Scenario: </span>
-                    <span class="title">Obtener detalles de la maquinaria para la cotización</span>
-                </h3>
-                <ol>
-                    <li class="pending">
-                        <div class="step">
-                            <span class="keyword">Given </span>
-                            <span class="text">tengo una instancia del modelo Cotizacion </span>
+                            <span class="text">no ingresa datos enviando el formulario </span>
                             <span class="path"></span>
                         </div>
                     </li>
                     <li class="pending">
                         <div class="step">
                             <span class="keyword">And </span>
-                            <span class="text">existe una maquinaria con idmaquinaria 567 </span>
+                            <span class="text">env&iacute;a el formulario </span>
                             <span class="path"></span>
                         </div>
                     </li>
-                    <li class="skipped">
-                        <div class="step">
-                            <span class="keyword">When </span>
-                            <span class="text">obtengo los detalles de la maquinaria con idmaquinaria 567 </span>
-                            <span class="path">CotizacionContext::obtengoLosDetallesDeLaMaquinariaConIdmaquinaria()</span>
-                        </div>
-                    </li>
-                    <li class="skipped">
-                        <div class="step">
-                            <span class="keyword">Then </span>
-                            <span class="text">deber&iacute;a recibir los detalles de la maquinaria </span>
-                            <span class="path">CotizacionContext::deberiaRecibirLosDetallesDeLaMaquinaria()</span>
-                        </div>
-                    </li>
-                </ol>
-            </div>
-            <div class="scenario">
-                <ul class="tags">
-                </ul>
-                <h3>
-                    <span class="keyword"> Scenario: </span>
-                    <span class="title">Obtener detalles de la ubicación para la cotización</span>
-                </h3>
-                <ol>
                     <li class="pending">
                         <div class="step">
-                            <span class="keyword">Given </span>
-                            <span class="text">tengo una instancia del modelo Cotizacion </span>
+                            <span class="keyword">Then </span>
+                            <span class="text">el sistema muestra un mensaje de error &quot;El campo idcliente no puede estar vac&iacute;o&quot; </span>
                             <span class="path"></span>
                         </div>
                     </li>
                     <li class="pending">
                         <div class="step">
                             <span class="keyword">And </span>
-                            <span class="text">existe una ubicaci&oacute;n con idlugar 4 </span>
+                            <span class="text">completa el formulario con la informaci&oacute;n de la cotizaci&oacute;n </span>
                             <span class="path"></span>
                         </div>
                     </li>
-                    <li class="skipped">
+                    <li class="pending">
                         <div class="step">
-                            <span class="keyword">When </span>
-                            <span class="text">obtengo los detalles de la ubicaci&oacute;n con idlugar 4 </span>
-                            <span class="path">CotizacionContext::obtengoLosDetallesDeLaUbicacionConIdlugar()</span>
+                            <span class="keyword">And </span>
+                            <span class="text">env&iacute;a el formulario </span>
+                            <span class="path"></span>
                         </div>
                     </li>
-                    <li class="skipped">
+                    <li class="pending">
                         <div class="step">
                             <span class="keyword">Then </span>
-                            <span class="text">deber&iacute;a recibir los detalles de la ubicaci&oacute;n </span>
-                            <span class="path">CotizacionContext::deberiaRecibirLosDetallesDeLaUbicacion()</span>
+                            <span class="text">el sistema guarda la nueva cotizaci&oacute;n en la base de datos </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">muestra un mensaje de confirmaci&oacute;n </span>
+                            <span class="path"></span>
                         </div>
                     </li>
                 </ol>
@@ -791,28 +681,21 @@ Para poder ver, añadir, editar y eliminar cotizaciones, así como recuperar det
                 </ul>
                 <h3>
                     <span class="keyword"> Scenario: </span>
-                    <span class="title">Obtener toda la maquinaria disponible para la cotización</span>
+                    <span class="title">Visualizar Cotizaciones</span>
                 </h3>
                 <ol>
                     <li class="pending">
                         <div class="step">
                             <span class="keyword">Given </span>
-                            <span class="text">tengo una instancia del modelo Cotizacion </span>
+                            <span class="text">que el Personal navega a la p&aacute;gina de administraci&oacute;n de cotizaciones </span>
                             <span class="path"></span>
                         </div>
                     </li>
-                    <li class="skipped">
-                        <div class="step">
-                            <span class="keyword">When </span>
-                            <span class="text">obtengo toda la maquinaria disponible </span>
-                            <span class="path">CotizacionContext::obtengoTodaLaMaquinariaDisponible()</span>
-                        </div>
-                    </li>
-                    <li class="skipped">
+                    <li class="pending">
                         <div class="step">
                             <span class="keyword">Then </span>
-                            <span class="text">deber&iacute;a recibir una lista de toda la maquinaria </span>
-                            <span class="path">CotizacionContext::deberiaRecibirUnaListaDeTodaLaMaquinaria()</span>
+                            <span class="text">el sistema muestra la lista de cotizaciones disponibles </span>
+                            <span class="path"></span>
                         </div>
                     </li>
                 </ol>
@@ -822,28 +705,94 @@ Para poder ver, añadir, editar y eliminar cotizaciones, así como recuperar det
                 </ul>
                 <h3>
                     <span class="keyword"> Scenario: </span>
-                    <span class="title">Obtener todas las ubicaciones disponibles para la cotización</span>
+                    <span class="title">Actualizar Cotización</span>
                 </h3>
                 <ol>
                     <li class="pending">
                         <div class="step">
                             <span class="keyword">Given </span>
-                            <span class="text">tengo una instancia del modelo Cotizacion </span>
+                            <span class="text">que el Personal navega a la p&aacute;gina de administraci&oacute;n de cotizaciones </span>
                             <span class="path"></span>
                         </div>
                     </li>
-                    <li class="skipped">
+                    <li class="pending">
                         <div class="step">
-                            <span class="keyword">When </span>
-                            <span class="text">obtengo todas las ubicaciones disponibles </span>
-                            <span class="path">CotizacionContext::obtengoTodasLasUbicacionesDisponibles()</span>
+                            <span class="keyword">And </span>
+                            <span class="text">selecciona una cotizaci&oacute;n para actualizar </span>
+                            <span class="path"></span>
                         </div>
                     </li>
-                    <li class="skipped">
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">modifica la informaci&oacute;n de la cotizaci&oacute;n </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">env&iacute;a el formulario </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="pending">
                         <div class="step">
                             <span class="keyword">Then </span>
-                            <span class="text">deber&iacute;a recibir una lista de todas las ubicaciones </span>
-                            <span class="path">CotizacionContext::deberiaRecibirUnaListaDeTodasLasUbicaciones()</span>
+                            <span class="text">el sistema actualiza la cotizaci&oacute;n en la base de datos </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">muestra un mensaje de confirmaci&oacute;n </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Eliminar Cotización</span>
+                </h3>
+                <ol>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">que el Personal navega a la p&aacute;gina de administraci&oacute;n de cotizaciones </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">selecciona una cotizaci&oacute;n para eliminar </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">confirma la eliminaci&oacute;n </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">el sistema elimina la cotizaci&oacute;n de la base de datos </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">muestra un mensaje de confirmaci&oacute;n </span>
+                            <span class="path"></span>
                         </div>
                     </li>
                 </ol>
@@ -892,7 +841,7 @@ Para poder ver, añadir, editar y eliminar cotizaciones, así como recuperar det
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Automated test report - 11/07/2024 21:32:43</a>
+            <a class="navbar-brand" href="#">Automated test report - 11/07/2024 21:37:28</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -918,10 +867,10 @@ Para poder ver, añadir, editar y eliminar cotizaciones, así como recuperar det
                 <canvas id="chart-scenarios" width="300" height="300"/>
             </div>
             <div class="chart-summary title">
-                14
+                11
                 Scenarios:
             </div>
-            <div class="chart-summary failed">9 failed</div>
+            <div class="chart-summary failed">6 failed</div>
             <div class="chart-summary undefined">0 undefined</div>
             <div class="chart-summary skipped">0 skipped</div>
         </div>
@@ -982,12 +931,12 @@ Para poder ver, añadir, editar y eliminar cotizaciones, así como recuperar det
                                                     <div class="col-sm-4 feature" data-id="feature-2">
                                 <div class="card failed">
                                     <div class="header">
-                                        <h2>Feature: Gestión de Cotizaciones</h2>
+                                        <h2>Feature: Administrar Cotizaciones</h2>
                                     </div>
                                     <div class="info">
-                                        <p>Como usuario,<br />
-Quiero gestionar cotizaciones en el sistema<br />
-Para poder ver, añadir, editar y eliminar cotizaciones, así como recuperar detalles de clientes, maquinaria y ubicaciones.</p>
+                                        <p>Como Personal administrativo<br />
+Quiero administrar cotizaciones en el sistema<br />
+Para poder crear, visualizar, actualizar y eliminar cotizaciones</p>
                                     </div>
                                     <div class="footer">
                                         <div class="tags">
@@ -1292,12 +1241,12 @@ Para poder ver, añadir, editar y eliminar cotizaciones, así como recuperar det
                     <div class="col-sm-4">
                         <div class="card failed">
                             <div class="header">
-                                <h2>Feature: Gestión de Cotizaciones</h2>
+                                <h2>Feature: Administrar Cotizaciones</h2>
                             </div>
                             <div class="info">
-                                <p>Como usuario,<br />
-Quiero gestionar cotizaciones en el sistema<br />
-Para poder ver, añadir, editar y eliminar cotizaciones, así como recuperar detalles de clientes, maquinaria y ubicaciones.</p>
+                                <p>Como Personal administrativo<br />
+Quiero administrar cotizaciones en el sistema<br />
+Para poder crear, visualizar, actualizar y eliminar cotizaciones</p>
                             </div>
                             <div class="footer">
                                 <div class="tags">
@@ -1327,7 +1276,7 @@ Para poder ver, añadir, editar y eliminar cotizaciones, así como recuperar det
                                            href="#scenario-2-1"
                                            aria-expanded="true"
                                            aria-controls="scenario-2-1">
-                                            Scenario: Crear una nueva cotización
+                                            Scenario: Crear Cotización
                                         </a>
 
                                         <div class="tags pull-right">
@@ -1339,13 +1288,31 @@ Para poder ver, añadir, editar y eliminar cotizaciones, así como recuperar det
                                      aria-labelledby="headingOne">
                                     <ul class="list-group">
                                                                                     <li class="list-group-item alert alert-warning">
-                                                <b>Given</b> tengo una instancia del modelo Cotizacion
+                                                <b>Given</b> que el Personal navega a la página de administración de cotizaciones
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
-                                                <b>When</b> añado una nueva cotización para el cliente con idcliente 1
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>And</b> selecciona &quot;Crear nueva cotización&quot;
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
-                                                <b>Then</b> la cotización debería añadirse exitosamente
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>And</b> no ingresa datos enviando el formulario
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>And</b> envía el formulario
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>Then</b> el sistema muestra un mensaje de error &quot;El campo idcliente no puede estar vacío&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>And</b> completa el formulario con la información de la cotización
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>And</b> envía el formulario
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>Then</b> el sistema guarda la nueva cotización en la base de datos
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>And</b> muestra un mensaje de confirmación
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                 </ul>
                                 </div>
@@ -1357,7 +1324,7 @@ Para poder ver, añadir, editar y eliminar cotizaciones, así como recuperar det
                                            href="#scenario-2-2"
                                            aria-expanded="true"
                                            aria-controls="scenario-2-2">
-                                            Scenario: Actualizar una cotización existente
+                                            Scenario: Visualizar Cotizaciones
                                         </a>
 
                                         <div class="tags pull-right">
@@ -1369,16 +1336,10 @@ Para poder ver, añadir, editar y eliminar cotizaciones, así como recuperar det
                                      aria-labelledby="headingOne">
                                     <ul class="list-group">
                                                                                     <li class="list-group-item alert alert-warning">
-                                                <b>Given</b> tengo una instancia del modelo Cotizacion
+                                                <b>Given</b> que el Personal navega a la página de administración de cotizaciones
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                         <li class="list-group-item alert alert-warning">
-                                                <b>And</b> existe una cotización con idcotizacion 431
-                                                                                                                                                                                                                                                                                                                                                </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
-                                                <b>When</b> actualizo la cotización con idcotizacion 431, estableciendo idcliente a 2, idmaquinaria a 567, idlugar a 4, total a 1500.50 y tiempo a 5
-                                                                                                                                                                                                                                                                                                                                                </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
-                                                <b>Then</b> la cotización con idcotizacion 431 debería actualizarse exitosamente
+                                                <b>Then</b> el sistema muestra la lista de cotizaciones disponibles
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                 </ul>
                                 </div>
@@ -1390,7 +1351,7 @@ Para poder ver, añadir, editar y eliminar cotizaciones, así como recuperar det
                                            href="#scenario-2-3"
                                            aria-expanded="true"
                                            aria-controls="scenario-2-3">
-                                            Scenario: Obtener detalles del cliente para la cotización
+                                            Scenario: Actualizar Cotización
                                         </a>
 
                                         <div class="tags pull-right">
@@ -1402,16 +1363,22 @@ Para poder ver, añadir, editar y eliminar cotizaciones, así como recuperar det
                                      aria-labelledby="headingOne">
                                     <ul class="list-group">
                                                                                     <li class="list-group-item alert alert-warning">
-                                                <b>Given</b> tengo una instancia del modelo Cotizacion
+                                                <b>Given</b> que el Personal navega a la página de administración de cotizaciones
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                         <li class="list-group-item alert alert-warning">
-                                                <b>And</b> existe un cliente con idcliente 2
+                                                <b>And</b> selecciona una cotización para actualizar
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
-                                                <b>When</b> obtengo los detalles del cliente con idcliente 2
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>And</b> modifica la información de la cotización
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
-                                                <b>Then</b> debería recibir los detalles del cliente
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>And</b> envía el formulario
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>Then</b> el sistema actualiza la cotización en la base de datos
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>And</b> muestra un mensaje de confirmación
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                 </ul>
                                 </div>
@@ -1423,7 +1390,7 @@ Para poder ver, añadir, editar y eliminar cotizaciones, así como recuperar det
                                            href="#scenario-2-4"
                                            aria-expanded="true"
                                            aria-controls="scenario-2-4">
-                                            Scenario: Obtener detalles de la maquinaria para la cotización
+                                            Scenario: Eliminar Cotización
                                         </a>
 
                                         <div class="tags pull-right">
@@ -1435,109 +1402,19 @@ Para poder ver, añadir, editar y eliminar cotizaciones, así como recuperar det
                                      aria-labelledby="headingOne">
                                     <ul class="list-group">
                                                                                     <li class="list-group-item alert alert-warning">
-                                                <b>Given</b> tengo una instancia del modelo Cotizacion
+                                                <b>Given</b> que el Personal navega a la página de administración de cotizaciones
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                         <li class="list-group-item alert alert-warning">
-                                                <b>And</b> existe una maquinaria con idmaquinaria 567
-                                                                                                                                                                                                                                                                                                                                                </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
-                                                <b>When</b> obtengo los detalles de la maquinaria con idmaquinaria 567
-                                                                                                                                                                                                                                                                                                                                                </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
-                                                <b>Then</b> debería recibir los detalles de la maquinaria
-                                                                                                                                                                                                                                                                                                                                                </li>
-                                                                                                                                                                                                                </ul>
-                                </div>
-                            </div>
-                                                    <div class="panel panel-default failed">
-                                <div class="panel-heading" role="tab">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion"
-                                           href="#scenario-2-5"
-                                           aria-expanded="true"
-                                           aria-controls="scenario-2-5">
-                                            Scenario: Obtener detalles de la ubicación para la cotización
-                                        </a>
-
-                                        <div class="tags pull-right">
-                                                                                                                                </div>
-                                    </h4>
-                                </div>
-                                <div id="scenario-2-5" class="panel-collapse collapse in"
-                                     role="tabpanel"
-                                     aria-labelledby="headingOne">
-                                    <ul class="list-group">
-                                                                                    <li class="list-group-item alert alert-warning">
-                                                <b>Given</b> tengo una instancia del modelo Cotizacion
+                                                <b>And</b> selecciona una cotización para eliminar
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                         <li class="list-group-item alert alert-warning">
-                                                <b>And</b> existe una ubicación con idlugar 4
+                                                <b>And</b> confirma la eliminación
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
-                                                <b>When</b> obtengo los detalles de la ubicación con idlugar 4
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>Then</b> el sistema elimina la cotización de la base de datos
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
-                                                <b>Then</b> debería recibir los detalles de la ubicación
-                                                                                                                                                                                                                                                                                                                                                </li>
-                                                                                                                                                                                                                </ul>
-                                </div>
-                            </div>
-                                                    <div class="panel panel-default failed">
-                                <div class="panel-heading" role="tab">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion"
-                                           href="#scenario-2-6"
-                                           aria-expanded="true"
-                                           aria-controls="scenario-2-6">
-                                            Scenario: Obtener toda la maquinaria disponible para la cotización
-                                        </a>
-
-                                        <div class="tags pull-right">
-                                                                                                                                </div>
-                                    </h4>
-                                </div>
-                                <div id="scenario-2-6" class="panel-collapse collapse in"
-                                     role="tabpanel"
-                                     aria-labelledby="headingOne">
-                                    <ul class="list-group">
-                                                                                    <li class="list-group-item alert alert-warning">
-                                                <b>Given</b> tengo una instancia del modelo Cotizacion
-                                                                                                                                                                                                                                                                                                                                                </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
-                                                <b>When</b> obtengo toda la maquinaria disponible
-                                                                                                                                                                                                                                                                                                                                                </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
-                                                <b>Then</b> debería recibir una lista de toda la maquinaria
-                                                                                                                                                                                                                                                                                                                                                </li>
-                                                                                                                                                                                                                </ul>
-                                </div>
-                            </div>
-                                                    <div class="panel panel-default failed">
-                                <div class="panel-heading" role="tab">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion"
-                                           href="#scenario-2-7"
-                                           aria-expanded="true"
-                                           aria-controls="scenario-2-7">
-                                            Scenario: Obtener todas las ubicaciones disponibles para la cotización
-                                        </a>
-
-                                        <div class="tags pull-right">
-                                                                                                                                </div>
-                                    </h4>
-                                </div>
-                                <div id="scenario-2-7" class="panel-collapse collapse in"
-                                     role="tabpanel"
-                                     aria-labelledby="headingOne">
-                                    <ul class="list-group">
-                                                                                    <li class="list-group-item alert alert-warning">
-                                                <b>Given</b> tengo una instancia del modelo Cotizacion
-                                                                                                                                                                                                                                                                                                                                                </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
-                                                <b>When</b> obtengo todas las ubicaciones disponibles
-                                                                                                                                                                                                                                                                                                                                                </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
-                                                <b>Then</b> debería recibir una lista de todas las ubicaciones
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>And</b> muestra un mensaje de confirmación
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                 </ul>
                                 </div>
@@ -1560,7 +1437,7 @@ Para poder ver, añadir, editar y eliminar cotizaciones, así como recuperar det
         new Chart(featureChart, {type: 'doughnut', options: {legend: {display: false}}, data: {
                 labels: ['Failed', 'Pending', 'Passed'],
                 datasets: [{
-                    data: [9, 0, 5],
+                    data: [6, 0, 5],
                     backgroundColor: ['#F7464A', 'e38d13', '#00a65a'],
                 }],
             }});
@@ -1639,13 +1516,13 @@ Para poder ver, añadir, editar y eliminar cotizaciones, así como recuperar det
                     2 features ( <strong class="failed">2 fail</strong> )
                 </p>
                 <p class="scenarios">
-                    14 scenarios ( <strong class="passed">5 success</strong> <strong class="failed">9 fail</strong> )
+                    11 scenarios ( <strong class="passed">5 success</strong> <strong class="failed">6 fail</strong> )
                 </p>
                 <p class="steps">
-                    51 steps ( <strong class="passed">24 success</strong> <strong class="pending">14 pending</strong> <strong class="skipped">13 skipped</strong> )
+                    48 steps ( <strong class="passed">24 success</strong> <strong class="pending">24 pending</strong> )
                 </p>
                 <p class="time">
-                0m0.05s - 13.11Mb
+                0m0.05s - 13.08Mb
                 </p>
             </div>
             <div class="switchers">
@@ -1657,18 +1534,28 @@ Para poder ver, añadir, editar y eliminar cotizaciones, así como recuperar det
                 <ul>
                     <li>Then el sistema muestra un mensaje de error indicando que los campos del formulario no pueden estar vacíos</li>
                     <li>Then el sistema muestra un mensaje de error indicando que los campos del formulario no pueden estar vacíos</li>
-                    <li>Given tengo una instancia del modelo Cotizacion</li>
-                    <li>Given tengo una instancia del modelo Cotizacion</li>
-                    <li>And existe una cotización con idcotizacion 431</li>
-                    <li>When actualizo la cotización con idcotizacion 431, estableciendo idcliente a 2, idmaquinaria a 567, idlugar a 4, total a 1500.50 y tiempo a 5</li>
-                    <li>Given tengo una instancia del modelo Cotizacion</li>
-                    <li>And existe un cliente con idcliente 2</li>
-                    <li>Given tengo una instancia del modelo Cotizacion</li>
-                    <li>And existe una maquinaria con idmaquinaria 567</li>
-                    <li>Given tengo una instancia del modelo Cotizacion</li>
-                    <li>And existe una ubicación con idlugar 4</li>
-                    <li>Given tengo una instancia del modelo Cotizacion</li>
-                    <li>Given tengo una instancia del modelo Cotizacion</li>
+                    <li>Given que el Personal navega a la página de administración de cotizaciones</li>
+                    <li>And selecciona "Crear nueva cotización"</li>
+                    <li>And no ingresa datos enviando el formulario</li>
+                    <li>And envía el formulario</li>
+                    <li>Then el sistema muestra un mensaje de error "El campo idcliente no puede estar vacío"</li>
+                    <li>And completa el formulario con la información de la cotización</li>
+                    <li>And envía el formulario</li>
+                    <li>Then el sistema guarda la nueva cotización en la base de datos</li>
+                    <li>And muestra un mensaje de confirmación</li>
+                    <li>Given que el Personal navega a la página de administración de cotizaciones</li>
+                    <li>Then el sistema muestra la lista de cotizaciones disponibles</li>
+                    <li>Given que el Personal navega a la página de administración de cotizaciones</li>
+                    <li>And selecciona una cotización para actualizar</li>
+                    <li>And modifica la información de la cotización</li>
+                    <li>And envía el formulario</li>
+                    <li>Then el sistema actualiza la cotización en la base de datos</li>
+                    <li>And muestra un mensaje de confirmación</li>
+                    <li>Given que el Personal navega a la página de administración de cotizaciones</li>
+                    <li>And selecciona una cotización para eliminar</li>
+                    <li>And confirma la eliminación</li>
+                    <li>Then el sistema elimina la cotización de la base de datos</li>
+                    <li>And muestra un mensaje de confirmación</li>
                 </ul>
             </div>
     </div><script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js'></script>
