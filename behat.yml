@@ -5,6 +5,7 @@ default:
         - "%paths.base%/features"
       contexts:
         - ClienteContext
+        - CotizacionContext
   # formatters:
   #   junit:
       # output_path: "build/junit"
