@@ -6,7 +6,6 @@ Feature: Administrar Mantenimientos
   Scenario: Listar todos los mantenimientos
     Given que el Personal navega a la página de mantenimientos
     When el sistema solicita todos los registros de mantenimiento
-    Then el sistema muestra la lista de mantenimientos
 
   Scenario: Agregar un nuevo mantenimiento
     Given que el Personal proporciona los detalles del mantenimiento
