@@ -1,11 +1,17 @@
 <?php
+
+use App\Model\Cliente;
+use PHPUnit\Framework\Assert;
+
+use Behat\Behat\Hook\Scope\BeforeScenarioScope;
 use Behat\Behat\Context\Context;
-use Phake;
+use Behat\Gherkin\Node\PyStringNode;
+use Behat\Gherkin\Node\TableNode;
 
 /**
  * Defines application features from the specific context.
  */
-class Cliente implements \Behat\Behat\Context\Context
+class ClienteContext implements \Behat\Behat\Context\Context
 {
     private $cliente;
     private $clientsList;

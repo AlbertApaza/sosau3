@@ -1,10 +1,9 @@
 <?php
 // MantenimientoContext.php
-use Behat\Behat\Context\Context;
-use Phake;
 
+use App\Model\Mantenimiento;
 
-class Mantenimiento implements \Behat\Behat\Context\Context
+class MantenimientoContext implements \Behat\Behat\Context\Context
 {
     private $mantenimientoModel;
     private $newMaintenanceId;

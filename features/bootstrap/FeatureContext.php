@@ -1,12 +1,13 @@
 <?php
 
 use Behat\Behat\Context\Context;
-use Phake;
+use Behat\Gherkin\Node\PyStringNode;
+use Behat\Gherkin\Node\TableNode;
 
 /**
  * Defines application features from the specific context.
  */
-class Feature implements Context
+class FeatureContext implements Context
 {
     /**
      * Initializes context.

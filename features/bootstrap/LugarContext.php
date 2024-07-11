@@ -1,11 +1,10 @@
 <?php
 
 use Behat\Behat\Context\Context;
-use Phake;
+use App\Model\Lugar;
 
 
-
-class Lugar implements Context
+class LugarContext implements Context
 {
     private $places;
 
