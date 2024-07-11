@@ -1,3 +1,5 @@
+<?php
+
 use Behat\Behat\Context\Context;
 use PHPUnit\Framework\Assert;
 
@@ -141,3 +143,4 @@ class ClienteContext implements Context
         Assert::assertTrue($found, "Expected client '$expectedClient' not found in the search results.");
     }
 }
+?>
