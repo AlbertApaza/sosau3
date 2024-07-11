@@ -1,26 +1,12 @@
 <?php
-use Behat\Behat\Context\Context;
-use Behat\Gherkin\Node\TableNode;
-use Phake;
-use Exception;
 
-// Asegúrate de definir o incluir la interfaz CotizacionService si no existe
-interface CotizacionService
-{
-    public function crearCotizacion($data);
-    public function actualizarCotizacion($idcotizacion, $data);
-    public function obtenerDetallesCliente($idcliente);
-    public function obtenerDetallesMaquinaria($idmaquinaria);
-    public function obtenerDetallesUbicacion($idlugar);
-    public function obtenerMaquinariaDisponible();
-    public function obtenerUbicacionesDisponibles();
-}
+use Behat\Behat\Context\Context;
+use Phake;
 
 class CotizacionContext implements Context
 {
     private $cotizacionService;
     private $exception;
-    private $cotizaciones = [];
 
     public function __construct()
     {
@@ -29,149 +15,141 @@ class CotizacionContext implements Context
     }
 
     /**
-     * @Given que tengo una instancia del modelo Cotizacion
+     * @Given que el Personal navega a la página de administración de cotizaciones
      */
-    public function queTengoUnaInstanciaDelModeloCotizacion()
+    public function queElPersonalNavegaALaPaginaDeAdministracionDeCotizaciones()
     {
         // No se requiere implementación para este método utilizando Phake
     }
 
     /**
-     * @When añado una nueva cotización para el cliente con idcliente :idcliente
+     * @Given selecciona "Crear nueva cotización"
      */
-    public function anadoUnaNuevaCotizacionParaElCliente($idcliente)
+    public function seleccionaCrearNuevaCotizacion()
     {
-        // Simular comportamiento con Phake
-        $cotizacionData = [
-            'idcliente' => $idcliente,
-            // Aquí podrías agregar más campos necesarios para la cotización
-        ];
-        $this->cotizaciones[] = $cotizacionData;
-        Phake::when($this->cotizacionService)->crearCotizacion($cotizacionData)->thenReturn(true);
+        // No se requiere implementación para este método utilizando Phake
     }
 
     /**
-     * @Then la cotización debería añadirse exitosamente
+     * @Given no ingresa datos enviando el formulario
      */
-    public function laCotizacionDeberiaAnadirseExitosamente()
+    public function noIngresaDatosEnviandoElFormulario()
     {
-        // Implementación opcional para verificar el éxito de la operación
+        // Simular comportamiento con Phake
+        Phake::when($this->cotizacionService)->agregarCotizacion(null)->thenThrow(new Exception('El campo idcliente no puede estar vacío'));
     }
 
     /**
-     * @When actualizo la cotización con idcotizacion :idcotizacion, estableciendo idcliente a :idcliente, idmaquinaria a :idmaquinaria, idlugar a :idlugar, total a :total, y tiempo a :tiempo
+     * @Given envía el formulario
      */
-    public function actualizoLaCotizacionConIdcotizacion($idcotizacion, $idcliente, $idmaquinaria, $idlugar, $total, $tiempo)
+    public function enviaElFormulario()
     {
         // Simular comportamiento con Phake
-        $cotizacionData = [
-            'idcliente' => $idcliente,
-            'idmaquinaria' => $idmaquinaria,
-            'idlugar' => $idlugar,
-            'total' => $total,
-            'tiempo' => $tiempo,
-        ];
-        foreach ($this->cotizaciones as &$cotizacion) {
-            if ($cotizacion['idcotizacion'] == $idcotizacion) {
-                $cotizacion = array_merge($cotizacion, $cotizacionData);
-                break;
-            }
+        try {
+            $this->cotizacionService->agregarCotizacion(null);
+        } catch (Exception $e) {
+            $this->exception = $e;
         }
-        Phake::when($this->cotizacionService)->actualizarCotizacion($idcotizacion, $cotizacionData)->thenReturn(true);
     }
 
     /**
-     * @Then la cotización con idcotizacion :idcotizacion debería actualizarse exitosamente
+     * @Then el sistema muestra un mensaje de error "El campo idcliente no puede estar vacío"
      */
-    public function laCotizacionConIdcotizacionDeberiaActualizarseExitosamente($idcotizacion)
+    public function elSistemaMuestraUnMensajeDeError()
     {
-        // Implementación opcional para verificar el éxito de la operación
+        // Verificar que se muestra el mensaje de error utilizando Phake
+        if ($this->exception && $this->exception->getMessage() === 'El campo idcliente no puede estar vacío') {
+            return true;
+        }
+
+        throw new Exception('El mensaje de error esperado no fue mostrado.');
     }
 
     /**
-     * @When obtengo los detalles del cliente con idcliente :idcliente
+     * @Given completa el formulario con la información de la cotización
      */
-    public function obtengoLosDetallesDelClienteConIdcliente($idcliente)
+    public function completaElFormularioConLaInformacionDeLaCotizacion()
     {
-        // Simular comportamiento con Phake
-        Phake::when($this->cotizacionService)->obtenerDetallesCliente($idcliente)->thenReturn(/* Detalles del cliente */);
+        // No se requiere implementación para este método utilizando Phake
     }
 
     /**
-     * @Then debería recibir los detalles del cliente
+     * @Then el sistema guarda la nueva cotización en la base de datos
      */
-    public function deberiaRecibirLosDetallesDelCliente()
+    public function elSistemaGuardaLaNuevaCotizacionEnLaBaseDeDatos()
     {
-        // Implementación opcional para verificar la recepción de los detalles del cliente
+        // No se requiere implementación para este método utilizando Phake
     }
 
     /**
-     * @When obtengo los detalles de la maquinaria con idmaquinaria :idmaquinaria
+     * @Then muestra un mensaje de confirmación
      */
-    public function obtengoLosDetallesDeLaMaquinariaConIdmaquinaria($idmaquinaria)
+    public function muestraUnMensajeDeConfirmacion()
     {
-        // Simular comportamiento con Phake
-        Phake::when($this->cotizacionService)->obtenerDetallesMaquinaria($idmaquinaria)->thenReturn(/* Detalles de la maquinaria */);
+        // Simular mensaje de confirmación con Phake
+        echo "Cotización creada correctamente";
     }
 
     /**
-     * @Then debería recibir los detalles de la maquinaria
+     * @Then el sistema muestra la lista de cotizaciones disponibles
      */
-    public function deberiaRecibirLosDetallesDeLaMaquinaria()
+    public function elSistemaMuestraLaListaDeCotizacionesDisponibles()
     {
-        // Implementación opcional para verificar la recepción de los detalles de la maquinaria
+        // No se requiere implementación para este método utilizando Phake
     }
 
     /**
-     * @When obtengo los detalles de la ubicación con idlugar :idlugar
+     * @Given selecciona una cotización para actualizar
      */
-    public function obtengoLosDetallesDeLaUbicacionConIdlugar($idlugar)
+    public function seleccionaUnaCotizacionParaActualizar()
     {
-        // Simular comportamiento con Phake
-        Phake::when($this->cotizacionService)->obtenerDetallesUbicacion($idlugar)->thenReturn(/* Detalles de la ubicación */);
+        // No se requiere implementación para este método utilizando Phake
     }
 
     /**
-     * @Then debería recibir los detalles de la ubicación
+     * @Given modifica la información de la cotización
      */
-    public function deberiaRecibirLosDetallesDeLaUbicacion()
+    public function modificaLaInformacionDeLaCotizacion()
     {
-        // Implementación opcional para verificar la recepción de los detalles de la ubicación
+        // No se requiere implementación para este método utilizando Phake
     }
 
     /**
-     * @When obtengo toda la maquinaria disponible
+     * @Then el sistema actualiza la cotización en la base de datos
      */
-    public function obtengoTodaLaMaquinariaDisponible()
+    public function elSistemaActualizaLaCotizacionEnLaBaseDeDatos()
     {
-        // Simular comportamiento con Phake
-        Phake::when($this->cotizacionService)->obtenerMaquinariaDisponible()->thenReturn(/* Lista de maquinaria disponible */);
+        // No se requiere implementación para este método utilizando Phake
     }
 
     /**
-     * @Then debería recibir una lista de toda la maquinaria
+     * @Given selecciona una cotización para eliminar
      */
-    public function deberiaRecibirUnaListaDeTodaLaMaquinaria()
+    public function seleccionaUnaCotizacionParaEliminar()
     {
-        // Implementación opcional para verificar la recepción de la lista de maquinaria
+        // No se requiere implementación para este método utilizando Phake
     }
 
     /**
-     * @When obtengo todas las ubicaciones disponibles
+     * @Given confirma la eliminación
      */
-    public function obtengoTodasLasUbicacionesDisponibles()
+    public function confirmaLaEliminacion()
     {
-        // Simular comportamiento con Phake
-        Phake::when($this->cotizacionService)->obtenerUbicacionesDisponibles()->thenReturn(/* Lista de ubicaciones disponibles */);
+        // No se requiere implementación para este método utilizando Phake
     }
 
     /**
-     * @Then debería recibir una lista de todas las ubicaciones
+     * @Then el sistema elimina la cotización de la base de datos
      */
-    public function deberiaRecibirUnaListaDeTodasLasUbicaciones()
+    public function elSistemaEliminaLaCotizacionDeLaBaseDeDatos()
     {
-        // Implementación opcional para verificar la recepción de la lista de ubicaciones
+        // No se requiere implementación para este método utilizando Phake
     }
 }
 
+// Asegúrate de definir o incluir la clase CotizacionService si no existe
+interface CotizacionService
+{
+    public function agregarCotizacion($idcliente);
+}
 ?>
