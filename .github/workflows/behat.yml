@@ -32,5 +32,11 @@ jobs:
       - name: Install Composer dependencies
         run: composer install --no-progress --prefer-dist
 
-      - name: Run Behat
-        run: vendor/bin/behat --format=progress
+      - name: Run Behat and generate report
+        run: vendor/bin/behat --format=progress --out=report/behat.html
+
+      - name: Upload Behat report
+        uses: actions/upload-artifact@v2
+        with:
+          name: behat-report
+          path: report/behat.html
