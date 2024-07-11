@@ -1,0 +1,30 @@
+{
+  "name": "yourname/projectname",
+  "description": "Proyecto de ejemplo para ejecutar pruebas de Behat",
+  "type": "project",
+  "require": {},
+  "require-dev": {
+    "behat/behat": "^3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Controller\\": "src/CONTROLLER/",
+      "DB\\": "src/DB/",
+      "Model\\": "src/MODEL/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Test\\Controller\\": "test/CONTROLLER/",
+      "Test\\DB\\": "test/DB/",
+      "Test\\Model\\": "test/MODEL/"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/behat --format=progress"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  }
+}
