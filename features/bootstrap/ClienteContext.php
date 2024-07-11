@@ -16,11 +16,7 @@ class ClienteContext implements \Behat\Behat\Context\Context
     private $cliente;
     private $clientsList;
 
-    public function __construct()
-    {
-        $this->cliente = new Cliente();
-        $this->clientsList = [];
-    }
+
 
     /**
      * @Given I have a Cliente instance
