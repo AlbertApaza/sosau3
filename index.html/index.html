@@ -331,37 +331,39 @@
         <div class="feature">
             <h2>
                 <span id="feat1" class="keyword"> Feature: </span>
-                <span class="title">Administrar Clientes</span>
+                <span class="title">Gestión de Clientes</span>
             </h2>
-            <p>Como Personal administrativo
-Quiero administrar clientes en el sistema
-Para poder crear, visualizar, actualizar y eliminar clientes</p>
+            <p>Como usuario,
+Quiero gestionar clientes en el sistema
+Para poder ver, añadir, editar, eliminar y buscar clientes.
+
+Escenario: Listar clientes
+  Dado que tengo una instancia de Cliente
+  Cuando solicite la lista de clientes
+  Entonces la lista debe contener al menos un cliente
+
+Escenario: Añadir un nuevo cliente
+  Dado que tengo una instancia de Cliente
+  Cuando añada un nuevo cliente con nombre "John", apellido "Doe", correo "john.doe@example.com", iddocumento "1", documento "12345678", teléfono "987654321"
+  Entonces la lista de clientes debe incluir "John Doe"
+
+Escenario: Editar un cliente existente
+  Dado que tengo una instancia de Cliente
+  Y hay un cliente con idcliente 240
+  Cuando edite el cliente con idcliente 240, estableciendo nombre a "Jane", apellido a "Smith", correo a "jane.smith@example.com", iddocumento a "1", documento a "87654321", teléfono a "654321987"
+  Entonces la lista de clientes debe incluir "Jane Smith"
+
+Escenario: Eliminar un cliente existente
+  Dado que tengo una instancia de Cliente
+  Cuando elimine el cliente con idcliente 239
+  Entonces la lista de clientes no debe incluir "Jane Smith"
+
+Escenario: Buscar clientes por término
+  Dado que tengo una instancia de Cliente
+  Cuando busque clientes con el término "John"
+  Entonces los resultados de la búsqueda deben incluir "John Doe"</p>
             <ul class="tags">
             </ul>
-            <div class="scenario">
-                <ul class="tags">
-                </ul>
-                <h3>
-                    <span class="keyword"> Scenario: </span>
-                    <span class="title">Visualizar Clientes</span>
-                </h3>
-                <ol>
-                    <li class="passed">
-                        <div class="step">
-                            <span class="keyword">Given </span>
-                            <span class="text">que el Personal navega a la p&aacute;gina de administraci&oacute;n de clientes </span>
-                            <span class="path">ClienteContext::queElPersonalNavegaALaPaginaDeAdministracionDeClientes()</span>
-                        </div>
-                    </li>
-                    <li class="passed">
-                        <div class="step">
-                            <span class="keyword">Then </span>
-                            <span class="text">el sistema muestra la lista de clientes disponibles </span>
-                            <span class="path">ClienteContext::elSistemaMuestraLaListaDeClientesDisponibles()</span>
-                        </div>
-                    </li>
-                </ol>
-            </div>
             <div class="featureResult passed">Feature has passed
             </div>
         </div><!DOCTYPE html>
@@ -404,7 +406,7 @@ Para poder crear, visualizar, actualizar y eliminar clientes</p>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Automated test report - 11/07/2024 19:01:40</a>
+            <a class="navbar-brand" href="#">Automated test report - 11/07/2024 19:17:04</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -430,7 +432,7 @@ Para poder crear, visualizar, actualizar y eliminar clientes</p>
                 <canvas id="chart-scenarios" width="300" height="300"/>
             </div>
             <div class="chart-summary title">
-                1
+                0
                 Scenarios:
             </div>
             <div class="chart-summary failed">0 failed</div>
@@ -442,7 +444,7 @@ Para poder crear, visualizar, actualizar y eliminar clientes</p>
                 <canvas id="chart-steps" width="300" height="300"/>
             </div>
             <div class="chart-summary title">
-                2
+                0
                 Steps:
             </div>
             <div class="chart-summary failed">0 failed</div>
@@ -466,30 +468,42 @@ Para poder crear, visualizar, actualizar y eliminar clientes</p>
                                                     <div class="col-sm-4 feature" data-id="feature-1">
                                 <div class="card passed">
                                     <div class="header">
-                                        <h2>Feature: Administrar Clientes</h2>
+                                        <h2>Feature: Gestión de Clientes</h2>
                                     </div>
                                     <div class="info">
-                                        <p>Como Personal administrativo<br />
-Quiero administrar clientes en el sistema<br />
-Para poder crear, visualizar, actualizar y eliminar clientes</p>
+                                        <p>Como usuario,<br />
+Quiero gestionar clientes en el sistema<br />
+Para poder ver, añadir, editar, eliminar y buscar clientes.<br />
+<br />
+Escenario: Listar clientes<br />
+  Dado que tengo una instancia de Cliente<br />
+  Cuando solicite la lista de clientes<br />
+  Entonces la lista debe contener al menos un cliente<br />
+<br />
+Escenario: Añadir un nuevo cliente<br />
+  Dado que tengo una instancia de Cliente<br />
+  Cuando añada un nuevo cliente con nombre "John", apellido "Doe", correo "john.doe@example.com", iddocumento "1", documento "12345678", teléfono "987654321"<br />
+  Entonces la lista de clientes debe incluir "John Doe"<br />
+<br />
+Escenario: Editar un cliente existente<br />
+  Dado que tengo una instancia de Cliente<br />
+  Y hay un cliente con idcliente 240<br />
+  Cuando edite el cliente con idcliente 240, estableciendo nombre a "Jane", apellido a "Smith", correo a "jane.smith@example.com", iddocumento a "1", documento a "87654321", teléfono a "654321987"<br />
+  Entonces la lista de clientes debe incluir "Jane Smith"<br />
+<br />
+Escenario: Eliminar un cliente existente<br />
+  Dado que tengo una instancia de Cliente<br />
+  Cuando elimine el cliente con idcliente 239<br />
+  Entonces la lista de clientes no debe incluir "Jane Smith"<br />
+<br />
+Escenario: Buscar clientes por término<br />
+  Dado que tengo una instancia de Cliente<br />
+  Cuando busque clientes con el término "John"<br />
+  Entonces los resultados de la búsqueda deben incluir "John Doe"</p>
                                     </div>
                                     <div class="footer">
                                         <div class="tags">
                                                                                     </div>
-                                                                                    <div class="progress">
-                                                <div class="progress-bar progress-bar-green" role="progressbar"
-                                                     style="width: 100%">
-                                                    <span class="sr-only">40% Complete (success)</span>
-                                                </div>
-                                                <div class="progress-bar progress-bar-warning" role="progressbar"
-                                                     style="width: 0%">
-                                                    <span class="sr-only">40% Complete (success)</span>
-                                                </div>
-                                                <div class="progress-bar progress-bar-red" role="progressbar"
-                                                     style="width: 0%">
-                                                    <span class="sr-only">40% Complete (success)</span>
-                                                </div>
-                                            </div>
                                                                             </div>
                                 </div>
                             </div>
@@ -503,61 +517,46 @@ Para poder crear, visualizar, actualizar y eliminar clientes</p>
                     <div class="col-sm-4">
                         <div class="card passed">
                             <div class="header">
-                                <h2>Feature: Administrar Clientes</h2>
+                                <h2>Feature: Gestión de Clientes</h2>
                             </div>
                             <div class="info">
-                                <p>Como Personal administrativo<br />
-Quiero administrar clientes en el sistema<br />
-Para poder crear, visualizar, actualizar y eliminar clientes</p>
+                                <p>Como usuario,<br />
+Quiero gestionar clientes en el sistema<br />
+Para poder ver, añadir, editar, eliminar y buscar clientes.<br />
+<br />
+Escenario: Listar clientes<br />
+  Dado que tengo una instancia de Cliente<br />
+  Cuando solicite la lista de clientes<br />
+  Entonces la lista debe contener al menos un cliente<br />
+<br />
+Escenario: Añadir un nuevo cliente<br />
+  Dado que tengo una instancia de Cliente<br />
+  Cuando añada un nuevo cliente con nombre "John", apellido "Doe", correo "john.doe@example.com", iddocumento "1", documento "12345678", teléfono "987654321"<br />
+  Entonces la lista de clientes debe incluir "John Doe"<br />
+<br />
+Escenario: Editar un cliente existente<br />
+  Dado que tengo una instancia de Cliente<br />
+  Y hay un cliente con idcliente 240<br />
+  Cuando edite el cliente con idcliente 240, estableciendo nombre a "Jane", apellido a "Smith", correo a "jane.smith@example.com", iddocumento a "1", documento a "87654321", teléfono a "654321987"<br />
+  Entonces la lista de clientes debe incluir "Jane Smith"<br />
+<br />
+Escenario: Eliminar un cliente existente<br />
+  Dado que tengo una instancia de Cliente<br />
+  Cuando elimine el cliente con idcliente 239<br />
+  Entonces la lista de clientes no debe incluir "Jane Smith"<br />
+<br />
+Escenario: Buscar clientes por término<br />
+  Dado que tengo una instancia de Cliente<br />
+  Cuando busque clientes con el término "John"<br />
+  Entonces los resultados de la búsqueda deben incluir "John Doe"</p>
                             </div>
                             <div class="footer">
                                 <div class="tags">
                                                                     </div>
-                                                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-green" role="progressbar"
-                                             style="width: 100%">
-                                            <span class="sr-only">40% Complete (success)</span>
-                                        </div>
-                                        <div class="progress-bar progress-bar-warning" role="progressbar"
-                                             style="width: 0%">
-                                            <span class="sr-only">40% Complete (success)</span>
-                                        </div>
-                                        <div class="progress-bar progress-bar-red" role="progressbar"
-                                             style="width: 0%">
-                                            <span class="sr-only">40% Complete (success)</span>
-                                        </div>
-                                    </div>
                                                             </div>
                         </div>
                     </div>
                     <div class="col-sm-8 details panel-group" role="tablist" aria-multiselectable="true">
-                                                    <div class="panel panel-default passed">
-                                <div class="panel-heading" role="tab">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion"
-                                           href="#scenario-1-1"
-                                           aria-expanded="true"
-                                           aria-controls="scenario-1-1">
-                                            Scenario: Visualizar Clientes
-                                        </a>
-
-                                        <div class="tags pull-right">
-                                                                                                                                </div>
-                                    </h4>
-                                </div>
-                                <div id="scenario-1-1" class="panel-collapse collapse in"
-                                     role="tabpanel"
-                                     aria-labelledby="headingOne">
-                                    <ul class="list-group">
-                                                                                    <li class="list-group-item alert alert-success">
-                                                <b>Given</b> que el Personal navega a la página de administración de clientes
-                                                                                                                                                                                                                                                                                                                                                </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
-                                                <b>Then</b> el sistema muestra la lista de clientes disponibles
-                                                                                                                                                                                                                                                                                                                                                </li>
-                                                                                                                                                                                                                </ul>
-                                </div>
-                            </div>
                                             </div>
                 </div>
                         </div>
@@ -576,7 +575,7 @@ Para poder crear, visualizar, actualizar y eliminar clientes</p>
         new Chart(featureChart, {type: 'doughnut', options: {legend: {display: false}}, data: {
                 labels: ['Failed', 'Pending', 'Passed'],
                 datasets: [{
-                    data: [0, 0, 1],
+                    data: [0, 0, 0],
                     backgroundColor: ['#F7464A', 'e38d13', '#00a65a'],
                 }],
             }});
@@ -590,7 +589,7 @@ Para poder crear, visualizar, actualizar y eliminar clientes</p>
         new Chart(stepChart, {type: 'doughnut', options: {legend: {display: false}}, data: {
                 labels: ['Failed','Passed'],
                 datasets: [{
-                    data: [0, 2],
+                    data: [0, 0],
                     backgroundColor: ["#F7464A", "#00a65a"],
                 }],
             }});
@@ -655,13 +654,13 @@ Para poder crear, visualizar, actualizar y eliminar clientes</p>
                     1 features ( <strong class="passed">1 success</strong> )
                 </p>
                 <p class="scenarios">
-                    1 scenarios ( <strong class="passed">1 success</strong> )
+                    0 scenarios ( )
                 </p>
                 <p class="steps">
-                    2 steps ( <strong class="passed">2 success</strong> )
+                    0 steps ( )
                 </p>
                 <p class="time">
-                0m0.01s - 12.55Mb
+                0m0.01s - 12.02Mb
                 </p>
             </div>
             <div class="switchers">
