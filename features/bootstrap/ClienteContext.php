@@ -175,25 +175,6 @@ class ClienteContext implements Context
     }
 
     /**
-     * @Then la lista de clientes debe incluir :nombreCompleto
-     */
-    public function laListaDeClientesDebeIncluir($nombreCompleto)
-    {
-        // Verificar que el nombre completo esté en la lista de clientes
-        $nombreEncontrado = false;
-        foreach ($this->clientes as $cliente) {
-            $nombreCompletoEsperado = $cliente['nombre'] . ' ' . $cliente['apellido'];
-            if ($nombreCompletoEsperado === $nombreCompleto) {
-                $nombreEncontrado = true;
-                break;
-            }
-        }
-        if (!$nombreEncontrado) {
-            throw new Exception("El cliente con nombre completo '$nombreCompleto' no está en la lista de clientes");
-        }
-    }
-
-    /**
      * @When intento editar el cliente con idcliente :idcliente, estableciendo nombre a :nombre, apellido a :apellido, correo a :correo, iddocumento a :iddocumento, documento a :documento, teléfono a :telefono con datos inválidos
      */
     public function intentoEditarElClienteConIdclienteEstableciendoDatosInvalidos($idcliente, $nombre, $apellido, $correo, $iddocumento, $documento, $telefono)
