@@ -2,7 +2,7 @@ name: Tarea Automatizada de ejecución de pruebas
 
 env:
   SONAR_ORG: 'albert1'                  # Nombre de la organización en SonarCloud
-  SONAR_PROJECT: 'albert1_sosa'   # Key ID del proyecto en SonarCloud
+  SONAR_PROJECT: 'albert1_sosa'         # Key ID del proyecto en SonarCloud
 
 on:
   push:
@@ -15,40 +15,42 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout código
+      uses: actions/checkout@v3
 
-    - name: Set up PHP
+    - name: Configurar PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version: '8.2' # Ajusta la versión de PHP según tus necesidades
+        php-version: '8.2'               # Ajusta la versión de PHP según tus necesidades
         extensions: mbstring, intl, pdo_mysql
 
-    - name: Install Composer dependencies
-      run: composer install
+    - name: Instalar dependencias de Composer
+      run: |
+        composer install --no-progress --prefer-dist
 
-    - name: Create reports directory
+    - name: Crear directorio para reportes
       run: mkdir -p features/bootstrap/reports
 
-    - name: Give execute permission to Behat
+    - name: Dar permisos de ejecución a Behat
       run: chmod +x vendor/bin/behat
 
-    - name: Run Behat tests
+    - name: Ejecutar pruebas con Behat
       run: vendor/bin/behat --format=html --out=features/bootstrap/reports/index.html
 
-    - name: SonarCloud Scan
+    - name: Escaneo en SonarCloud
       uses: SonarSource/sonarcloud-github-action@master
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Necesario para obtener información de PR, si existe
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-    - name: Upload Behat HTML report
+    - name: Subir informe HTML de Behat
       if: always()
       uses: actions/upload-artifact@v2
       with:
         name: behat-report
         path: features/bootstrap/reports/index.html
 
-    - name: Deploy Behat HTML report to GitHub Pages
+    - name: Desplegar informe HTML de Behat en GitHub Pages
       if: always()
       uses: peaceiris/actions-gh-pages@v3
       with:
