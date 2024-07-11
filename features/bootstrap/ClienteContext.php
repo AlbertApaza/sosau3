@@ -5,7 +5,7 @@ use PHPUnit\Framework\Assert;
 
 // Importar Phake y la clase que quieres mockear
 use Phake;
-use ClienteService; // Reemplaza esto con la ubicación real de tu clase ClienteService
+use App\ClienteService; // Reemplaza esto con la ubicación real de tu clase ClienteService
 
 class ClienteContext implements Context
 {
