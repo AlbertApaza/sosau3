@@ -17,7 +17,8 @@
     "psr-4": {
       "Test\\Controller\\": "test/CONTROLLER/",
       "Test\\DB\\": "test/DB/",
-      "Test\\Model\\": "test/MODEL/"
+      "Test\\Model\\": "test/MODEL/",
+      "": "features/bootstrap/"
     }
   },
   "scripts": {
