@@ -347,25 +347,25 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
                     <span class="title">Listar clientes existentes</span>
                 </h3>
                 <ol>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">Given </span>
                             <span class="text">que tengo una instancia del modelo Cliente </span>
-                            <span class="path"></span>
+                            <span class="path">ClienteContext::queTengoUnaInstanciaDelModeloCliente()</span>
                         </div>
                     </li>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">When </span>
                             <span class="text">solicito la lista de clientes </span>
-                            <span class="path"></span>
+                            <span class="path">ClienteContext::solicitoLaListaDeClientes()</span>
                         </div>
                     </li>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">Then </span>
                             <span class="text">la lista debe contener al menos un cliente </span>
-                            <span class="path"></span>
+                            <span class="path">ClienteContext::laListaDebeContenerAlMenosUnCliente()</span>
                         </div>
                     </li>
                 </ol>
@@ -378,25 +378,25 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
                     <span class="title">Agregar un nuevo cliente</span>
                 </h3>
                 <ol>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">Given </span>
                             <span class="text">que tengo una instancia del modelo Cliente </span>
-                            <span class="path"></span>
+                            <span class="path">ClienteContext::queTengoUnaInstanciaDelModeloCliente()</span>
                         </div>
                     </li>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">When </span>
                             <span class="text">a&ntilde;ado un nuevo cliente con nombre &quot;John&quot;, apellido &quot;Doe&quot;, correo &quot;john.doe@example.com&quot;, iddocumento &quot;1&quot;, documento &quot;12345678&quot;, tel&eacute;fono &quot;987654321&quot; </span>
-                            <span class="path"></span>
+                            <span class="path">ClienteContext::anadoUnNuevoClienteConLosSiguientesDatos()</span>
                         </div>
                     </li>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">Then </span>
                             <span class="text">la lista de clientes debe incluir &quot;John Doe&quot; </span>
-                            <span class="path"></span>
+                            <span class="path">ClienteContext::laListaDeClientesDebeIncluir()</span>
                         </div>
                     </li>
                 </ol>
@@ -409,11 +409,11 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
                     <span class="title">Editar un cliente existente</span>
                 </h3>
                 <ol>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">Given </span>
                             <span class="text">que tengo una instancia del modelo Cliente </span>
-                            <span class="path"></span>
+                            <span class="path">ClienteContext::queTengoUnaInstanciaDelModeloCliente()</span>
                         </div>
                     </li>
                     <li class="pending">
@@ -430,11 +430,11 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
                             <span class="path"></span>
                         </div>
                     </li>
-                    <li class="pending">
+                    <li class="skipped">
                         <div class="step">
                             <span class="keyword">Then </span>
                             <span class="text">la lista de clientes debe incluir &quot;Jane Smith&quot; </span>
-                            <span class="path"></span>
+                            <span class="path">ClienteContext::laListaDeClientesDebeIncluir()</span>
                         </div>
                     </li>
                 </ol>
@@ -447,25 +447,25 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
                     <span class="title">Buscar clientes por término</span>
                 </h3>
                 <ol>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">Given </span>
                             <span class="text">que tengo una instancia del modelo Cliente </span>
-                            <span class="path"></span>
+                            <span class="path">ClienteContext::queTengoUnaInstanciaDelModeloCliente()</span>
                         </div>
                     </li>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">When </span>
                             <span class="text">busco clientes con el t&eacute;rmino &quot;John&quot; </span>
-                            <span class="path"></span>
+                            <span class="path">ClienteContext::buscoClientesConElTermino()</span>
                         </div>
                     </li>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">Then </span>
                             <span class="text">los resultados de la b&uacute;squeda deben incluir &quot;John Doe&quot; </span>
-                            <span class="path"></span>
+                            <span class="path">ClienteContext::losResultadosDeLaBusquedaDebenIncluir()</span>
                         </div>
                     </li>
                 </ol>
@@ -478,18 +478,18 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
                     <span class="title">Intento de agregar cliente con campos vacíos</span>
                 </h3>
                 <ol>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">Given </span>
                             <span class="text">que tengo una instancia del modelo Cliente </span>
-                            <span class="path"></span>
+                            <span class="path">ClienteContext::queTengoUnaInstanciaDelModeloCliente()</span>
                         </div>
                     </li>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">When </span>
                             <span class="text">intento a&ntilde;adir un nuevo cliente sin completar todos los campos requeridos </span>
-                            <span class="path"></span>
+                            <span class="path">ClienteContext::intentoAnadirUnNuevoClienteSinCompletarTodosLosCamposRequeridos()</span>
                         </div>
                     </li>
                     <li class="pending">
@@ -509,11 +509,11 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
                     <span class="title">Intento de editar cliente con datos inválidos</span>
                 </h3>
                 <ol>
-                    <li class="pending">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">Given </span>
                             <span class="text">que tengo una instancia del modelo Cliente </span>
-                            <span class="path"></span>
+                            <span class="path">ClienteContext::queTengoUnaInstanciaDelModeloCliente()</span>
                         </div>
                     </li>
                     <li class="pending">
@@ -523,11 +523,11 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
                             <span class="path"></span>
                         </div>
                     </li>
-                    <li class="pending">
+                    <li class="skipped">
                         <div class="step">
                             <span class="keyword">When </span>
                             <span class="text">intento editar el cliente con idcliente 240, estableciendo nombre a &quot;&quot;, apellido a &quot;&quot;, correo a &quot;&quot;, iddocumento a &quot;&quot;, documento a &quot;&quot;, tel&eacute;fono a &quot;&quot; </span>
-                            <span class="path"></span>
+                            <span class="path">ClienteContext::intentoEditarElClienteConIdclienteEstableciendoDatos()</span>
                         </div>
                     </li>
                     <li class="pending">
@@ -540,8 +540,8 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
                 </ol>
             </div>
             <div class="featureResult failed">Feature has failed
-                <span>Scenarios passed : 0%,
-                Scenarios failed : 100%</span>
+                <span>Scenarios passed : 50%,
+                Scenarios failed : 50%</span>
             </div>
         </div><!DOCTYPE html>
 <html lang="en">
@@ -583,7 +583,7 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Automated test report - 11/07/2024 19:40:41</a>
+            <a class="navbar-brand" href="#">Automated test report - 11/07/2024 19:42:08</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -612,7 +612,7 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
                 6
                 Scenarios:
             </div>
-            <div class="chart-summary failed">6 failed</div>
+            <div class="chart-summary failed">3 failed</div>
             <div class="chart-summary undefined">0 undefined</div>
             <div class="chart-summary skipped">0 skipped</div>
         </div>
@@ -621,7 +621,7 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
                 <canvas id="chart-steps" width="300" height="300"/>
             </div>
             <div class="chart-summary title">
-                0
+                13
                 Steps:
             </div>
             <div class="chart-summary failed">0 failed</div>
@@ -658,7 +658,7 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
                                                                                     </div>
                                                                                     <div class="progress">
                                                 <div class="progress-bar progress-bar-green" role="progressbar"
-                                                     style="width: 0%">
+                                                     style="width: 50%">
                                                     <span class="sr-only">40% Complete (success)</span>
                                                 </div>
                                                 <div class="progress-bar progress-bar-warning" role="progressbar"
@@ -666,7 +666,7 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
                                                     <span class="sr-only">40% Complete (success)</span>
                                                 </div>
                                                 <div class="progress-bar progress-bar-red" role="progressbar"
-                                                     style="width: 100%">
+                                                     style="width: 50%">
                                                     <span class="sr-only">40% Complete (success)</span>
                                                 </div>
                                             </div>
@@ -696,7 +696,7 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
                                                                     </div>
                                                                     <div class="progress">
                                         <div class="progress-bar progress-bar-green" role="progressbar"
-                                             style="width: 0%">
+                                             style="width: 50%">
                                             <span class="sr-only">40% Complete (success)</span>
                                         </div>
                                         <div class="progress-bar progress-bar-warning" role="progressbar"
@@ -704,7 +704,7 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
                                             <span class="sr-only">40% Complete (success)</span>
                                         </div>
                                         <div class="progress-bar progress-bar-red" role="progressbar"
-                                             style="width: 100%">
+                                             style="width: 50%">
                                             <span class="sr-only">40% Complete (success)</span>
                                         </div>
                                     </div>
@@ -712,7 +712,7 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
                         </div>
                     </div>
                     <div class="col-sm-8 details panel-group" role="tablist" aria-multiselectable="true">
-                                                    <div class="panel panel-default failed">
+                                                    <div class="panel panel-default passed">
                                 <div class="panel-heading" role="tab">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordion"
@@ -730,19 +730,19 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
                                      role="tabpanel"
                                      aria-labelledby="headingOne">
                                     <ul class="list-group">
-                                                                                    <li class="list-group-item alert alert-warning">
+                                                                                    <li class="list-group-item alert alert-success">
                                                 <b>Given</b> que tengo una instancia del modelo Cliente
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
                                                 <b>When</b> solicito la lista de clientes
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
                                                 <b>Then</b> la lista debe contener al menos un cliente
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                 </ul>
                                 </div>
                             </div>
-                                                    <div class="panel panel-default failed">
+                                                    <div class="panel panel-default passed">
                                 <div class="panel-heading" role="tab">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordion"
@@ -760,13 +760,13 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
                                      role="tabpanel"
                                      aria-labelledby="headingOne">
                                     <ul class="list-group">
-                                                                                    <li class="list-group-item alert alert-warning">
+                                                                                    <li class="list-group-item alert alert-success">
                                                 <b>Given</b> que tengo una instancia del modelo Cliente
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
                                                 <b>When</b> añado un nuevo cliente con nombre &quot;John&quot;, apellido &quot;Doe&quot;, correo &quot;john.doe@example.com&quot;, iddocumento &quot;1&quot;, documento &quot;12345678&quot;, teléfono &quot;987654321&quot;
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
                                                 <b>Then</b> la lista de clientes debe incluir &quot;John Doe&quot;
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                 </ul>
@@ -790,7 +790,7 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
                                      role="tabpanel"
                                      aria-labelledby="headingOne">
                                     <ul class="list-group">
-                                                                                    <li class="list-group-item alert alert-warning">
+                                                                                    <li class="list-group-item alert alert-success">
                                                 <b>Given</b> que tengo una instancia del modelo Cliente
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                         <li class="list-group-item alert alert-warning">
@@ -799,13 +799,13 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
                                                                                                                                                                                                                         <li class="list-group-item alert alert-warning">
                                                 <b>When</b> edito el cliente con idcliente 240, estableciendo nombre a &quot;Jane&quot;, apellido a &quot;Smith&quot;, correo a &quot;jane.smith@example.com&quot;, iddocumento a &quot;1&quot;, documento a &quot;87654321&quot;, teléfono a &quot;654321987&quot;
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
                                                 <b>Then</b> la lista de clientes debe incluir &quot;Jane Smith&quot;
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                 </ul>
                                 </div>
                             </div>
-                                                    <div class="panel panel-default failed">
+                                                    <div class="panel panel-default passed">
                                 <div class="panel-heading" role="tab">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordion"
@@ -823,13 +823,13 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
                                      role="tabpanel"
                                      aria-labelledby="headingOne">
                                     <ul class="list-group">
-                                                                                    <li class="list-group-item alert alert-warning">
+                                                                                    <li class="list-group-item alert alert-success">
                                                 <b>Given</b> que tengo una instancia del modelo Cliente
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
                                                 <b>When</b> busco clientes con el término &quot;John&quot;
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
                                                 <b>Then</b> los resultados de la búsqueda deben incluir &quot;John Doe&quot;
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                 </ul>
@@ -853,10 +853,10 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
                                      role="tabpanel"
                                      aria-labelledby="headingOne">
                                     <ul class="list-group">
-                                                                                    <li class="list-group-item alert alert-warning">
+                                                                                    <li class="list-group-item alert alert-success">
                                                 <b>Given</b> que tengo una instancia del modelo Cliente
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
                                                 <b>When</b> intento añadir un nuevo cliente sin completar todos los campos requeridos
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                         <li class="list-group-item alert alert-warning">
@@ -883,13 +883,13 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
                                      role="tabpanel"
                                      aria-labelledby="headingOne">
                                     <ul class="list-group">
-                                                                                    <li class="list-group-item alert alert-warning">
+                                                                                    <li class="list-group-item alert alert-success">
                                                 <b>Given</b> que tengo una instancia del modelo Cliente
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                         <li class="list-group-item alert alert-warning">
                                                 <b>And</b> existe un cliente con idcliente 240
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
                                                 <b>When</b> intento editar el cliente con idcliente 240, estableciendo nombre a &quot;&quot;, apellido a &quot;&quot;, correo a &quot;&quot;, iddocumento a &quot;&quot;, documento a &quot;&quot;, teléfono a &quot;&quot;
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                         <li class="list-group-item alert alert-warning">
@@ -916,7 +916,7 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
         new Chart(featureChart, {type: 'doughnut', options: {legend: {display: false}}, data: {
                 labels: ['Failed', 'Pending', 'Passed'],
                 datasets: [{
-                    data: [6, 0, 0],
+                    data: [3, 0, 3],
                     backgroundColor: ['#F7464A', 'e38d13', '#00a65a'],
                 }],
             }});
@@ -930,7 +930,7 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
         new Chart(stepChart, {type: 'doughnut', options: {legend: {display: false}}, data: {
                 labels: ['Failed','Passed'],
                 datasets: [{
-                    data: [0, 0],
+                    data: [0, 13],
                     backgroundColor: ["#F7464A", "#00a65a"],
                 }],
             }});
@@ -995,13 +995,13 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
                     1 features ( <strong class="failed">1 fail</strong> )
                 </p>
                 <p class="scenarios">
-                    6 scenarios ( <strong class="failed">6 fail</strong> )
+                    6 scenarios ( <strong class="passed">3 success</strong> <strong class="failed">3 fail</strong> )
                 </p>
                 <p class="steps">
-                    20 steps ( <strong class="pending">20 pending</strong> )
+                    20 steps ( <strong class="passed">13 success</strong> <strong class="pending">5 pending</strong> <strong class="skipped">2 skipped</strong> )
                 </p>
                 <p class="time">
-                0m0.02s - 12.59Mb
+                0m0.02s - 12.86Mb
                 </p>
             </div>
             <div class="switchers">
@@ -1011,25 +1011,10 @@ Para poder ver, añadir, editar, eliminar y buscar clientes</p>
         </div> 
             <div class="pending">Pending steps :
                 <ul>
-                    <li>Given que tengo una instancia del modelo Cliente</li>
-                    <li>When solicito la lista de clientes</li>
-                    <li>Then la lista debe contener al menos un cliente</li>
-                    <li>Given que tengo una instancia del modelo Cliente</li>
-                    <li>When añado un nuevo cliente con nombre "John", apellido "Doe", correo "john.doe@example.com", iddocumento "1", documento "12345678", teléfono "987654321"</li>
-                    <li>Then la lista de clientes debe incluir "John Doe"</li>
-                    <li>Given que tengo una instancia del modelo Cliente</li>
                     <li>And existe un cliente con idcliente 240</li>
                     <li>When edito el cliente con idcliente 240, estableciendo nombre a "Jane", apellido a "Smith", correo a "jane.smith@example.com", iddocumento a "1", documento a "87654321", teléfono a "654321987"</li>
-                    <li>Then la lista de clientes debe incluir "Jane Smith"</li>
-                    <li>Given que tengo una instancia del modelo Cliente</li>
-                    <li>When busco clientes con el término "John"</li>
-                    <li>Then los resultados de la búsqueda deben incluir "John Doe"</li>
-                    <li>Given que tengo una instancia del modelo Cliente</li>
-                    <li>When intento añadir un nuevo cliente sin completar todos los campos requeridos</li>
                     <li>Then el sistema muestra un mensaje de error indicando que los campos del formulario no pueden estar vacíos</li>
-                    <li>Given que tengo una instancia del modelo Cliente</li>
                     <li>And existe un cliente con idcliente 240</li>
-                    <li>When intento editar el cliente con idcliente 240, estableciendo nombre a "", apellido a "", correo a "", iddocumento a "", documento a "", teléfono a ""</li>
                     <li>Then el sistema muestra un mensaje de error indicando que los campos del formulario no pueden estar vacíos</li>
                 </ul>
             </div>
