@@ -8,6 +8,7 @@ default:
         - CotizacionContext
         - LugarContext
         - MantenimientoContext
+        - MaquinariaContext
   # formatters:
   #   junit:
       # output_path: "build/junit"
