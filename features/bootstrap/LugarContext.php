@@ -41,7 +41,11 @@ class LugarContext implements Context
      */
     public function elSistemaMuestraLaListaDeLugaresDisponibles()
     {
-        // Verificar que la lista de lugares se muestra utilizando Phake
+        // Verificar que se muestra la lista de lugares utilizando Phake
+        if ($this->exception) {
+            throw new Exception('Hubo un error al solicitar los lugares: ' . $this->exception->getMessage());
+        }
+
         if (is_array($this->resultado) && count($this->resultado) > 0) {
             return true;
         }
