@@ -2,6 +2,7 @@
 
 use Behat\Behat\Context\Context;
 use Behat\Behat\Tester\Exception\PendingException;
+use PHPUnit\Framework\MockObject\MockObject;
 
 class MaquinariaContext implements Context
 {
@@ -11,10 +12,18 @@ class MaquinariaContext implements Context
     private $newMaquinariaData;
     private $updatedMaquinariaData;
 
+    /**
+     * @var Maquinaria|MockObject $maquinariaModelMock
+     */
+    private $maquinariaModelMock;
+
     public function __construct()
     {
-        // Reemplaza 'Maquinaria' con la clase correspondiente en tu modelo
-        $this->maquinariaModel = new Maquinaria();
+        // Crear un mock de Maquinaria
+        $this->maquinariaModelMock = $this->createMock(Maquinaria::class);
+
+        // Asignar el mock a la propiedad maquinariaModel
+        $this->maquinariaModel = $this->maquinariaModelMock;
     }
 
     /**
@@ -38,6 +47,17 @@ class MaquinariaContext implements Context
      */
     public function elSistemaSolicitaTodasLasMaquinarias()
     {
+        // Configurar el comportamiento del mock para listar maquinarias
+        $this->maquinariaList = [
+            ['idmaquinaria' => 1, 'numserie' => '12345', 'nombre' => 'Maquinaria 1'],
+            ['idmaquinaria' => 2, 'numserie' => '54321', 'nombre' => 'Maquinaria 2'],
+        ];
+        $this->maquinariaModelMock
+            ->expects($this->any())
+            ->method('listar_Maquinarias')
+            ->willReturn($this->maquinariaList);
+
+        // Llamar al método real para Behat, pero utilizando el mock
         $this->maquinariaList = $this->maquinariaModel->listar_Maquinarias();
     }
 
@@ -57,8 +77,23 @@ class MaquinariaContext implements Context
      */
     public function seleccionaUnaMaquinariaEspecifica()
     {
-        // Simula la selección de una maquinaria específica, por ejemplo, la primera en la lista
+        // Simular la selección de una maquinaria específica, por ejemplo, la primera en la lista
         if (isset($this->maquinariaList[0])) {
+            $this->maquinariaDetails = [
+                'idmaquinaria' => $this->maquinariaList[0]['idmaquinaria'],
+                'numserie' => $this->maquinariaList[0]['numserie'],
+                'nombre' => $this->maquinariaList[0]['nombre'],
+                // Añadir más detalles según sea necesario
+            ];
+
+            // Configurar el comportamiento del mock para mostrar detalles de maquinaria
+            $this->maquinariaModelMock
+                ->expects($this->any())
+                ->method('mostrar_Maquinaria')
+                ->with($this->maquinariaList[0]['idmaquinaria'])
+                ->willReturn($this->maquinariaDetails);
+
+            // Llamar al método real para Behat, pero utilizando el mock
             $this->maquinariaDetails = $this->maquinariaModel->mostrar_Maquinaria($this->maquinariaList[0]['idmaquinaria']);
         } else {
             throw new Exception('No hay maquinarias para seleccionar.');
@@ -173,7 +208,11 @@ class MaquinariaContext implements Context
         // Simula la selección de una maquinaria específica para eliminar
         if (isset($this->maquinariaList[0])) {
             $maquinariaId = $this->maquinariaList[0]['idmaquinaria'];
-            $this->maquinariaModel->eliminarMaquinaria($maquinariaId);
+            // Configurar el comportamiento del mock para eliminar maquinaria
+            $this->maquinariaModelMock
+                ->expects($this->any())
+                ->method('eliminarMaquinaria')
+                ->with($maquinariaId);
         } else {
             throw new Exception('No hay maquinarias para eliminar.');
         }
@@ -186,6 +225,7 @@ class MaquinariaContext implements Context
     {
         // Simula el proceso de confirmación y eliminación de la maquinaria
         // Esto ya se ejecutó en el paso anterior (eliminarMaquinaria)
+        $this->maquinariaModel->eliminarMaquinaria($this->maquinariaList[0]['idmaquinaria']);
     }
 
     /**
