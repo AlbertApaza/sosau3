@@ -14,24 +14,7 @@ class CotizacionContext implements Context
     private $allMachinery;
     private $allLocations;
 
-    public function __construct()
-    {
-        // Create a mysqli connection
-        $this->conexion = new \mysqli('161.132.38.229', 'root', 'Upt2024', 'DBSOSA');
-        if ($this->conexion->connect_error) {
-            die("Connection failed: " . $this->conexion->connect_error);
-        }
-        
-        // Initialize the Cotizacion class with the mysqli connection
-        $this->cotizacion = new Cotizacion($this->conexion);
-
-        // Initialize other variables or dependencies needed for the context
-        $this->clientDetails = [];
-        $this->machineryDetails = [];
-        $this->locationDetails = [];
-        $this->allMachinery = [];
-        $this->allLocations = [];
-    }
+   
 
     /**
      * @Given I have a Cotizacion instance

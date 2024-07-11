@@ -8,10 +8,7 @@ class MantenimientoContext implements \Behat\Behat\Context\Context
     private $mantenimientoModel;
     private $newMaintenanceId;
 
-    public function __construct()
-    {
-        $this->mantenimientoModel = new Mantenimiento();
-    }
+
 
     /**
      * @Given I have a Mantenimiento instance
