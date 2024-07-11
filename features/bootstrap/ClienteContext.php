@@ -2,6 +2,7 @@
 
 use Behat\Behat\Context\Context;
 use Phake;
+use Exception;
 
 class ClienteContext implements Context
 {
