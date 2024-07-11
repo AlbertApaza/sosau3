@@ -4,7 +4,7 @@ use Behat\Behat\Context\Context;
 use Phake;
 
 
-class MaquinariaContext implements Context
+class Maquinaria implements Context
 {
     private $machinery;
 

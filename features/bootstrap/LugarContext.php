@@ -5,7 +5,7 @@ use Phake;
 
 
 
-class LugarContext implements Context
+class Lugar implements Context
 {
     private $places;
 

@@ -4,7 +4,7 @@ use Behat\Behat\Context\Context;
 use Phake;
 
 
-class CotizacionContext implements Context
+class Cotizacion implements Context
 {
     private $conexion;
     private $cotizacion;

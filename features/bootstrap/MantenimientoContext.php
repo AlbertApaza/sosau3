@@ -4,7 +4,7 @@ use Behat\Behat\Context\Context;
 use Phake;
 
 
-class MantenimientoContext implements \Behat\Behat\Context\Context
+class Mantenimiento implements \Behat\Behat\Context\Context
 {
     private $mantenimientoModel;
     private $newMaintenanceId;

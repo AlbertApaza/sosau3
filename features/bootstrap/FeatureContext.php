@@ -6,7 +6,7 @@ use Phake;
 /**
  * Defines application features from the specific context.
  */
-class FeatureContext implements Context
+class Feature implements Context
 {
     /**
      * Initializes context.

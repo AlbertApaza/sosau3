@@ -5,7 +5,7 @@ use Phake;
 /**
  * Defines application features from the specific context.
  */
-class ClienteContext implements \Behat\Behat\Context\Context
+class Cliente implements \Behat\Behat\Context\Context
 {
     private $cliente;
     private $clientsList;
