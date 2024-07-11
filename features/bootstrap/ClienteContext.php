@@ -4,6 +4,12 @@ use Behat\Behat\Context\Context;
 use Phake;
 use Exception;
 
+// Asegúrate de definir o incluir la interfaz ClienteService si no existe
+interface ClienteService
+{
+    public function crearCliente($data);
+}
+
 class ClienteContext implements Context
 {
     private $clienteService;
@@ -37,7 +43,9 @@ class ClienteContext implements Context
     public function noIngresaDatosEnviandoElFormulario()
     {
         // Simular comportamiento con Phake
-        Phake::when($this->clienteService)->crearCliente(Phake::anyParameters())->thenThrow(new Exception('Los campos del formulario no pueden estar vacíos'));
+        Phake::when($this->clienteService)
+            ->crearCliente(Phake::anyParameters())
+            ->thenThrow(new Exception('Los campos del formulario no pueden estar vacíos'));
     }
 
     /**
@@ -146,10 +154,4 @@ class ClienteContext implements Context
     {
         // No se requiere implementación para este método utilizando Phake
     }
-}
-
-// Asegúrate de definir o incluir la clase ClienteService si no existe
-interface ClienteService
-{
-    public function crearCliente($data);
 }
