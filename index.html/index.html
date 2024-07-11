@@ -341,7 +341,7 @@
                 </ul>
                 <h3>
                     <span class="keyword"> Scenario: </span>
-                    <span class="title">Editar un cliente existente</span>
+                    <span class="title">Listar clientes existentes</span>
                 </h3>
                 <ol>
                     <li class="passed">
@@ -355,21 +355,51 @@
                         <div class="step">
                             <span class="keyword">And </span>
                             <span class="text">que existen los siguientes clientes en la base de datos: </span>
-                            <span class="path">ClienteContext::queExistenLosSiguientesClientesEnLaBaseDeDatos()</span><br><pre class="argument"><table class="argument"> <thead><tr class="row"><td>idcliente</td><td>nombre</td><td>apellido</td><td>correo</td><td>iddocumento</td><td>documento</td><td>telefono</td></tr></thead><tbody><tr class="row"><td>240</td><td>John</td><td>Doe</td><td>john.doe@example.com</td><td>1</td><td>12345678</td><td>987654321</td></tr></tbody></table></pre>
+                            <span class="path">ClienteContext::queExistenLosSiguientesClientesEnLaBaseDeDatos()</span><br><pre class="argument"><table class="argument"> <thead><tr class="row"><td>nombre</td><td>apellido</td><td>correo</td><td>iddocumento</td><td>documento</td><td>telefono</td></tr></thead><tbody><tr class="row"><td>John</td><td>Doe</td><td>john.doe@example.com</td><td>1</td><td>12345678</td><td>987654321</td></tr><tr class="row"><td>Jane</td><td>Smith</td><td>jane.smith@example.com</td><td>2</td><td>87654321</td><td>654321987</td></tr></tbody></table></pre>
                         </div>
                     </li>
-                    <li class="failed">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">When </span>
-                            <span class="text">intento editar el cliente con idcliente 240, estableciendo nombre a &quot;Jane&quot;, apellido a &quot;Smith&quot;, correo a &quot;jane.smith@example.com&quot;, iddocumento a &quot;1&quot;, documento a &quot;87654321&quot;, tel&eacute;fono a &quot;654321987&quot; </span>
-                            <span class="path">ClienteContext::intentoEditarElClienteConIdclienteEstableciendoDatos()</span>
+                            <span class="text">solicito la lista de clientes </span>
+                            <span class="path">ClienteContext::solicitoLaListaDeClientes()</span>
                         </div>
-                        <pre class="backtrace">Warning: Undefined array key "idcliente" in /home/runner/work/sosau3/sosau3/features/bootstrap/ClienteContext.php line 144</pre>
                     </li>
-                    <li class="skipped">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">Then </span>
-                            <span class="text">la lista de clientes debe incluir &quot;Jane Smith&quot; </span>
+                            <span class="text">la lista debe contener al menos un cliente </span>
+                            <span class="path">ClienteContext::laListaDebeContenerAlMenosUnCliente()</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Añadir un nuevo cliente</span>
+                </h3>
+                <ol>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">que tengo una instancia del modelo Cliente </span>
+                            <span class="path">ClienteContext::queTengoUnaInstanciaDelModeloCliente()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">a&ntilde;ado un nuevo cliente con nombre &quot;Alice&quot;, apellido &quot;Johnson&quot;, correo &quot;alice.johnson@example.com&quot;, iddocumento &quot;1&quot;, documento &quot;55555555&quot;, tel&eacute;fono &quot;999888777&quot; </span>
+                            <span class="path">ClienteContext::anadoUnNuevoClienteConLosSiguientesDatos()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">la lista de clientes debe incluir &quot;Alice Johnson&quot; </span>
                             <span class="path">ClienteContext::laListaDeClientesDebeIncluir()</span>
                         </div>
                     </li>
@@ -394,7 +424,7 @@
                         <div class="step">
                             <span class="keyword">And </span>
                             <span class="text">que existen los siguientes clientes en la base de datos: </span>
-                            <span class="path">ClienteContext::queExistenLosSiguientesClientesEnLaBaseDeDatos()</span><br><pre class="argument"><table class="argument"> <thead><tr class="row"><td>idcliente</td><td>nombre</td><td>apellido</td><td>correo</td><td>iddocumento</td><td>documento</td><td>telefono</td></tr></thead><tbody><tr class="row"><td>1</td><td>John</td><td>Doe</td><td>john.doe@example.com</td><td>1</td><td>12345678</td><td>987654321</td></tr><tr class="row"><td>2</td><td>Jane</td><td>Smith</td><td>jane.smith@example.com</td><td>2</td><td>87654321</td><td>654321987</td></tr></tbody></table></pre>
+                            <span class="path">ClienteContext::queExistenLosSiguientesClientesEnLaBaseDeDatos()</span><br><pre class="argument"><table class="argument"> <thead><tr class="row"><td>nombre</td><td>apellido</td><td>correo</td><td>iddocumento</td><td>documento</td><td>telefono</td></tr></thead><tbody><tr class="row"><td>John</td><td>Doe</td><td>john.doe@example.com</td><td>1</td><td>12345678</td><td>987654321</td></tr><tr class="row"><td>Jane</td><td>Smith</td><td>jane.smith@example.com</td><td>2</td><td>87654321</td><td>654321987</td></tr></tbody></table></pre>
                         </div>
                     </li>
                     <li class="passed">
@@ -418,7 +448,7 @@
                 </ul>
                 <h3>
                     <span class="keyword"> Scenario: </span>
-                    <span class="title">Intento de agregar cliente con campos vacíos</span>
+                    <span class="title">Intento añadir cliente con campos vacíos</span>
                 </h3>
                 <ol>
                     <li class="passed">
@@ -449,7 +479,7 @@
                 </ul>
                 <h3>
                     <span class="keyword"> Scenario: </span>
-                    <span class="title">Intento de editar cliente con datos inválidos</span>
+                    <span class="title">Editar un cliente existente</span>
                 </h3>
                 <ol>
                     <li class="passed">
@@ -463,13 +493,52 @@
                         <div class="step">
                             <span class="keyword">And </span>
                             <span class="text">que existen los siguientes clientes en la base de datos: </span>
-                            <span class="path">ClienteContext::queExistenLosSiguientesClientesEnLaBaseDeDatos()</span><br><pre class="argument"><table class="argument"> <thead><tr class="row"><td>idcliente</td><td>nombre</td><td>apellido</td><td>correo</td><td>iddocumento</td><td>documento</td><td>telefono</td></tr></thead><tbody><tr class="row"><td>240</td><td>John</td><td>Doe</td><td>john.doe@example.com</td><td>1</td><td>12345678</td><td>987654321</td></tr></tbody></table></pre>
+                            <span class="path">ClienteContext::queExistenLosSiguientesClientesEnLaBaseDeDatos()</span><br><pre class="argument"><table class="argument"> <thead><tr class="row"><td>idcliente</td><td>nombre</td><td>apellido</td><td>correo</td><td>iddocumento</td><td>documento</td><td>telefono</td></tr></thead><tbody><tr class="row"><td>1</td><td>John</td><td>Doe</td><td>john.doe@example.com</td><td>1</td><td>12345678</td><td>987654321</td></tr><tr class="row"><td>2</td><td>Jane</td><td>Smith</td><td>jane.smith@example.com</td><td>2</td><td>87654321</td><td>654321987</td></tr></tbody></table></pre>
                         </div>
                     </li>
                     <li class="failed">
                         <div class="step">
                             <span class="keyword">When </span>
-                            <span class="text">intento editar el cliente con idcliente 240, estableciendo nombre a &quot;&quot;, apellido a &quot;&quot;, correo a &quot;&quot;, iddocumento a &quot;&quot;, documento a &quot;&quot;, tel&eacute;fono a &quot;&quot; </span>
+                            <span class="text">intento editar el cliente con idcliente 1, estableciendo nombre a &quot;Johnny&quot;, apellido a &quot;Doe&quot;, correo a &quot;johnny.doe@example.com&quot;, iddocumento a &quot;1&quot;, documento a &quot;99999999&quot;, tel&eacute;fono a &quot;111222333&quot; </span>
+                            <span class="path">ClienteContext::intentoEditarElClienteConIdclienteEstableciendoDatos()</span>
+                        </div>
+                        <pre class="backtrace">Warning: Undefined array key "idcliente" in /home/runner/work/sosau3/sosau3/features/bootstrap/ClienteContext.php line 144</pre>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">la lista de clientes debe incluir &quot;Johnny Doe&quot; </span>
+                            <span class="path">ClienteContext::laListaDeClientesDebeIncluir()</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Intento editar cliente con datos inválidos</span>
+                </h3>
+                <ol>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">que tengo una instancia del modelo Cliente </span>
+                            <span class="path">ClienteContext::queTengoUnaInstanciaDelModeloCliente()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">que existen los siguientes clientes en la base de datos: </span>
+                            <span class="path">ClienteContext::queExistenLosSiguientesClientesEnLaBaseDeDatos()</span><br><pre class="argument"><table class="argument"> <thead><tr class="row"><td>idcliente</td><td>nombre</td><td>apellido</td><td>correo</td><td>iddocumento</td><td>documento</td><td>telefono</td></tr></thead><tbody><tr class="row"><td>1</td><td>John</td><td>Doe</td><td>john.doe@example.com</td><td>1</td><td>12345678</td><td>987654321</td></tr></tbody></table></pre>
+                        </div>
+                    </li>
+                    <li class="failed">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">intento editar el cliente con idcliente 1, estableciendo nombre a &quot;&quot;, apellido a &quot;&quot;, correo a &quot;&quot;, iddocumento a &quot;&quot;, documento a &quot;&quot;, tel&eacute;fono a &quot;&quot; </span>
                             <span class="path">ClienteContext::intentoEditarElClienteConIdclienteEstableciendoDatos()</span>
                         </div>
                         <pre class="backtrace">Warning: Undefined array key "idcliente" in /home/runner/work/sosau3/sosau3/features/bootstrap/ClienteContext.php line 144</pre>
@@ -483,9 +552,47 @@
                     </li>
                 </ol>
             </div>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Eliminar un cliente existente</span>
+                </h3>
+                <ol>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">que tengo una instancia del modelo Cliente </span>
+                            <span class="path">ClienteContext::queTengoUnaInstanciaDelModeloCliente()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">que existen los siguientes clientes en la base de datos: </span>
+                            <span class="path">ClienteContext::queExistenLosSiguientesClientesEnLaBaseDeDatos()</span><br><pre class="argument"><table class="argument"> <thead><tr class="row"><td>idcliente</td><td>nombre</td><td>apellido</td><td>correo</td><td>iddocumento</td><td>documento</td><td>telefono</td></tr></thead><tbody><tr class="row"><td>1</td><td>John</td><td>Doe</td><td>john.doe@example.com</td><td>1</td><td>12345678</td><td>987654321</td></tr></tbody></table></pre>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">intento eliminar el cliente con idcliente 1 </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                    <li class="pending">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">el cliente con idcliente 1 ya no debe estar en la lista de clientes </span>
+                            <span class="path"></span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
             <div class="featureResult failed">Feature has failed
-                <span>Scenarios passed : 25%,
-                Scenarios failed : 75%</span>
+                <span>Scenarios passed : 42.86%,
+                Scenarios failed : 57.14%</span>
             </div>
         </div><!DOCTYPE html>
 <html lang="en">
@@ -527,7 +634,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Automated test report - 11/07/2024 19:44:56</a>
+            <a class="navbar-brand" href="#">Automated test report - 11/07/2024 19:48:18</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -553,10 +660,10 @@
                 <canvas id="chart-scenarios" width="300" height="300"/>
             </div>
             <div class="chart-summary title">
-                4
+                7
                 Scenarios:
             </div>
-            <div class="chart-summary failed">3 failed</div>
+            <div class="chart-summary failed">4 failed</div>
             <div class="chart-summary undefined">0 undefined</div>
             <div class="chart-summary skipped">0 skipped</div>
         </div>
@@ -565,7 +672,7 @@
                 <canvas id="chart-steps" width="300" height="300"/>
             </div>
             <div class="chart-summary title">
-                12
+                21
                 Steps:
             </div>
             <div class="chart-summary failed">2 failed</div>
@@ -599,7 +706,7 @@
                                                                                     </div>
                                                                                     <div class="progress">
                                                 <div class="progress-bar progress-bar-green" role="progressbar"
-                                                     style="width: 25%">
+                                                     style="width: 42.857142857143%">
                                                     <span class="sr-only">40% Complete (success)</span>
                                                 </div>
                                                 <div class="progress-bar progress-bar-warning" role="progressbar"
@@ -607,7 +714,7 @@
                                                     <span class="sr-only">40% Complete (success)</span>
                                                 </div>
                                                 <div class="progress-bar progress-bar-red" role="progressbar"
-                                                     style="width: 75%">
+                                                     style="width: 57.142857142857%">
                                                     <span class="sr-only">40% Complete (success)</span>
                                                 </div>
                                             </div>
@@ -634,7 +741,7 @@
                                                                     </div>
                                                                     <div class="progress">
                                         <div class="progress-bar progress-bar-green" role="progressbar"
-                                             style="width: 25%">
+                                             style="width: 42.857142857143%">
                                             <span class="sr-only">40% Complete (success)</span>
                                         </div>
                                         <div class="progress-bar progress-bar-warning" role="progressbar"
@@ -642,7 +749,7 @@
                                             <span class="sr-only">40% Complete (success)</span>
                                         </div>
                                         <div class="progress-bar progress-bar-red" role="progressbar"
-                                             style="width: 75%">
+                                             style="width: 57.142857142857%">
                                             <span class="sr-only">40% Complete (success)</span>
                                         </div>
                                     </div>
@@ -650,14 +757,14 @@
                         </div>
                     </div>
                     <div class="col-sm-8 details panel-group" role="tablist" aria-multiselectable="true">
-                                                    <div class="panel panel-default failed">
+                                                    <div class="panel panel-default passed">
                                 <div class="panel-heading" role="tab">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordion"
                                            href="#scenario-1-1"
                                            aria-expanded="true"
                                            aria-controls="scenario-1-1">
-                                            Scenario: Editar un cliente existente
+                                            Scenario: Listar clientes existentes
                                         </a>
 
                                         <div class="tags pull-right">
@@ -674,15 +781,15 @@
                                                                                                                                                                                                                         <li class="list-group-item alert alert-success">
                                                 <b>And</b> que existen los siguientes clientes en la base de datos:
                                                                                                                                                             <p style="padding-left:0.5em; overflow-x:scroll; white-space:nowrap; font-family:monospace">
-                                                            | 240 |  John |  Doe |  john.doe@example.com |  1 |  12345678 |  987654321 |                                                         </p>
+                                                            | John |  Doe |  john.doe@example.com |  1 |  12345678 |  987654321 |                                                         </p>
+                                                                                                            <p style="padding-left:0.5em; overflow-x:scroll; white-space:nowrap; font-family:monospace">
+                                                            | Jane |  Smith |  jane.smith@example.com |  2 |  87654321 |  654321987 |                                                         </p>
                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-danger">
-                                                <b>When</b> intento editar el cliente con idcliente 240, estableciendo nombre a &quot;Jane&quot;, apellido a &quot;Smith&quot;, correo a &quot;jane.smith@example.com&quot;, iddocumento a &quot;1&quot;, documento a &quot;87654321&quot;, teléfono a &quot;654321987&quot;
-                                                                                                                                                                                                                                                        <br>
-                                                    <p style="padding-left:2em ; color:gray">(Warning: Undefined array key &quot;idcliente&quot; in /home/runner/work/sosau3/sosau3/features/bootstrap/ClienteContext.php line 144)</p>
-                                                                                                                                                                                            </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
-                                                <b>Then</b> la lista de clientes debe incluir &quot;Jane Smith&quot;
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>When</b> solicito la lista de clientes
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>Then</b> la lista debe contener al menos un cliente
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                 </ul>
                                 </div>
@@ -694,7 +801,7 @@
                                            href="#scenario-1-2"
                                            aria-expanded="true"
                                            aria-controls="scenario-1-2">
-                                            Scenario: Buscar clientes por término
+                                            Scenario: Añadir un nuevo cliente
                                         </a>
 
                                         <div class="tags pull-right">
@@ -709,11 +816,41 @@
                                                 <b>Given</b> que tengo una instancia del modelo Cliente
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                         <li class="list-group-item alert alert-success">
+                                                <b>When</b> añado un nuevo cliente con nombre &quot;Alice&quot;, apellido &quot;Johnson&quot;, correo &quot;alice.johnson@example.com&quot;, iddocumento &quot;1&quot;, documento &quot;55555555&quot;, teléfono &quot;999888777&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>Then</b> la lista de clientes debe incluir &quot;Alice Johnson&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default passed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-1-3"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-1-3">
+                                            Scenario: Buscar clientes por término
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-1-3" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-success">
+                                                <b>Given</b> que tengo una instancia del modelo Cliente
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
                                                 <b>And</b> que existen los siguientes clientes en la base de datos:
                                                                                                                                                             <p style="padding-left:0.5em; overflow-x:scroll; white-space:nowrap; font-family:monospace">
-                                                            | 1 |  John |  Doe |  john.doe@example.com |  1 |  12345678 |  987654321 |                                                         </p>
+                                                            | John |  Doe |  john.doe@example.com |  1 |  12345678 |  987654321 |                                                         </p>
                                                                                                             <p style="padding-left:0.5em; overflow-x:scroll; white-space:nowrap; font-family:monospace">
-                                                            | 2 |  Jane |  Smith |  jane.smith@example.com |  2 |  87654321 |  654321987 |                                                         </p>
+                                                            | Jane |  Smith |  jane.smith@example.com |  2 |  87654321 |  654321987 |                                                         </p>
                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                         <li class="list-group-item alert alert-success">
                                                 <b>When</b> busco clientes con el término &quot;John&quot;
@@ -728,17 +865,17 @@
                                 <div class="panel-heading" role="tab">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordion"
-                                           href="#scenario-1-3"
+                                           href="#scenario-1-4"
                                            aria-expanded="true"
-                                           aria-controls="scenario-1-3">
-                                            Scenario: Intento de agregar cliente con campos vacíos
+                                           aria-controls="scenario-1-4">
+                                            Scenario: Intento añadir cliente con campos vacíos
                                         </a>
 
                                         <div class="tags pull-right">
                                                                                                                                 </div>
                                     </h4>
                                 </div>
-                                <div id="scenario-1-3" class="panel-collapse collapse in"
+                                <div id="scenario-1-4" class="panel-collapse collapse in"
                                      role="tabpanel"
                                      aria-labelledby="headingOne">
                                     <ul class="list-group">
@@ -758,17 +895,17 @@
                                 <div class="panel-heading" role="tab">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordion"
-                                           href="#scenario-1-4"
+                                           href="#scenario-1-5"
                                            aria-expanded="true"
-                                           aria-controls="scenario-1-4">
-                                            Scenario: Intento de editar cliente con datos inválidos
+                                           aria-controls="scenario-1-5">
+                                            Scenario: Editar un cliente existente
                                         </a>
 
                                         <div class="tags pull-right">
                                                                                                                                 </div>
                                     </h4>
                                 </div>
-                                <div id="scenario-1-4" class="panel-collapse collapse in"
+                                <div id="scenario-1-5" class="panel-collapse collapse in"
                                      role="tabpanel"
                                      aria-labelledby="headingOne">
                                     <ul class="list-group">
@@ -778,15 +915,89 @@
                                                                                                                                                                                                                         <li class="list-group-item alert alert-success">
                                                 <b>And</b> que existen los siguientes clientes en la base de datos:
                                                                                                                                                             <p style="padding-left:0.5em; overflow-x:scroll; white-space:nowrap; font-family:monospace">
-                                                            | 240 |  John |  Doe |  john.doe@example.com |  1 |  12345678 |  987654321 |                                                         </p>
+                                                            | 1 |  John |  Doe |  john.doe@example.com |  1 |  12345678 |  987654321 |                                                         </p>
+                                                                                                            <p style="padding-left:0.5em; overflow-x:scroll; white-space:nowrap; font-family:monospace">
+                                                            | 2 |  Jane |  Smith |  jane.smith@example.com |  2 |  87654321 |  654321987 |                                                         </p>
                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                         <li class="list-group-item alert alert-danger">
-                                                <b>When</b> intento editar el cliente con idcliente 240, estableciendo nombre a &quot;&quot;, apellido a &quot;&quot;, correo a &quot;&quot;, iddocumento a &quot;&quot;, documento a &quot;&quot;, teléfono a &quot;&quot;
+                                                <b>When</b> intento editar el cliente con idcliente 1, estableciendo nombre a &quot;Johnny&quot;, apellido a &quot;Doe&quot;, correo a &quot;johnny.doe@example.com&quot;, iddocumento a &quot;1&quot;, documento a &quot;99999999&quot;, teléfono a &quot;111222333&quot;
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(Warning: Undefined array key &quot;idcliente&quot; in /home/runner/work/sosau3/sosau3/features/bootstrap/ClienteContext.php line 144)</p>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>Then</b> la lista de clientes debe incluir &quot;Johnny Doe&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-1-6"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-1-6">
+                                            Scenario: Intento editar cliente con datos inválidos
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-1-6" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-success">
+                                                <b>Given</b> que tengo una instancia del modelo Cliente
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> que existen los siguientes clientes en la base de datos:
+                                                                                                                                                            <p style="padding-left:0.5em; overflow-x:scroll; white-space:nowrap; font-family:monospace">
+                                                            | 1 |  John |  Doe |  john.doe@example.com |  1 |  12345678 |  987654321 |                                                         </p>
+                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-danger">
+                                                <b>When</b> intento editar el cliente con idcliente 1, estableciendo nombre a &quot;&quot;, apellido a &quot;&quot;, correo a &quot;&quot;, iddocumento a &quot;&quot;, documento a &quot;&quot;, teléfono a &quot;&quot;
                                                                                                                                                                                                                                                         <br>
                                                     <p style="padding-left:2em ; color:gray">(Warning: Undefined array key &quot;idcliente&quot; in /home/runner/work/sosau3/sosau3/features/bootstrap/ClienteContext.php line 144)</p>
                                                                                                                                                                                             </li>
                                                                                                                                                                                                                         <li class="list-group-item alert alert-warning">
                                                 <b>Then</b> el sistema muestra un mensaje de error indicando que los campos del formulario no pueden estar vacíos
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-1-7"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-1-7">
+                                            Scenario: Eliminar un cliente existente
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-1-7" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-success">
+                                                <b>Given</b> que tengo una instancia del modelo Cliente
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> que existen los siguientes clientes en la base de datos:
+                                                                                                                                                            <p style="padding-left:0.5em; overflow-x:scroll; white-space:nowrap; font-family:monospace">
+                                                            | 1 |  John |  Doe |  john.doe@example.com |  1 |  12345678 |  987654321 |                                                         </p>
+                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>When</b> intento eliminar el cliente con idcliente 1
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-warning">
+                                                <b>Then</b> el cliente con idcliente 1 ya no debe estar en la lista de clientes
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                 </ul>
                                 </div>
@@ -809,7 +1020,7 @@
         new Chart(featureChart, {type: 'doughnut', options: {legend: {display: false}}, data: {
                 labels: ['Failed', 'Pending', 'Passed'],
                 datasets: [{
-                    data: [3, 0, 1],
+                    data: [4, 0, 3],
                     backgroundColor: ['#F7464A', 'e38d13', '#00a65a'],
                 }],
             }});
@@ -823,7 +1034,7 @@
         new Chart(stepChart, {type: 'doughnut', options: {legend: {display: false}}, data: {
                 labels: ['Failed','Passed'],
                 datasets: [{
-                    data: [2, 10],
+                    data: [2, 19],
                     backgroundColor: ["#F7464A", "#00a65a"],
                 }],
             }});
@@ -888,13 +1099,13 @@
                     1 features ( <strong class="failed">1 fail</strong> )
                 </p>
                 <p class="scenarios">
-                    4 scenarios ( <strong class="passed">1 success</strong> <strong class="failed">3 fail</strong> )
+                    7 scenarios ( <strong class="passed">3 success</strong> <strong class="failed">4 fail</strong> )
                 </p>
                 <p class="steps">
-                    15 steps ( <strong class="passed">10 success</strong> <strong class="pending">2 pending</strong> <strong class="skipped">1 skipped</strong> <strong class="failed">2 fail</strong> )
+                    26 steps ( <strong class="passed">19 success</strong> <strong class="pending">4 pending</strong> <strong class="skipped">1 skipped</strong> <strong class="failed">2 fail</strong> )
                 </p>
                 <p class="time">
-                0m0.02s - 12.92Mb
+                0m0.03s - 12.97Mb
                 </p>
             </div>
             <div class="switchers">
@@ -906,6 +1117,8 @@
                 <ul>
                     <li>Then el sistema muestra un mensaje de error indicando que los campos del formulario no pueden estar vacíos</li>
                     <li>Then el sistema muestra un mensaje de error indicando que los campos del formulario no pueden estar vacíos</li>
+                    <li>When intento eliminar el cliente con idcliente 1</li>
+                    <li>Then el cliente con idcliente 1 ya no debe estar en la lista de clientes</li>
                 </ul>
             </div>
     </div><script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js'></script>
