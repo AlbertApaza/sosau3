@@ -1,42 +1,34 @@
-Feature: Gestión de Cotizaciones
-  Como usuario,
-  Quiero gestionar cotizaciones en el sistema
-  Para poder ver, añadir, editar y eliminar cotizaciones, así como recuperar detalles de clientes, maquinaria y ubicaciones.
-  Scenario: Crear una nueva cotización
-    Given tengo una instancia del modelo Cotizacion
-    When añado una nueva cotización para el cliente con idcliente 1
-    Then la cotización debería añadirse exitosamente
-  
-  Scenario: Actualizar una cotización existente
-    Given tengo una instancia del modelo Cotizacion
-    And existe una cotización con idcotizacion 431
-    When actualizo la cotización con idcotizacion 431, estableciendo idcliente a 2, idmaquinaria a 567, idlugar a 4, total a 1500.50 y tiempo a 5
-    Then la cotización con idcotizacion 431 debería actualizarse exitosamente
-  
-  Scenario: Obtener detalles del cliente para la cotización
-    Given tengo una instancia del modelo Cotizacion
-    And existe un cliente con idcliente 2
-    When obtengo los detalles del cliente con idcliente 2
-    Then debería recibir los detalles del cliente
-  
-  Scenario: Obtener detalles de la maquinaria para la cotización
-    Given tengo una instancia del modelo Cotizacion
-    And existe una maquinaria con idmaquinaria 567
-    When obtengo los detalles de la maquinaria con idmaquinaria 567
-    Then debería recibir los detalles de la maquinaria
-  
-  Scenario: Obtener detalles de la ubicación para la cotización
-    Given tengo una instancia del modelo Cotizacion
-    And existe una ubicación con idlugar 4
-    When obtengo los detalles de la ubicación con idlugar 4
-    Then debería recibir los detalles de la ubicación
-  
-  Scenario: Obtener toda la maquinaria disponible para la cotización
-    Given tengo una instancia del modelo Cotizacion
-    When obtengo toda la maquinaria disponible
-    Then debería recibir una lista de toda la maquinaria
-  
-  Scenario: Obtener todas las ubicaciones disponibles para la cotización
-    Given tengo una instancia del modelo Cotizacion
-    When obtengo todas las ubicaciones disponibles
-    Then debería recibir una lista de todas las ubicaciones
+Feature: Administrar Cotizaciones
+  Como Personal administrativo
+  Quiero administrar cotizaciones en el sistema
+  Para poder crear, visualizar, actualizar y eliminar cotizaciones
+
+  Scenario: Crear Cotización
+    Given que el Personal navega a la página de administración de cotizaciones
+    And selecciona "Crear nueva cotización"
+    And no ingresa datos enviando el formulario
+    And envía el formulario
+    Then el sistema muestra un mensaje de error "El campo idcliente no puede estar vacío"
+    And completa el formulario con la información de la cotización
+    And envía el formulario
+    Then el sistema guarda la nueva cotización en la base de datos
+    And muestra un mensaje de confirmación
+
+  Scenario: Visualizar Cotizaciones
+    Given que el Personal navega a la página de administración de cotizaciones
+    Then el sistema muestra la lista de cotizaciones disponibles
+
+  Scenario: Actualizar Cotización
+    Given que el Personal navega a la página de administración de cotizaciones
+    And selecciona una cotización para actualizar
+    And modifica la información de la cotización
+    And envía el formulario
+    Then el sistema actualiza la cotización en la base de datos
+    And muestra un mensaje de confirmación
+
+  Scenario: Eliminar Cotización
+    Given que el Personal navega a la página de administración de cotizaciones
+    And selecciona una cotización para eliminar
+    And confirma la eliminación
+    Then el sistema elimina la cotización de la base de datos
+    And muestra un mensaje de confirmación
