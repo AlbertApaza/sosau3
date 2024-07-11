@@ -1,7 +1,8 @@
 <?php
 // MantenimientoContext.php
+use Behat\Behat\Context\Context;
+use Phake;
 
-use App\Model\Mantenimiento;
 
 class MantenimientoContext implements \Behat\Behat\Context\Context
 {

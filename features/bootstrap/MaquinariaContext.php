@@ -1,7 +1,8 @@
 <?php
 
 use Behat\Behat\Context\Context;
-use App\Model\Maquinaria;
+use Phake;
+
 
 class MaquinariaContext implements Context
 {

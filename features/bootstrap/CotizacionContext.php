@@ -1,8 +1,8 @@
 <?php
 
-use App\Model\Cotizacion;
-use PHPUnit\Framework\Assert;
 use Behat\Behat\Context\Context;
+use Phake;
+
 
 class CotizacionContext implements Context
 {

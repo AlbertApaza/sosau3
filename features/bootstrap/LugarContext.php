@@ -1,7 +1,8 @@
 <?php
 
 use Behat\Behat\Context\Context;
-use App\Model\Lugar;
+use Phake;
+
 
 
 class LugarContext implements Context

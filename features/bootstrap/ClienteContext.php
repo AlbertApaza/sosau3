@@ -1,12 +1,6 @@
 <?php
-
-use App\Model\Cliente;
-use PHPUnit\Framework\Assert;
-
-use Behat\Behat\Hook\Scope\BeforeScenarioScope;
 use Behat\Behat\Context\Context;
-use Behat\Gherkin\Node\PyStringNode;
-use Behat\Gherkin\Node\TableNode;
+use Phake;
 
 /**
  * Defines application features from the specific context.
