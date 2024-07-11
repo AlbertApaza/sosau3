@@ -1,3 +1,5 @@
+<?php
+
 use Behat\Behat\Context\Context;
 use Phake;
 
@@ -64,3 +66,4 @@ interface LugarService
 {
     public function obtenerTodosLugares();
 }
+?>
