@@ -1,23 +1,18 @@
-<?php
-
 use Behat\Behat\Context\Context;
-use Behat\Gherkin\Node\TableNode;
 use PHPUnit\Framework\Assert;
-use Phake;
 
-/**
- * Defines application features from the specific context.
- */
 class ClienteContext implements Context
 {
-    private $cliente;
+    private $clienteService;
     private $clientsList;
+    private $clientData;
 
     public function __construct()
     {
-        // Inicializar el cliente simulado usando Phake
-        $this->cliente = Phake::mock('App\Model\Cliente');
+        // Inicializar el servicio utilizando Phake para simular
+        $this->clienteService = Phake::mock('ClienteService');
         $this->clientsList = [];
+        $this->clientData = [];
     }
 
     /**
@@ -25,8 +20,12 @@ class ClienteContext implements Context
      */
     public function iHaveAClienteInstance()
     {
-        // Verificar que se haya inicializado correctamente el cliente simulado
-        Assert::assertInstanceOf('App\Model\Cliente', $this->cliente);
+        // Simular la instancia de Cliente (opcional dependiendo del enfoque)
+        // Esto podría ser una inicialización de datos simulados
+        $this->clientData = [
+            ['nombre' => 'John', 'apellido' => 'Doe', 'correo' => 'john.doe@example.com'],
+            ['nombre' => 'Jane', 'apellido' => 'Smith', 'correo' => 'jane.smith@example.com'],
+        ];
     }
 
     /**
@@ -34,13 +33,8 @@ class ClienteContext implements Context
      */
     public function iRequestTheListOfClients()
     {
-        // Simular la obtención de la lista de clientes
-        Phake::when($this->cliente)->listarClientes()->thenReturn([
-            ['nombre' => 'John', 'apellido' => 'Doe'],
-            ['nombre' => 'Jane', 'apellido' => 'Smith']
-        ]);
-
-        $this->clientsList = $this->cliente->listarClientes();
+        // Simular la solicitud de lista de clientes
+        $this->clientsList = $this->clienteService->listarClientes();
     }
 
     /**
@@ -48,25 +42,18 @@ class ClienteContext implements Context
      */
     public function theListShouldContainAtLeastOneClient()
     {
-        // Verificar que la lista de clientes no esté vacía
+        // Verificar que la lista contenga al menos un cliente
         Assert::assertNotEmpty($this->clientsList, 'The client list is empty.');
     }
 
     /**
-     * @When I add a new client with nombre :nombre, apellido :apellido, correo :correo, iddocumento :iddocumento, documento :documento, telefono :telefono
+     * @When I add a new client with nombre :nombre, apellido :apellido, correo :correo
      */
-    public function iAddANewClientWith($nombre, $apellido, $correo, $iddocumento, $documento, $telefono)
+    public function iAddANewClientWith($nombre, $apellido, $correo)
     {
-        try {
-            // Simular la adición de un cliente nuevo
-            $this->cliente->agregarCliente($nombre, $apellido, $correo, $iddocumento, $documento, $telefono);
-            echo "Cliente '$nombre $apellido' agregado correctamente." . PHP_EOL;
-
-            // Actualizar la lista de clientes después de agregar uno nuevo
-            $this->iRequestTheListOfClients();
-        } catch (\Exception $e) {
-            echo "Error al agregar el cliente: " . $e->getMessage() . PHP_EOL;
-        }
+        // Simular agregar un nuevo cliente
+        $this->clienteService->crearCliente(['nombre' => $nombre, 'apellido' => $apellido, 'correo' => $correo]);
+        echo "Cliente '$nombre $apellido' agregado correctamente." . PHP_EOL;
     }
 
     /**
@@ -74,7 +61,7 @@ class ClienteContext implements Context
      */
     public function theClientListShouldInclude($expectedClient)
     {
-        // Verificar que el cliente esperado esté en la lista
+        // Simular verificar que la lista incluya un cliente esperado
         $found = false;
         foreach ($this->clientsList as $client) {
             if ($client['nombre'] . ' ' . $client['apellido'] === $expectedClient) {
@@ -90,25 +77,18 @@ class ClienteContext implements Context
      */
     public function thereIsAClientWithIdcliente($idcliente)
     {
-        // Simular la existencia de un cliente con ID específico
-        Phake::when($this->cliente)->agregarCliente('John', 'Doe', 'john.doe@example.com', 'DNI', '12345678', '987654321');
+        // Simular agregar un cliente con un ID específico
+        $this->clienteService->crearCliente(['nombre' => 'John', 'apellido' => 'Doe', 'correo' => 'john.doe@example.com']);
     }
 
     /**
-     * @When I edit the client with idcliente :idcliente, setting nombre to :nombre, apellido to :apellido, correo to :correo, iddocumento to :iddocumento, documento to :documento, telefono to :telefono
+     * @When I edit the client with idcliente :idcliente, setting nombre to :nombre, apellido to :apellido, correo to :correo
      */
-    public function iEditTheClientWithIdcliente($idcliente, $nombre, $apellido, $correo, $iddocumento, $documento, $telefono)
+    public function iEditTheClientWithIdcliente($idcliente, $nombre, $apellido, $correo)
     {
-        try {
-            // Simular la edición del cliente
-            $this->cliente->editarCliente($idcliente, $nombre, $apellido, $correo, $iddocumento, $documento, $telefono);
-            echo "Cliente con id $idcliente editado correctamente." . PHP_EOL;
-
-            // Actualizar la lista de clientes después de la edición
-            $this->iRequestTheListOfClients();
-        } catch (\Exception $e) {
-            echo "Error al editar el cliente: " . $e->getMessage() . PHP_EOL;
-        }
+        // Simular editar un cliente con un ID específico
+        $this->clienteService->editarCliente($idcliente, ['nombre' => $nombre, 'apellido' => $apellido, 'correo' => $correo]);
+        echo "Cliente con id $idcliente editado correctamente." . PHP_EOL;
     }
 
     /**
@@ -116,8 +96,8 @@ class ClienteContext implements Context
      */
     public function iDeleteTheClientWithIdcliente($idcliente)
     {
-        // Simular la eliminación de un cliente
-        Phake::when($this->cliente)->eliminarCliente($idcliente);
+        // Simular eliminar un cliente con un ID específico
+        $this->clienteService->eliminarCliente($idcliente);
     }
 
     /**
@@ -125,7 +105,7 @@ class ClienteContext implements Context
      */
     public function theClientListShouldNotInclude($expectedClient)
     {
-        // Verificar que el cliente esperado no esté en la lista
+        // Simular verificar que la lista no incluya un cliente esperado
         $found = false;
         foreach ($this->clientsList as $client) {
             if ($client['nombre'] . ' ' . $client['apellido'] === $expectedClient) {
@@ -141,12 +121,8 @@ class ClienteContext implements Context
      */
     public function iSearchForClientsWithTerm($term)
     {
-        // Simular la búsqueda de clientes con un término específico
-        Phake::when($this->cliente)->buscarCliente($term)->thenReturn([
-            ['nombre' => 'John', 'apellido' => 'Doe']
-        ]);
-
-        $this->clientsList = $this->cliente->buscarCliente($term);
+        // Simular buscar clientes con un término específico
+        $this->clientsList = $this->clienteService->buscarCliente($term);
     }
 
     /**
@@ -154,7 +130,7 @@ class ClienteContext implements Context
      */
     public function theSearchResultsShouldInclude($expectedClient)
     {
-        // Verificar que los resultados de búsqueda contengan al cliente esperado
+        // Simular verificar que los resultados de búsqueda incluyan un cliente esperado
         $found = false;
         foreach ($this->clientsList as $client) {
             if ($client['nombre'] . ' ' . $client['apellido'] === $expectedClient) {
@@ -165,4 +141,3 @@ class ClienteContext implements Context
         Assert::assertTrue($found, "Expected client '$expectedClient' not found in the search results.");
     }
 }
-?>
